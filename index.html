@@ -119,6 +119,7 @@
                 </p>
               </div>
             </div>
+            <span id="bio-end"></span>
           </section>
 
           <section id="resume" class="bg-light py-5">
@@ -154,6 +155,7 @@
                 </ul>
               </div>
             </div>
+            <span id="resume-end"></span>
           </section>
 
           <section id="gallery" class="py-5">
@@ -241,6 +243,7 @@
                 />
               </div>
             </div>
+            <span id="gallery-end"></span>
           </section>
         </main>
       </div>
@@ -413,7 +416,7 @@
 
       // Define the animation for fading out as the content moves up
       function fadeOutAnimation(section) {
-        // Start fully visible and scaled normally
+        // Configure the animation
         var tween = gsap.timeline();
         tween.fromTo(
           '#' + section,
@@ -421,21 +424,22 @@
           { autoAlpha: 0, scale: 0.8, duration: 1 }
         );
 
-        return new ScrollMagic.Scene({
-          triggerElement: '#' + section,
-          duration: '100%', // Animation length relative to the container height
-          triggerHook: 0, // Start animation right when the top hits the trigger
+        // Create a ScrollMagic scene
+        new ScrollMagic.Scene({
+          triggerElement: '#' + section + '-end',
+          duration: '100%',
+          triggerHook: 0.5,
         })
           .setTween(tween)
           .addTo(controller);
       }
 
       // Apply the animation to each section
-      ['bio', 'resume'].forEach(function (section) {
+      ['bio', 'resume', 'gallery'].forEach(function (section) {
         fadeOutAnimation(section);
       });
 
-      // Gallery image click to update carousel position
+      // Handle gallery image clicks to update carousel position
       const galleryItems = document.querySelectorAll('.gallery img');
       galleryItems.forEach((item, index) => {
         item.addEventListener('click', () => {
