@@ -102,6 +102,8 @@
     async
     src="https://www.googletagmanager.com/gtag/js?id=G-SX0REXJ6CG"
   ></script>
+  <!-- jsPDF Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag() {
@@ -136,6 +138,11 @@
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#contact">Contact</a>
+            </li>
+            <li class="nav-item">
+              <button class="btn btn-primary" onclick="generatePDF()">
+                Download Resume
+              </button>
             </li>
           </ul>
         </div>
@@ -258,37 +265,36 @@
                 </div>
               </div>
             </div>
-            <!-- Add education section -->
+            <!-- Education Section -->
             <div class="resume-section">
               <p class="lead section-title">Education</p>
               <div class="list-group">
                 <div class="list-group-item resume-item">
-                  <h4 class="resume-header">Bachelor of Science</h4>
+                  <h4 class="resume-header">
+                    Bachelor of Science in Computer Science
+                  </h4>
                   <div class="resume-content">
-                    <p class="position-title">
-                      Computer Science, Brigham Young University
-                    </p>
+                    <p class="position-title">Brigham Young University</p>
                     <p class="date-range">August 2011 - April 2015</p>
                     <p class="company-details">Provo, UT</p>
                   </div>
                 </div>
               </div>
             </div>
-            <!-- Add work experience section -->
-            <div class="resume-section">
-              <p class="lead section-title">Experience</p>
 
+            <!-- Experience Section -->
+            <div class="resume-section" id="experience-section">
+              <p class="lead section-title">Experience</p>
               <div class="list-group">
                 <div class="list-group-item resume-item">
                   <h4 class="resume-header">
                     Lead Software Engineer, Frontend
                   </h4>
                   <div class="resume-content">
-                    <p class="position-title">
-                      GameOn Technologies, Remote, Heber City, UT
-                    </p>
-                    <p class="date-range">February 2023 - Present</p>
-                    <ul>
+                    <p class="position-title">ON Platform DBA. GameOn</p>
+                    <p class="date-range">February 2023 - July 2024</p>
+                    <p class="company-details">Remote, Heber City, UT</p>
+                    <ul class="responsibilities">
                       <li>Led a team of 5 software engineers.</li>
                       <li>
                         Delivered large-scale features, including Live Support
@@ -300,13 +306,12 @@
                 <div class="list-group-item resume-item">
                   <h4 class="resume-header">Software Engineer</h4>
                   <div class="resume-content">
-                    <p class="position-title">
-                      GameOn Technologies, Remote, Heber City, UT
-                    </p>
+                    <p class="position-title">GameOn Technologies</p>
                     <p class="date-range">
                       May 2022 - February 2023 (Promoted)
                     </p>
-                    <ul>
+                    <p class="company-details">Remote, Heber City, UT</p>
+                    <ul class="responsibilities">
                       <li>
                         Implemented a web component design system using Lit.
                       </li>
@@ -320,11 +325,10 @@
                 <div class="list-group-item resume-item">
                   <h4 class="resume-header">Software Engineer</h4>
                   <div class="resume-content">
-                    <p class="position-title">
-                      Bark Technologies, Remote, Heber City, UT
-                    </p>
+                    <p class="position-title">Bark Technologies</p>
                     <p class="date-range">February 2020 - April 2022</p>
-                    <ul>
+                    <p class="company-details">Remote, Heber City, UT</p>
+                    <ul class="responsibilities">
                       <li>
                         Maintained and integrated Router Limits technologies
                         after acquisition.
@@ -339,11 +343,12 @@
                 <div class="list-group-item resume-item">
                   <h4 class="resume-header">Software Developer</h4>
                   <div class="resume-content">
-                    <p class="position-title">Router Limits, Layton, UT</p>
+                    <p class="position-title">Router Limits</p>
                     <p class="date-range">
                       November 2015 - February 2020 (Acquired)
                     </p>
-                    <ul>
+                    <p class="company-details">Layton, UT</p>
+                    <ul class="responsibilities">
                       <li>
                         Led frontend development for a small software company.
                       </li>
@@ -362,10 +367,11 @@
                   <h4 class="resume-header">Software Engineer Intern</h4>
                   <div class="resume-content">
                     <p class="position-title">
-                      Lockheed Martin Mission Systems and Training, Orlando, FL
+                      Lockheed Martin Mission Systems and Training
                     </p>
                     <p class="date-range">June 2015 - August 2015</p>
-                    <ul>
+                    <p class="company-details">Orlando, FL</p>
+                    <ul class="responsibilities">
                       <li>
                         Contributed to F-14 training simulation software using
                         C# .NET and WPF.
@@ -376,11 +382,10 @@
                 <div class="list-group-item resume-item">
                   <h4 class="resume-header">Full Stack Programmer</h4>
                   <div class="resume-content">
-                    <p class="position-title">
-                      Missionary Training Center, Provo, UT
-                    </p>
+                    <p class="position-title">Missionary Training Center</p>
                     <p class="date-range">April 2014 - November 2015</p>
-                    <ul>
+                    <p class="company-details">Provo, UT</p>
+                    <ul class="responsibilities">
                       <li>
                         Developed a missionary chat application for Mormon.org
                         with Java Spring and Oracle SQL backend.
@@ -395,9 +400,10 @@
                 <div class="list-group-item resume-item">
                   <h4 class="resume-header">Product Marketing Intern</h4>
                   <div class="resume-content">
-                    <p class="position-title">Go GungHo Inc., Provo, UT</p>
+                    <p class="position-title">Go GungHo Inc.</p>
                     <p class="date-range">Sept 2013-Dec 2013</p>
-                    <ul>
+                    <p class="company-details">Provo, UT</p>
+                    <ul class="responsibilities">
                       <li>
                         Developed a Java program using the Twitter API to
                         contact prospective customers.
@@ -407,7 +413,6 @@
                 </div>
               </div>
             </div>
-
             <span id="resume-end"></span>
           </section>
         </main>
@@ -502,6 +507,134 @@
       // Get the current year for the footer
       document.getElementById('current-year').textContent =
         new Date().getFullYear();
+    </script>
+    <script>
+      async function generatePDF() {
+        const { jsPDF } = window.jspdf;
+        const doc = new jsPDF();
+
+        const pageHeight = doc.internal.pageSize.height;
+        const margin = 10;
+        const newPageMargin = 10;
+
+        // Function to check if a new page is needed
+        const checkPageOverflow = (doc, currentY, lineHeight = 10) => {
+          if (currentY + lineHeight > pageHeight - margin) {
+            doc.addPage();
+            return margin + newPageMargin; // add extra space at the top of a new page
+          }
+          return currentY;
+        };
+
+        // Add Name and Contact Info
+        doc.setFontSize(20);
+        doc.setFont('helvetica', 'bold');
+        doc.text('Andrew Hyte', margin, margin + 10);
+        doc.setFontSize(12);
+        doc.setFont('helvetica', 'normal');
+        doc.text(
+          'Contact: your.email@example.com | 123-456-7890',
+          margin,
+          margin + 20
+        );
+
+        // Define a function to add section titles
+        const addSectionTitle = (doc, title, y) => {
+          doc.setFontSize(16);
+          doc.setFont('helvetica', 'bold');
+          doc.text(title, margin, y);
+          doc.setFontSize(12);
+          doc.setFont('helvetica', 'normal');
+        };
+
+        // Define a function to add job details
+        const addJobDetails = (
+          doc,
+          jobTitle,
+          company,
+          location,
+          dateRange,
+          y
+        ) => {
+          doc.setFontSize(12);
+          doc.setFont('helvetica', 'bold');
+          doc.text(jobTitle, margin, y);
+          doc.text(
+            dateRange,
+            doc.internal.pageSize.width - margin,
+            y,
+            null,
+            null,
+            'right'
+          );
+          doc.setFont('helvetica', 'italic');
+          doc.text(company + ', ' + location, margin, y + 5);
+        };
+
+        // Start from Skills Profile Section
+        let y = margin + 40;
+
+        // Add Skills Profile Section
+        const skillsProfileElement =
+          document.querySelector('#skills-profile ul');
+        const skillsProfile = skillsProfileElement.innerText.split('\n');
+        addSectionTitle(doc, 'Skills Profile', y);
+        y += 10;
+        skillsProfile.forEach((line) => {
+          y = checkPageOverflow(doc, y);
+          doc.text(line, margin, y);
+          y += 5;
+        });
+        y += 10;
+
+        // Add Education Section
+        y = checkPageOverflow(doc, y);
+        addSectionTitle(doc, 'Education', y);
+        y += 10;
+        addJobDetails(
+          doc,
+          'Bachelor of Science in Computer Science',
+          'Brigham Young University',
+          'Provo, UT',
+          'August 2011 - April 2015',
+          y
+        );
+        y += 20;
+
+        // Add Experience Section
+        y = checkPageOverflow(doc, y);
+        addSectionTitle(doc, 'Experience', y);
+        y += 10;
+
+        const experienceItems = document.querySelectorAll(
+          '#experience-section .list-group-item'
+        );
+        experienceItems.forEach((item) => {
+          const jobTitle = item.querySelector('.resume-header').innerText;
+          const company = item.querySelector('.position-title').innerText;
+          const dateRange = item.querySelector('.date-range').innerText;
+          const location = item.querySelector('.company-details').innerText;
+          const responsibilitiesElement =
+            item.querySelector('.responsibilities');
+          const responsibilities =
+            responsibilitiesElement.innerText.split('\n');
+
+          y = checkPageOverflow(doc, y);
+          addJobDetails(doc, jobTitle, company, location, dateRange, y);
+          doc.setFontSize(11);
+          doc.setFont('helvetica', 'normal');
+          y += 10;
+          responsibilities.forEach((line) => {
+            y = checkPageOverflow(doc, y);
+            doc.text(line, margin, y);
+            y += 5;
+          });
+          y += 10;
+        });
+
+        // Save the PDF
+        doc.save('Andrew_Hyte_Resume.pdf');
+      }
     </script>
   </body>
 </html>
