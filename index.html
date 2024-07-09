@@ -8,6 +8,12 @@
     />
     <title>Lead Frontend Software Engineer</title>
     <link
+      rel="icon"
+      href="./public/andrew-icon.svg"
+      type="image/svg+xml"
+      sizes="32x32"
+    />
+    <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
@@ -18,6 +24,7 @@
         padding-top: 56px;
         --bs-primary: #6b9d3a;
         --bs-primary-rgb: 107, 157, 58;
+        font-family: Arial, sans-serif;
       }
       .gallery img {
         width: 100%;
@@ -32,6 +39,50 @@
         background: #f8f9fa;
         text-align: center;
       }
+      .resume-header {
+        background-color: #f0f0f0;
+        border-left: 5px solid #6b9d3a;
+        padding: 10px 15px;
+        font-size: 20px;
+        font-weight: bold;
+      }
+      .resume-content {
+        padding: 10px 15px;
+      }
+      .resume-item {
+        margin-bottom: 20px;
+        background-color: #fff;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+      .resume-section {
+        margin-bottom: 30px;
+      }
+      .section-title {
+        margin-left: 20px;
+        font-size: 28px;
+        color: #333;
+      }
+      .position-title {
+        font-size: 18px;
+        color: #333;
+        margin-top: 0;
+      }
+      .company-details {
+        margin-bottom: 5px;
+        font-size: 16px;
+        color: #666;
+      }
+      .date-range {
+        font-style: italic;
+        color: #666;
+        font-size: 14px;
+      }
+      ul {
+        padding-left: 20px;
+      }
+      ul li {
+        margin-bottom: 5px;
+      }
     </style>
     <!-- ScrollMagic and GSAP Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
@@ -42,7 +93,7 @@
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
       <div class="container">
-        <a class="navbar-brand" href="#">My Resume</a>
+        <a class="navbar-brand" href="#">Andrew Hyte</a>
         <button
           class="navbar-toggler"
           type="button"
@@ -75,8 +126,11 @@
 
     <header class="bg-primary text-white text-center py-5">
       <div class="container">
-        <h1>Lead Frontend Software Engineer</h1>
-        <p class="lead">Welcome to my personal website</p>
+        <h1>Polyglot Full Stack Web Engineer</h1>
+        <p class="lead">
+          With <span id="years-of-experience"></span> years professional
+          experience.
+        </p>
       </div>
     </header>
 
@@ -99,23 +153,44 @@
         <main class="col-lg-10 pt-4 mx-auto">
           <section id="bio" class="py-5">
             <h2 class="text-center">Bio</h2>
-            <p class="lead text-center">Quick bio about yourself</p>
+            <p class="lead text-center"></p>
             <div class="row">
               <div class="col-md-4 mx-auto">
                 <img
-                  src="https://loremflickr.com/200/200"
-                  alt="Your Photo"
+                  src="./public/andrew_in_the_mountains_cropped.png"
+                  alt="Photo of Andrew Hyte in the mountains, smiling, wearing a zions National Park hat."
                   class="img-fluid rounded-circle mb-3"
                 />
               </div>
               <div class="col-md-8 mx-auto">
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Integer posuere erat a ante.
+                  As a seasoned Lead Frontend Software Engineer, I have
+                  cultivated a robust career distinguished by progressive
+                  responsibilities and a track record of delivering complex
+                  software solutions. Most recently spearheading a remote team
+                  of five at GameOn Technologies, my role involved steering
+                  large-scale projects like Live Support Chat, ensuring they
+                  meet stringent timelines and quality benchmarks. My technical
+                  arsenal is rich with expertise in modern web technologies
+                  including Typescript, React, Angular, and native web
+                  components underpinned by a strong foundation in backend
+                  integrations and UI/UX design principles.
                 </p>
                 <p>
-                  Someone famous in
-                  <cite title="Source Title">Source Title</cite>
+                  Previously, I have held roles at Bark Technologies and Router
+                  Limits, where I led significant integration and development
+                  projects, demonstrating my capability to adapt and thrive in
+                  dynamic tech environments. My career commenced with a position
+                  as a Software Engineer Intern at Lockheed Martin, where I
+                  contributed to critical training simulation software, setting
+                  the stage for a career characterized by technical excellence
+                  and leadership.
+                </p>
+                <p>
+                  Outside of my professional pursuits, I am actively engaged in
+                  enhancing my skills and staying abreast of the latest industry
+                  trends, ensuring that I bring a forward-thinking approach to
+                  software development and team leadership.
                 </p>
               </div>
             </div>
@@ -124,37 +199,204 @@
 
           <section id="resume" class="bg-light py-5">
             <h2 class="text-center">Resume</h2>
-            <p class="lead text-center">My professional experience</p>
-            <div class="row">
-              <div class="col-md-10 mx-auto">
-                <h3>Lead Frontend Software Engineer</h3>
-                <p>Company Name</p>
-                <p>January 2020 - Present</p>
-                <ul>
-                  <li>Lead a team of frontend developers</li>
-                  <li>
-                    Develop and maintain web applications using React, Angular,
-                    and Vue.js
-                  </li>
-                  <li>Ensure the technical feasibility of UI/UX designs</li>
-                  <li>
-                    Optimize applications for maximum speed and scalability
-                  </li>
-                </ul>
-                <h3>Senior Frontend Developer</h3>
-                <p>Company Name</p>
-                <p>June 2017 - December 2019</p>
-                <ul>
-                  <li>
-                    Developed web applications using HTML, CSS, and JavaScript
-                  </li>
-                  <li>
-                    Collaborated with backend developers to integrate APIs
-                  </li>
-                  <li>Participated in code reviews and team meetings</li>
-                </ul>
+            <!-- Skills Profile Section -->
+            <div class="resume-section">
+              <p class="lead section-title">Skills Profile</p>
+              <div class="list-group">
+                <div class="list-group-item resume-item">
+                  <h4 class="resume-header">Computer Science</h4>
+                  <div class="resume-content">
+                    <ul>
+                      <li>Excellent object-oriented programming background</li>
+                      <li>Passionate for great UX</li>
+                      <li>
+                        Experienced with Ruby, C#, JavaScript, HTML, SASS, Node,
+                        Angular, Xamarin, mySQL
+                      </li>
+                      <li>
+                        Comfortable with React, React Native, Webpack, Java,
+                        Python, Postgres, Firebase, AWS
+                      </li>
+                      <li>
+                        Developing Android and iOS apps using Flutter and
+                        Firebase
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="list-group-item resume-item">
+                  <h4 class="resume-header">Personal and Communication</h4>
+                  <div class="resume-content">
+                    <ul>
+                      <li>Autonomous self-starter</li>
+                      <li>Consistent positive “Let’s do it!” attitude</li>
+                      <li>
+                        Experienced in handling technical customer support,
+                        collections, and physical transactions
+                      </li>
+                      <li>
+                        Developed communication skills through years of
+                        management experience
+                      </li>
+                    </ul>
+                  </div>
+                </div>
               </div>
             </div>
+            <!-- Add education section -->
+            <div class="resume-section">
+              <p class="lead section-title">Education</p>
+              <div class="container">
+                <div class="list-group">
+                  <div class="list-group-item resume-item">
+                    <h4 class="resume-header">Bachelor of Science</h4>
+                    <div class="resume-content">
+                      <p class="position-title">
+                        Computer Science, Brigham Young University
+                      </p>
+                      <p class="date-range">August 2011 - April 2015</p>
+                      <p class="company-details">Provo, UT</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Add work experience section -->
+            <div class="resume-section">
+              <p class="lead section-title">Experience</p>
+              <div class="container">
+                <div class="list-group">
+                  <div class="list-group-item resume-item">
+                    <h4 class="resume-header">
+                      Lead Software Engineer, Frontend
+                    </h4>
+                    <div class="resume-content">
+                      <p class="position-title">
+                        GameOn Technologies, Remote, Heber City, UT
+                      </p>
+                      <p class="date-range">February 2023 - Present</p>
+                      <ul>
+                        <li>Led a team of 5 software engineers.</li>
+                        <li>
+                          Delivered large-scale features, including Live Support
+                          Chat, meeting all time commitments.
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="list-group-item resume-item">
+                    <h4 class="resume-header">Software Engineer</h4>
+                    <div class="resume-content">
+                      <p class="position-title">
+                        GameOn Technologies, Remote, Heber City, UT
+                      </p>
+                      <p class="date-range">
+                        May 2022 - February 2023 (Promoted)
+                      </p>
+                      <ul>
+                        <li>
+                          Implemented a web component design system using Lit.
+                        </li>
+                        <li>
+                          Architected a web portal to support the core web chat
+                          bot product.
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="list-group-item resume-item">
+                    <h4 class="resume-header">Software Engineer</h4>
+                    <div class="resume-content">
+                      <p class="position-title">
+                        Bark Technologies, Remote, Heber City, UT
+                      </p>
+                      <p class="date-range">February 2020 - April 2022</p>
+                      <ul>
+                        <li>
+                          Maintained and integrated Router Limits technologies
+                          after acquisition.
+                        </li>
+                        <li>
+                          Migrated front-end pages to a new UI kit and took
+                          ownership of Bark React Native app development.
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="list-group-item resume-item">
+                    <h4 class="resume-header">Software Developer</h4>
+                    <div class="resume-content">
+                      <p class="position-title">Router Limits, Layton, UT</p>
+                      <p class="date-range">
+                        November 2015 - February 2020 (Acquired)
+                      </p>
+                      <ul>
+                        <li>
+                          Led frontend development for a small software company.
+                        </li>
+                        <li>
+                          Developed Android and iOS apps using C# with Xamarin
+                          forms.
+                        </li>
+                        <li>
+                          Created a complex AngularJS progressive web app with
+                          Node mySQL REST API integration.
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="list-group-item resume-item">
+                    <h4 class="resume-header">Software Engineer Intern</h4>
+                    <div class="resume-content">
+                      <p class="position-title">
+                        Lockheed Martin Mission Systems and Training, Orlando,
+                        FL
+                      </p>
+                      <p class="date-range">June 2015 - August 2015</p>
+                      <ul>
+                        <li>
+                          Contributed to F-14 training simulation software using
+                          C# .NET and WPF.
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="list-group-item resume-item">
+                    <h4 class="resume-header">Full Stack Programmer</h4>
+                    <div class="resume-content">
+                      <p class="position-title">
+                        Missionary Training Center, Provo, UT
+                      </p>
+                      <p class="date-range">April 2014 - November 2015</p>
+                      <ul>
+                        <li>
+                          Developed a missionary chat application for Mormon.org
+                          with Java Spring and Oracle SQL backend.
+                        </li>
+                        <li>
+                          Worked in an Agile Scrum environment using Jira for
+                          sprint management.
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="list-group-item resume-item">
+                    <h4 class="resume-header">Product Marketing Intern</h4>
+                    <div class="resume-content">
+                      <p class="position-title">Go GungHo Inc., Provo, UT</p>
+                      <p class="date-range">Sept 2013-Dec 2013</p>
+                      <ul>
+                        <li>
+                          Developed a Java program using the Twitter API to
+                          contact prospective customers.
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             <span id="resume-end"></span>
           </section>
 
@@ -256,25 +498,25 @@
         <div class="row">
           <div class="col-md-4 mx-auto text-center">
             <a
-              href="https://www.facebook.com/yourprofile"
+              href="https://www.facebook.com/hytead/"
               target="_blank"
               class="btn btn-outline-primary btn-block mb-2"
               >Facebook</a
             >
             <a
-              href="https://www.linkedin.com/in/yourprofile"
+              href="https://www.linkedin.com/in/andrew-hyte"
               target="_blank"
               class="btn btn-outline-info btn-block mb-2"
               >LinkedIn</a
             >
             <a
-              href="https://github.com/yourprofile"
+              href="https://github.com/hytea"
               target="_blank"
               class="btn btn-outline-dark btn-block mb-2"
               >GitHub</a
             >
             <a
-              href="https://twitter.com/yourprofile"
+              href="https://x.com/hyteandrew"
               target="_blank"
               class="btn btn-outline-primary btn-block mb-2"
               >Twitter</a
@@ -286,7 +528,10 @@
 
     <footer class="footer">
       <div class="container">
-        <p class="m-0">&copy; 2024 Your Name. All Rights Reserved.</p>
+        <p class="m-0">
+          &copy; <span id="current-year"></span> Andrew Hyte. All Rights
+          Reserved.
+        </p>
       </div>
     </footer>
 
@@ -453,6 +698,15 @@
           });
         });
       });
+    </script>
+    <script>
+      // Calculate years of experience
+      const experience = new Date().getFullYear() - 2013;
+      document.getElementById('years-of-experience').textContent = experience;
+
+      // Get the current year for the footer
+      document.getElementById('current-year').textContent =
+        new Date().getFullYear();
     </script>
   </body>
 </html>
