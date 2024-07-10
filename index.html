@@ -71,7 +71,7 @@
             <li class="nav-item">
               <button
                 class="btn btn-custom nav-link-button"
-                onclick="generatePDF()"
+                onclick="trackDownloadResume()"
               >
                 Download Resume
               </button>
@@ -505,6 +505,15 @@
       // Get the current year for the footer
       document.getElementById('current-year').textContent =
         new Date().getFullYear();
+
+      function trackDownloadResume() {
+        gtag('event', 'download_resume', {
+          event_category: 'button',
+          event_label: 'Download Resume',
+        });
+
+        generatePDF();
+      }
     </script>
     <script src="./src/generatePDF.js"></script>
   </body>
