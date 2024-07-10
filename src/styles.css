@@ -14,7 +14,7 @@ body {
 }
 .hero {
   background: url('../public/Provo_Canyon.jpg') center center/cover no-repeat;
-  height: 100vh;
+  height: calc(100vh - 56px); /* 56px is the height of the navbar */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -128,4 +128,12 @@ ul li {
   background-color: var(--primary-color-hover);
   border-color: var(--primary-color-hover);
   color: white;
+}
+
+/* Left nav links adjustments */
+aside ul.nav a.nav-link {
+  color: var(--primary-color);
+}
+aside ul.nav a.nav-link:hover {
+  color: var(--primary-color-hover);
 }
