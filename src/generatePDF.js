@@ -107,6 +107,7 @@ async function generatePDF() {
       'right'
     );
     doc.setFont(fontFamily, 'italic');
+    doc.setFontSize(10);
     doc.text(company + ', ' + location, margin, y + 5);
     y += 10;
     return y;
