@@ -19,78 +19,7 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
-    <style>
-      body {
-        padding-top: 56px;
-        --bs-primary: #6b9d3a;
-        --bs-primary-rgb: 107, 157, 58;
-        font-family: Arial, sans-serif;
-      }
-      .hero {
-        background: url('./public/Provo_Canyon.jpg') center center/cover
-          no-repeat;
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: #fff;
-        text-align: center;
-      }
-      .glass {
-        background: rgba(8, 8, 8, 0.4);
-        padding: 20px;
-        border-radius: 10px;
-      }
-      .footer {
-        padding: 20px 0;
-        background: #f8f9fa;
-        text-align: center;
-      }
-      .resume-header {
-        background-color: #f0f0f0;
-        border-left: 5px solid #6b9d3a;
-        padding: 10px 15px;
-        font-size: 20px;
-        font-weight: bold;
-      }
-      .resume-content {
-        padding: 10px 15px;
-      }
-      .resume-item {
-        margin-bottom: 20px;
-        background-color: #fff;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      }
-      .resume-section {
-        margin-bottom: 30px;
-      }
-      .section-title {
-        margin-left: 20px;
-        font-size: 28px;
-        color: #333;
-      }
-      .position-title {
-        font-size: 18px;
-        color: #333;
-        margin-top: 0;
-      }
-      .company-details {
-        margin-bottom: 5px;
-        font-size: 16px;
-        color: #666;
-      }
-      .date-range {
-        font-style: italic;
-        color: #666;
-        font-size: 14px;
-      }
-      ul {
-        padding-left: 20px;
-      }
-      ul li {
-        margin-bottom: 5px;
-      }
-    </style>
+    <link rel="stylesheet" href="./src/styles.css" />
     <!-- ScrollMagic and GSAP Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js"></script>
@@ -102,6 +31,8 @@
     async
     src="https://www.googletagmanager.com/gtag/js?id=G-SX0REXJ6CG"
   ></script>
+  <!-- jsPDF Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag() {
@@ -137,6 +68,14 @@
             <li class="nav-item">
               <a class="nav-link" href="#contact">Contact</a>
             </li>
+            <li class="nav-item">
+              <button
+                class="btn btn-custom nav-link-button"
+                onclick="generatePDF()"
+              >
+                Download Resume
+              </button>
+            </li>
           </ul>
         </div>
       </div>
@@ -169,43 +108,43 @@
           <section id="bio" class="py-5">
             <h2 class="text-center">Andrew Hyte Bio</h2>
             <p class="lead text-center"></p>
-            <div class="row">
-              <div class="col-md-4 mx-auto">
+            <div class="row d-flex align-items-center">
+              <div class="col-md-4">
                 <img
                   src="./public/andrew_in_the_mountains_cropped.png"
                   alt="Photo of Andrew Hyte in the mountains, smiling, wearing a zions National Park hat."
-                  class="img-fluid rounded-circle mb-3"
+                  class="img-fluid rounded-circle mb-3 bio-image"
                 />
               </div>
-              <div class="col-md-8 mx-auto">
+              <div class="col-md-8">
                 <p>
-                  As a seasoned Lead Frontend Software Engineer, I have
-                  cultivated a robust career distinguished by progressive
-                  responsibilities and a track record of delivering complex
-                  software solutions. Most recently spearheading a remote team
-                  of five at GameOn Technologies, my role involved steering
-                  large-scale projects like Live Support Chat, ensuring they
-                  meet stringent timelines and quality benchmarks. My technical
-                  arsenal is rich with expertise in modern web technologies
-                  including Typescript, React, Angular, and native web
-                  components underpinned by a strong foundation in backend
-                  integrations and UI/UX design principles.
+                  Andrew is a Lead Frontend Software Engineer known for taking
+                  on challenging projects. Recently, he has been leading a
+                  remote team of five at GameOn Technologies, managing
+                  large-scale projects like architecting and building a Portal
+                  used to manage and customize the conversational AI chat
+                  experience and ensuring the frontend team met strict timelines
+                  and quality benchmarks. His technical expertise spans modern
+                  web technologies, including Typescript, React, Angular, and
+                  native web components, all backed by a solid foundation in
+                  backend integrations and UI/UX design.
                 </p>
                 <p>
-                  Previously, I have held roles at Bark Technologies and Router
-                  Limits, where I led significant integration and development
-                  projects, demonstrating my capability to adapt and thrive in
-                  dynamic tech environments. My career commenced with a position
-                  as a Software Engineer Intern at Lockheed Martin, where I
-                  contributed to critical training simulation software, setting
-                  the stage for a career characterized by technical excellence
-                  and leadership.
+                  Before this role, Andrew worked at Bark Technologies and
+                  Router Limits, leading significant integration and development
+                  projects and demonstrating his ability to adapt and thrive in
+                  fast-paced tech environments. His professional journey began
+                  at the Missionary Training Center, where he developed a
+                  missionary chat application and honed his software development
+                  skills.
                 </p>
                 <p>
-                  Outside of my professional pursuits, I am actively engaged in
-                  enhancing my skills and staying abreast of the latest industry
-                  trends, ensuring that I bring a forward-thinking approach to
-                  software development and team leadership.
+                  Outside of his professional pursuits, Andrew is committed to
+                  continuously improving his skills and staying updated on the
+                  latest industry trends. He enjoys spending time with his wife
+                  and two kids, hiking, skiing, and building various projects.
+                  He's always working on something new and is eager to share his
+                  latest carpentry projects if you ask him.
                 </p>
               </div>
             </div>
@@ -213,201 +152,265 @@
           </section>
 
           <section id="resume" class="py-5">
-            <h2 class="text-center">Resume</h2>
             <!-- Skills Profile Section -->
             <div class="resume-section">
               <p class="lead section-title">Skills Profile</p>
-              <div class="list-group">
-                <div class="list-group-item resume-item">
-                  <h4 class="resume-header">Computer Science</h4>
-                  <div class="resume-content">
-                    <ul>
-                      <li>Excellent object-oriented programming background</li>
-                      <li>Passionate for great UX</li>
-                      <li>
-                        Experienced with Ruby, C#, JavaScript, HTML, SASS, Node,
-                        Angular, Xamarin, mySQL
-                      </li>
-                      <li>
-                        Comfortable with React, React Native, Webpack, Java,
-                        Python, Postgres, Firebase, AWS
-                      </li>
-                      <li>
-                        Developing Android and iOS apps using Flutter and
-                        Firebase
-                      </li>
-                    </ul>
-                  </div>
+              <div class="resume-item">
+                <h4 class="resume-header">Computer Science:</h4>
+                <div class="resume-content computer-science-skills">
+                  <p>
+                    Excellent object-oriented programming background. Passionate
+                    for great UX. Experienced with
+                    <strong
+                      >JavaScript, Typescript, React, HTML, SASS, Firebase, AWS,
+                      Docker, Node, Angular, mySQL, Lit, Storybook, Vite,
+                      Netlify</strong
+                    >. Comfortable with
+                    <strong
+                      >React Native, Webpack, Java, Python, Ruby, C#, Postgres,
+                      Xamarin</strong
+                    >. Currently working on side projects developing Android and
+                    iOS apps using <strong>Flutter and Firebase</strong>.
+                  </p>
                 </div>
-                <div class="list-group-item resume-item">
-                  <h4 class="resume-header">Personal and Communication</h4>
-                  <div class="resume-content">
-                    <ul>
-                      <li>Autonomous self-starter</li>
-                      <li>Consistent positive “Let’s do it!” attitude</li>
-                      <li>
-                        Experienced in handling technical customer support,
-                        collections, and physical transactions
-                      </li>
-                      <li>
-                        Developed communication skills through years of
-                        management experience
-                      </li>
-                    </ul>
-                  </div>
+              </div>
+              <div class="resume-item">
+                <h4 class="resume-header">Personal and Communication:</h4>
+                <div class="resume-content personal-communication-skills">
+                  <p>
+                    Autonomous self-starter. Consistent positive &ldquo;Let's do
+                    it!&rdquo; attitude. Have worked on a distributed team for
+                    the last four years. Experienced in handling technical
+                    customer support, collections, and physical transactions.
+                    Developed communication skills through years of management
+                    experience in the workplace.
+                  </p>
                 </div>
               </div>
             </div>
-            <!-- Add education section -->
+
+            <!-- Education Section -->
             <div class="resume-section">
               <p class="lead section-title">Education</p>
-              <div class="list-group">
-                <div class="list-group-item resume-item">
-                  <h4 class="resume-header">Bachelor of Science</h4>
-                  <div class="resume-content">
-                    <p class="position-title">
-                      Computer Science, Brigham Young University
-                    </p>
-                    <p class="date-range">August 2011 - April 2015</p>
-                    <p class="company-details">Provo, UT</p>
-                  </div>
+              <div class="resume-item">
+                <div
+                  class="d-flex flex-column flex-sm-row justify-content-between align-items-start align-items-sm-center"
+                >
+                  <h4 class="resume-header">B.S. Computer Science</h4>
+                  <p class="date-range">December 2015</p>
+                </div>
+                <div
+                  class="d-flex flex-column flex-sm-row justify-content-between align-items-start align-items-sm-center"
+                >
+                  <p class="company-details">Brigham Young University</p>
+                  <p class="location">Provo, UT</p>
                 </div>
               </div>
             </div>
-            <!-- Add work experience section -->
-            <div class="resume-section">
-              <p class="lead section-title">Experience</p>
 
-              <div class="list-group">
-                <div class="list-group-item resume-item">
+            <!-- Experience Section -->
+            <div class="resume-section" id="experience-section">
+              <p class="lead section-title">Relevant Experience</p>
+
+              <div class="resume-item">
+                <div
+                  class="d-flex flex-column flex-sm-row justify-content-between align-items-start align-items-sm-center"
+                >
                   <h4 class="resume-header">
                     Lead Software Engineer, Frontend
                   </h4>
-                  <div class="resume-content">
-                    <p class="position-title">
-                      GameOn Technologies, Remote, Heber City, UT
-                    </p>
-                    <p class="date-range">February 2023 - Present</p>
-                    <ul>
-                      <li>Led a team of 5 software engineers.</li>
-                      <li>
-                        Delivered large-scale features, including Live Support
-                        Chat, meeting all time commitments.
-                      </li>
-                    </ul>
-                  </div>
+                  <p class="date-range">February 2023 - July 2024</p>
                 </div>
-                <div class="list-group-item resume-item">
+                <div
+                  class="d-flex flex-column flex-sm-row justify-content-between align-items-start align-items-sm-center"
+                >
+                  <p class="company-details">ON Platform DBA. GameOn</p>
+                  <p class="location">Remote, Heber City, UT</p>
+                </div>
+                <div class="resume-content">
+                  <ul class="responsibilities">
+                    <li>Led a team of 5 software engineers.</li>
+                    <li>
+                      Participated in weekly product discussions and provided
+                      technical guidance.
+                    </li>
+                    <li>
+                      Used Linear project management software to breakdown
+                      project work into tasks, prioritize and assign to team
+                      members.
+                    </li>
+                    <li>
+                      Delivered large-scale features, including Live Support
+                      Chat, meeting all time commitments.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="resume-item">
+                <div
+                  class="d-flex flex-column flex-sm-row justify-content-between align-items-start align-items-sm-center"
+                >
                   <h4 class="resume-header">Software Engineer</h4>
-                  <div class="resume-content">
-                    <p class="position-title">
-                      GameOn Technologies, Remote, Heber City, UT
-                    </p>
-                    <p class="date-range">
-                      May 2022 - February 2023 (Promoted)
-                    </p>
-                    <ul>
-                      <li>
-                        Implemented a web component design system using Lit.
-                      </li>
-                      <li>
-                        Architected a web portal to support the core web chat
-                        bot product.
-                      </li>
-                    </ul>
-                  </div>
+                  <p class="date-range">May 2022 - February 2023 (Promoted)</p>
                 </div>
-                <div class="list-group-item resume-item">
+                <div
+                  class="d-flex flex-column flex-sm-row justify-content-between align-items-start align-items-sm-center"
+                >
+                  <p class="company-details">GameOn Technologies</p>
+                  <p class="location">Remote, Heber City, UT</p>
+                </div>
+                <div class="resume-content">
+                  <ul class="responsibilities">
+                    <li>
+                      Implemented a web component design system using Lit.
+                    </li>
+                    <li>
+                      Architected a web portal to support the core
+                      conversational AI chat product.
+                    </li>
+                    <li>
+                      Created and managed a CI/CD pipeline for the frontend team
+                      using Vite, Netlify, and GitHub Actions.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="resume-item">
+                <div
+                  class="d-flex flex-column flex-sm-row justify-content-between align-items-start align-items-sm-center"
+                >
                   <h4 class="resume-header">Software Engineer</h4>
-                  <div class="resume-content">
-                    <p class="position-title">
-                      Bark Technologies, Remote, Heber City, UT
-                    </p>
-                    <p class="date-range">February 2020 - April 2022</p>
-                    <ul>
-                      <li>
-                        Maintained and integrated Router Limits technologies
-                        after acquisition.
-                      </li>
-                      <li>
-                        Migrated front-end pages to a new UI kit and took
-                        ownership of Bark React Native app development.
-                      </li>
-                    </ul>
-                  </div>
+                  <p class="date-range">February 2020 - April 2022</p>
                 </div>
-                <div class="list-group-item resume-item">
+                <div
+                  class="d-flex flex-column flex-sm-row justify-content-between align-items-start align-items-sm-center"
+                >
+                  <p class="company-details">Bark Technologies</p>
+                  <p class="location">Remote, Heber City, UT</p>
+                </div>
+                <div class="resume-content">
+                  <ul class="responsibilities">
+                    <li>
+                      Maintained and integrated Router Limits technologies after
+                      acquisition.
+                    </li>
+                    <li>
+                      Migrated front-end pages to a new UI kit and took
+                      ownership of Bark React Native app development.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="resume-item">
+                <div
+                  class="d-flex flex-column flex-sm-row justify-content-between align-items-start align-items-sm-center"
+                >
                   <h4 class="resume-header">Software Developer</h4>
-                  <div class="resume-content">
-                    <p class="position-title">Router Limits, Layton, UT</p>
-                    <p class="date-range">
-                      November 2015 - February 2020 (Acquired)
-                    </p>
-                    <ul>
-                      <li>
-                        Led frontend development for a small software company.
-                      </li>
-                      <li>
-                        Developed Android and iOS apps using C# with Xamarin
-                        forms.
-                      </li>
-                      <li>
-                        Created a complex AngularJS progressive web app with
-                        Node mySQL REST API integration.
-                      </li>
-                    </ul>
-                  </div>
+                  <p class="date-range">
+                    November 2015 - February 2020 (Acquired)
+                  </p>
                 </div>
-                <div class="list-group-item resume-item">
+                <div
+                  class="d-flex flex-column flex-sm-row justify-content-between align-items-start align-items-sm-center"
+                >
+                  <p class="company-details">Router Limits</p>
+                  <p class="location">Layton, UT</p>
+                </div>
+                <div class="resume-content">
+                  <ul class="responsibilities">
+                    <li>
+                      Led frontend development for a small software company.
+                    </li>
+                    <li>
+                      Developed Android and iOS apps using C# with Xamarin
+                      forms.
+                    </li>
+                    <li>
+                      Created a complex AngularJS progressive web app with Node
+                      mySQL REST API integration.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="resume-item">
+                <div
+                  class="d-flex flex-column flex-sm-row justify-content-between align-items-start align-items-sm-center"
+                >
                   <h4 class="resume-header">Software Engineer Intern</h4>
-                  <div class="resume-content">
-                    <p class="position-title">
-                      Lockheed Martin Mission Systems and Training, Orlando, FL
-                    </p>
-                    <p class="date-range">June 2015 - August 2015</p>
-                    <ul>
-                      <li>
-                        Contributed to F-14 training simulation software using
-                        C# .NET and WPF.
-                      </li>
-                    </ul>
-                  </div>
+                  <p class="date-range">June 2015 - August 2015</p>
                 </div>
-                <div class="list-group-item resume-item">
+                <div
+                  class="d-flex flex-column flex-sm-row justify-content-between align-items-start align-items-sm-center"
+                >
+                  <p class="company-details">
+                    Lockheed Martin Mission Systems and Training
+                  </p>
+                  <p class="location">Orlando, FL</p>
+                </div>
+                <div class="resume-content">
+                  <ul class="responsibilities">
+                    <li>
+                      Contributed to F-14 training simulation software using C#
+                      .NET and WPF.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="resume-item">
+                <div
+                  class="d-flex flex-column flex-sm-row justify-content-between align-items-start align-items-sm-center"
+                >
                   <h4 class="resume-header">Full Stack Programmer</h4>
-                  <div class="resume-content">
-                    <p class="position-title">
-                      Missionary Training Center, Provo, UT
-                    </p>
-                    <p class="date-range">April 2014 - November 2015</p>
-                    <ul>
-                      <li>
-                        Developed a missionary chat application for Mormon.org
-                        with Java Spring and Oracle SQL backend.
-                      </li>
-                      <li>
-                        Worked in an Agile Scrum environment using Jira for
-                        sprint management.
-                      </li>
-                    </ul>
-                  </div>
+                  <p class="date-range">April 2014 - November 2015</p>
                 </div>
-                <div class="list-group-item resume-item">
+                <div
+                  class="d-flex flex-column flex-sm-row justify-content-between align-items-start align-items-sm-center"
+                >
+                  <p class="company-details">Missionary Training Center</p>
+                  <p class="location">Provo, UT</p>
+                </div>
+                <div class="resume-content">
+                  <ul class="responsibilities">
+                    <li>
+                      Developed a missionary chat application for Mormon.org
+                      with Java Spring and Oracle SQL backend.
+                    </li>
+                    <li>
+                      Worked in an Agile Scrum environment using Jira for sprint
+                      management.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="resume-item">
+                <div
+                  class="d-flex flex-column flex-sm-row justify-content-between align-items-start align-items-sm-center"
+                >
                   <h4 class="resume-header">Product Marketing Intern</h4>
-                  <div class="resume-content">
-                    <p class="position-title">Go GungHo Inc., Provo, UT</p>
-                    <p class="date-range">Sept 2013-Dec 2013</p>
-                    <ul>
-                      <li>
-                        Developed a Java program using the Twitter API to
-                        contact prospective customers.
-                      </li>
-                    </ul>
-                  </div>
+                  <p class="date-range">Sept 2013-Dec 2013</p>
+                </div>
+                <div
+                  class="d-flex flex-column flex-sm-row justify-content-between align-items-start align-items-sm-center"
+                >
+                  <p class="company-details">Go GungHo Inc.</p>
+                  <p class="location">Provo, UT</p>
+                </div>
+                <div class="resume-content">
+                  <ul class="responsibilities">
+                    <li>
+                      Developed a Java program using the Twitter API to contact
+                      prospective customers.
+                    </li>
+                  </ul>
                 </div>
               </div>
             </div>
-
             <span id="resume-end"></span>
           </section>
         </main>
@@ -503,5 +506,6 @@
       document.getElementById('current-year').textContent =
         new Date().getFullYear();
     </script>
+    <script src="./src/generatePDF.js"></script>
   </body>
 </html>
