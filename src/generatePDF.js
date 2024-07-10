@@ -35,7 +35,7 @@ async function generatePDF() {
       'right'
     );
     doc.text(
-      'Andrew@Hyte.us',
+      'Andrew.D.Hyte@gmail.com',
       doc.internal.pageSize.width - margin,
       25,
       null,
