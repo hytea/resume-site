@@ -1,0 +1,121 @@
+:root {
+  --primary-color: #6b9d3a;
+  --primary-color-hover: #5a842d;
+  --light-grey: #e7e7e7;
+  --text-color: #333;
+  --secondary-text-color: #666;
+}
+
+body {
+  padding-top: 56px;
+  --bs-primary: var(--primary-color);
+  --bs-primary-rgb: 107, 157, 58;
+  font-family: Arial, sans-serif;
+}
+.hero {
+  background: url('../public/Provo_Canyon.jpg') center center/cover no-repeat;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  text-align: center;
+}
+.glass {
+  background: rgba(8, 8, 8, 0.4);
+  padding: 20px;
+  border-radius: 10px;
+}
+.footer {
+  padding: 20px 0;
+  background: #f8f9fa;
+  text-align: center;
+}
+.resume-header {
+  font-size: 18px;
+  font-weight: bold;
+}
+.date-range {
+  font-size: 14px;
+  font-weight: bold;
+  color: var(--text-color);
+}
+#resume {
+  padding: 20px;
+}
+.resume-content {
+  padding: 10px 0;
+}
+.resume-item {
+  margin: 0 0 20px 0;
+}
+.resume-section {
+  margin-bottom: 30px;
+}
+.section-title {
+  margin-left: 0;
+  font-size: 24px;
+  color: var(--text-color);
+  font-weight: bold;
+  border-top: 1px solid var(--text-color);
+  border-bottom: 1px solid var(--text-color);
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.position-title {
+  font-size: 16px;
+  color: var(--text-color);
+  margin-top: 0;
+}
+.company-details,
+.location {
+  font-size: 14px;
+  color: var(--secondary-text-color);
+}
+ul {
+  padding-left: 20px;
+}
+ul li {
+  margin-bottom: 5px;
+}
+/* Responsive adjustments */
+@media (max-width: 576px) {
+  .d-flex {
+    display: block !important;
+  }
+  .justify-content-between {
+    justify-content: flex-start !important;
+  }
+  .align-items-center {
+    align-items: flex-start !important;
+  }
+  .date-range,
+  .location {
+    text-align: left;
+    margin-top: 5px;
+  }
+  #resume {
+    padding: 10px;
+  }
+}
+/* Navbar adjustments */
+.navbar-nav .nav-item {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.nav-link-button {
+  margin-left: 10px;
+}
+.navbar-nav .nav-item .nav-link {
+  padding: 10px 15px;
+}
+.btn-custom {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  color: white;
+}
+.btn-custom:hover {
+  background-color: var(--primary-color-hover);
+  border-color: var(--primary-color-hover);
+  color: white;
+}
