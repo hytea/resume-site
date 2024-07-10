@@ -98,6 +98,16 @@ ul li {
     padding: 10px;
   }
 }
+/* Bio section image adjustment */
+.bio-image {
+  max-height: 100%;
+  object-fit: cover;
+}
+@media (min-width: 768px) {
+  .bio-image {
+    height: 100%;
+  }
+}
 /* Navbar adjustments */
 .navbar-nav .nav-item {
   padding-left: 10px;
