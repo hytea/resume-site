@@ -47,42 +47,42 @@
         text-align: center;
       }
       .resume-header {
-        background-color: #f0f0f0;
-        border-left: 5px solid #6b9d3a;
-        padding: 10px 15px;
-        font-size: 20px;
+        font-size: 18px;
         font-weight: bold;
+        margin-bottom: 5px;
       }
       .resume-content {
-        padding: 10px 15px;
+        padding: 10px 0;
       }
       .resume-item {
-        margin-bottom: 20px;
-        background-color: #fff;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        margin: 0 0 20px 20px;
       }
       .resume-section {
         margin-bottom: 30px;
       }
       .section-title {
         margin-left: 20px;
-        font-size: 28px;
+        font-size: 24px;
         color: #333;
+        font-weight: bold;
+        border-top: 1px solid #333;
+        border-bottom: 1px solid #333;
+        padding-top: 5px;
+        padding-bottom: 5px;
       }
       .position-title {
-        font-size: 18px;
+        font-size: 16px;
         color: #333;
         margin-top: 0;
       }
       .company-details {
-        margin-bottom: 5px;
-        font-size: 16px;
+        font-size: 14px;
         color: #666;
       }
       .date-range {
-        font-style: italic;
-        color: #666;
         font-size: 14px;
+        font-weight: bold;
+        color: #333;
       }
       ul {
         padding-left: 20px;
@@ -221,195 +221,185 @@
 
           <section id="resume" class="py-5">
             <h2 class="text-center">Resume</h2>
+
             <!-- Skills Profile Section -->
             <div class="resume-section">
               <p class="lead section-title">Skills Profile</p>
-              <div class="list-group">
-                <div class="list-group-item resume-item">
-                  <h4 class="resume-header">Computer Science</h4>
-                  <div class="resume-content">
-                    <ul>
-                      <li>Excellent object-oriented programming background</li>
-                      <li>Passionate for great UX</li>
-                      <li>
-                        Experienced with Ruby, C#, JavaScript, HTML, SASS, Node,
-                        Angular, Xamarin, mySQL
-                      </li>
-                      <li>
-                        Comfortable with React, React Native, Webpack, Java,
-                        Python, Postgres, Firebase, AWS
-                      </li>
-                      <li>
-                        Developing Android and iOS apps using Flutter and
-                        Firebase
-                      </li>
-                    </ul>
-                  </div>
+              <div class="resume-item">
+                <h4 class="resume-header">Computer Science:</h4>
+                <div class="resume-content computer-science-skills">
+                  <p>
+                    Excellent object-oriented programming background. Passionate
+                    for great UX. Experienced with
+                    <strong
+                      >Ruby, C#, JavaScript, HTML, SASS, Node, Angular, Xamarin,
+                      mySQL</strong
+                    >. Comfortable with
+                    <strong
+                      >React and React Native, Webpack, Java, Python, Postgres,
+                      Firebase, AWS</strong
+                    >. Currently working on side projects developing Android and
+                    iOS apps using <strong>Flutter and Firebase</strong>.
+                  </p>
                 </div>
-                <div class="list-group-item resume-item">
-                  <h4 class="resume-header">Personal and Communication</h4>
-                  <div class="resume-content">
-                    <ul>
-                      <li>Autonomous self-starter</li>
-                      <li>Consistent positive “Let’s do it!” attitude</li>
-                      <li>
-                        Experienced in handling technical customer support,
-                        collections, and physical transactions
-                      </li>
-                      <li>
-                        Developed communication skills through years of
-                        management experience
-                      </li>
-                    </ul>
-                  </div>
+              </div>
+              <div class="resume-item">
+                <h4 class="resume-header">Personal and Communication:</h4>
+                <div class="resume-content personal-communication-skills">
+                  <p>
+                    Autonomous self-starter. Consistent positive “Let’s do it!”
+                    attitude. Have worked on a distributed team for the last two
+                    years. Experienced in handling technical customer support,
+                    collections, and physical transactions. Developed
+                    communication skills through years of management experience
+                    in the workplace.
+                  </p>
                 </div>
               </div>
             </div>
+
             <!-- Education Section -->
             <div class="resume-section">
               <p class="lead section-title">Education</p>
-              <div class="list-group">
-                <div class="list-group-item resume-item">
-                  <h4 class="resume-header">
-                    Bachelor of Science in Computer Science
-                  </h4>
-                  <div class="resume-content">
-                    <p class="position-title">Brigham Young University</p>
-                    <p class="date-range">August 2011 - April 2015</p>
-                    <p class="company-details">Provo, UT</p>
-                  </div>
+              <div class="resume-item">
+                <h4 class="resume-header">B.S. Computer Science</h4>
+                <div class="resume-content">
+                  <p class="position-title">Brigham Young University</p>
+                  <p class="date-range">Dec 2015</p>
+                  <p class="company-details">Provo, UT</p>
                 </div>
               </div>
             </div>
 
             <!-- Experience Section -->
             <div class="resume-section" id="experience-section">
-              <p class="lead section-title">Experience</p>
-              <div class="list-group">
-                <div class="list-group-item resume-item">
-                  <h4 class="resume-header">
-                    Lead Software Engineer, Frontend
-                  </h4>
-                  <div class="resume-content">
-                    <p class="position-title">ON Platform DBA. GameOn</p>
-                    <p class="date-range">February 2023 - July 2024</p>
-                    <p class="company-details">Remote, Heber City, UT</p>
-                    <ul class="responsibilities">
-                      <li>Led a team of 5 software engineers.</li>
-                      <li>
-                        Delivered large-scale features, including Live Support
-                        Chat, meeting all time commitments.
-                      </li>
-                    </ul>
-                  </div>
+              <p class="lead section-title">Relevant Experience</p>
+
+              <div class="resume-item">
+                <h4 class="resume-header">Lead Software Engineer, Frontend</h4>
+                <div class="resume-content">
+                  <p class="position-title">ON Platform DBA. GameOn</p>
+                  <p class="date-range">February 2023 - July 2024</p>
+                  <p class="company-details">Remote, Heber City, UT</p>
+                  <ul class="responsibilities">
+                    <li>Led a team of 5 software engineers.</li>
+                    <li>
+                      Delivered large-scale features, including Live Support
+                      Chat, meeting all time commitments.
+                    </li>
+                  </ul>
                 </div>
-                <div class="list-group-item resume-item">
-                  <h4 class="resume-header">Software Engineer</h4>
-                  <div class="resume-content">
-                    <p class="position-title">GameOn Technologies</p>
-                    <p class="date-range">
-                      May 2022 - February 2023 (Promoted)
-                    </p>
-                    <p class="company-details">Remote, Heber City, UT</p>
-                    <ul class="responsibilities">
-                      <li>
-                        Implemented a web component design system using Lit.
-                      </li>
-                      <li>
-                        Architected a web portal to support the core web chat
-                        bot product.
-                      </li>
-                    </ul>
-                  </div>
+              </div>
+
+              <div class="resume-item">
+                <h4 class="resume-header">Software Engineer</h4>
+                <div class="resume-content">
+                  <p class="position-title">GameOn Technologies</p>
+                  <p class="date-range">May 2022 - February 2023 (Promoted)</p>
+                  <p class="company-details">Remote, Heber City, UT</p>
+                  <ul class="responsibilities">
+                    <li>
+                      Implemented a web component design system using Lit.
+                    </li>
+                    <li>
+                      Architected a web portal to support the core web chat bot
+                      product.
+                    </li>
+                  </ul>
                 </div>
-                <div class="list-group-item resume-item">
-                  <h4 class="resume-header">Software Engineer</h4>
-                  <div class="resume-content">
-                    <p class="position-title">Bark Technologies</p>
-                    <p class="date-range">February 2020 - April 2022</p>
-                    <p class="company-details">Remote, Heber City, UT</p>
-                    <ul class="responsibilities">
-                      <li>
-                        Maintained and integrated Router Limits technologies
-                        after acquisition.
-                      </li>
-                      <li>
-                        Migrated front-end pages to a new UI kit and took
-                        ownership of Bark React Native app development.
-                      </li>
-                    </ul>
-                  </div>
+              </div>
+
+              <div class="resume-item">
+                <h4 class="resume-header">Software Engineer</h4>
+                <div class="resume-content">
+                  <p class="position-title">Bark Technologies</p>
+                  <p class="date-range">February 2020 - April 2022</p>
+                  <p class="company-details">Remote, Heber City, UT</p>
+                  <ul class="responsibilities">
+                    <li>
+                      Maintained and integrated Router Limits technologies after
+                      acquisition.
+                    </li>
+                    <li>
+                      Migrated front-end pages to a new UI kit and took
+                      ownership of Bark React Native app development.
+                    </li>
+                  </ul>
                 </div>
-                <div class="list-group-item resume-item">
-                  <h4 class="resume-header">Software Developer</h4>
-                  <div class="resume-content">
-                    <p class="position-title">Router Limits</p>
-                    <p class="date-range">
-                      November 2015 - February 2020 (Acquired)
-                    </p>
-                    <p class="company-details">Layton, UT</p>
-                    <ul class="responsibilities">
-                      <li>
-                        Led frontend development for a small software company.
-                      </li>
-                      <li>
-                        Developed Android and iOS apps using C# with Xamarin
-                        forms.
-                      </li>
-                      <li>
-                        Created a complex AngularJS progressive web app with
-                        Node mySQL REST API integration.
-                      </li>
-                    </ul>
-                  </div>
+              </div>
+
+              <div class="resume-item">
+                <h4 class="resume-header">Software Developer</h4>
+                <div class="resume-content">
+                  <p class="position-title">Router Limits</p>
+                  <p class="date-range">
+                    November 2015 - February 2020 (Acquired)
+                  </p>
+                  <p class="company-details">Layton, UT</p>
+                  <ul class="responsibilities">
+                    <li>
+                      Led frontend development for a small software company.
+                    </li>
+                    <li>
+                      Developed Android and iOS apps using C# with Xamarin
+                      forms.
+                    </li>
+                    <li>
+                      Created a complex AngularJS progressive web app with Node
+                      mySQL REST API integration.
+                    </li>
+                  </ul>
                 </div>
-                <div class="list-group-item resume-item">
-                  <h4 class="resume-header">Software Engineer Intern</h4>
-                  <div class="resume-content">
-                    <p class="position-title">
-                      Lockheed Martin Mission Systems and Training
-                    </p>
-                    <p class="date-range">June 2015 - August 2015</p>
-                    <p class="company-details">Orlando, FL</p>
-                    <ul class="responsibilities">
-                      <li>
-                        Contributed to F-14 training simulation software using
-                        C# .NET and WPF.
-                      </li>
-                    </ul>
-                  </div>
+              </div>
+
+              <div class="resume-item">
+                <h4 class="resume-header">Software Engineer Intern</h4>
+                <div class="resume-content">
+                  <p class="position-title">
+                    Lockheed Martin Mission Systems and Training
+                  </p>
+                  <p class="date-range">June 2015 - August 2015</p>
+                  <p class="company-details">Orlando, FL</p>
+                  <ul class="responsibilities">
+                    <li>
+                      Contributed to F-14 training simulation software using C#
+                      .NET and WPF.
+                    </li>
+                  </ul>
                 </div>
-                <div class="list-group-item resume-item">
-                  <h4 class="resume-header">Full Stack Programmer</h4>
-                  <div class="resume-content">
-                    <p class="position-title">Missionary Training Center</p>
-                    <p class="date-range">April 2014 - November 2015</p>
-                    <p class="company-details">Provo, UT</p>
-                    <ul class="responsibilities">
-                      <li>
-                        Developed a missionary chat application for Mormon.org
-                        with Java Spring and Oracle SQL backend.
-                      </li>
-                      <li>
-                        Worked in an Agile Scrum environment using Jira for
-                        sprint management.
-                      </li>
-                    </ul>
-                  </div>
+              </div>
+
+              <div class="resume-item">
+                <h4 class="resume-header">Full Stack Programmer</h4>
+                <div class="resume-content">
+                  <p class="position-title">Missionary Training Center</p>
+                  <p class="date-range">April 2014 - November 2015</p>
+                  <p class="company-details">Provo, UT</p>
+                  <ul class="responsibilities">
+                    <li>
+                      Developed a missionary chat application for Mormon.org
+                      with Java Spring and Oracle SQL backend.
+                    </li>
+                    <li>
+                      Worked in an Agile Scrum environment using Jira for sprint
+                      management.
+                    </li>
+                  </ul>
                 </div>
-                <div class="list-group-item resume-item">
-                  <h4 class="resume-header">Product Marketing Intern</h4>
-                  <div class="resume-content">
-                    <p class="position-title">Go GungHo Inc.</p>
-                    <p class="date-range">Sept 2013-Dec 2013</p>
-                    <p class="company-details">Provo, UT</p>
-                    <ul class="responsibilities">
-                      <li>
-                        Developed a Java program using the Twitter API to
-                        contact prospective customers.
-                      </li>
-                    </ul>
-                  </div>
+              </div>
+
+              <div class="resume-item">
+                <h4 class="resume-header">Product Marketing Intern</h4>
+                <div class="resume-content">
+                  <p class="position-title">Go GungHo Inc.</p>
+                  <p class="date-range">Sept 2013-Dec 2013</p>
+                  <p class="company-details">Provo, UT</p>
+                  <ul class="responsibilities">
+                    <li>
+                      Developed a Java program using the Twitter API to contact
+                      prospective customers.
+                    </li>
+                  </ul>
                 </div>
               </div>
             </div>
@@ -516,6 +506,7 @@
         const pageHeight = doc.internal.pageSize.height;
         const margin = 10;
         const newPageMargin = 10;
+        const SECTION_TITLE_BUFFER = 10;
 
         // Function to check if a new page is needed
         const checkPageOverflow = (doc, currentY, lineHeight = 10) => {
@@ -526,25 +517,67 @@
           return currentY;
         };
 
-        // Add Name and Contact Info
-        doc.setFontSize(20);
-        doc.setFont('helvetica', 'bold');
-        doc.text('Andrew Hyte', margin, margin + 10);
-        doc.setFontSize(12);
-        doc.setFont('helvetica', 'normal');
-        doc.text(
-          'Contact: your.email@example.com | 123-456-7890',
-          margin,
-          margin + 20
-        );
+        // Add Header with Name and Contact Info
+        const addHeader = (doc) => {
+          doc.setFontSize(45);
+          doc.setFont('helvetica', 'bold');
+          doc.text('Andrew Hyte', margin, 20);
 
-        // Define a function to add section titles
+          doc.setFontSize(12);
+          doc.setFont('helvetica', 'normal');
+          doc.text(
+            '+1 801-200-8453',
+            doc.internal.pageSize.width - margin,
+            15,
+            null,
+            null,
+            'right'
+          );
+          doc.text(
+            'Andrew@Hyte.us',
+            doc.internal.pageSize.width - margin,
+            25,
+            null,
+            null,
+            'right'
+          );
+          doc.text(
+            'Andrew.Hyte.us',
+            doc.internal.pageSize.width - margin,
+            35,
+            null,
+            null,
+            'right'
+          );
+
+          // Icons can be added here if necessary using `doc.addImage()`
+          // Example: doc.addImage(iconData, 'PNG', x, y, width, height);
+        };
+
+        // Define a function to add section titles with top and bottom lines
         const addSectionTitle = (doc, title, y) => {
           doc.setFontSize(16);
           doc.setFont('helvetica', 'bold');
+          doc.line(margin, y - 6, doc.internal.pageSize.width - margin, y - 6); // adjust top line position
           doc.text(title, margin, y);
+          doc.line(margin, y + 3, doc.internal.pageSize.width - margin, y + 3); // add bottom line
           doc.setFontSize(12);
           doc.setFont('helvetica', 'normal');
+        };
+
+        // Define a function to add skill details
+        const addSkillDetails = (doc, skillCategory, skills, y) => {
+          doc.setFontSize(14);
+          doc.setFont('helvetica', 'bold');
+          doc.text(skillCategory, margin, y);
+          doc.setFontSize(12);
+          doc.setFont('helvetica', 'normal');
+          skills.forEach((skill) => {
+            y = checkPageOverflow(doc, y);
+            doc.text(skill, margin + 5, y + 5);
+            y += 5;
+          });
+          return y + 10;
         };
 
         // Define a function to add job details
@@ -569,45 +602,66 @@
           );
           doc.setFont('helvetica', 'italic');
           doc.text(company + ', ' + location, margin, y + 5);
+          y += 10;
+          return y;
         };
 
+        // Extract skills from the DOM
+        const extractSkills = (selector) => {
+          const skillsElement = document.querySelector(selector);
+          if (skillsElement) {
+            return skillsElement.innerText
+              .split('.')
+              .map((skill) => skill.trim())
+              .filter((skill) => skill.length > 0);
+          }
+          return [];
+        };
+
+        const computerScienceSkills = extractSkills('.computer-science-skills');
+        const personalCommunicationSkills = extractSkills(
+          '.personal-communication-skills'
+        );
+
+        // Add Header
+        addHeader(doc);
+
         // Start from Skills Profile Section
-        let y = margin + 40;
+        let y = 50;
 
         // Add Skills Profile Section
-        const skillsProfileElement =
-          document.querySelector('#skills-profile ul');
-        const skillsProfile = skillsProfileElement.innerText.split('\n');
         addSectionTitle(doc, 'Skills Profile', y);
-        y += 10;
-        skillsProfile.forEach((line) => {
-          y = checkPageOverflow(doc, y);
-          doc.text(line, margin, y);
-          y += 5;
-        });
-        y += 10;
+        y += SECTION_TITLE_BUFFER += 5; // Adjusted to add more space after the section title
+        y = addSkillDetails(doc, 'Computer Science:', computerScienceSkills, y);
+        y = addSkillDetails(
+          doc,
+          'Personal and Communication:',
+          personalCommunicationSkills,
+          y
+        );
 
         // Add Education Section
         y = checkPageOverflow(doc, y);
+        y += 10; // Add a bit of a buffer between the bottom of the section
         addSectionTitle(doc, 'Education', y);
-        y += 10;
-        addJobDetails(
+        y += SECTION_TITLE_BUFFER += 5; // Adjusted to add more space after the section title
+        y = addJobDetails(
           doc,
-          'Bachelor of Science in Computer Science',
+          'B.S. Computer Science',
           'Brigham Young University',
           'Provo, UT',
-          'August 2011 - April 2015',
+          'Dec 2015',
           y
         );
-        y += 20;
 
         // Add Experience Section
         y = checkPageOverflow(doc, y);
-        addSectionTitle(doc, 'Experience', y);
-        y += 10;
+        y += SECTION_TITLE_BUFFER; // Add section buffer
+        addSectionTitle(doc, 'Relevant Experience', y);
+        y += SECTION_TITLE_BUFFER += 5; // Adjusted to add more space after the section title
 
         const experienceItems = document.querySelectorAll(
-          '#experience-section .list-group-item'
+          '#experience-section .resume-item'
         );
         experienceItems.forEach((item) => {
           const jobTitle = item.querySelector('.resume-header').innerText;
@@ -620,13 +674,12 @@
             responsibilitiesElement.innerText.split('\n');
 
           y = checkPageOverflow(doc, y);
-          addJobDetails(doc, jobTitle, company, location, dateRange, y);
+          y = addJobDetails(doc, jobTitle, company, location, dateRange, y);
           doc.setFontSize(11);
           doc.setFont('helvetica', 'normal');
-          y += 10;
           responsibilities.forEach((line) => {
             y = checkPageOverflow(doc, y);
-            doc.text(line, margin, y);
+            doc.text('• ' + line, margin, y);
             y += 5;
           });
           y += 10;
