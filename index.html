@@ -7,6 +7,11 @@
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
     <title>Lead Frontend Software Engineer</title>
+    <meta
+      name="description"
+      id="meta-description"
+      content="Andrew Hyte's resume website. Andrew is a Lead Frontend Software Engineer with 11 years of professional experience developing web and mobile apps with various flavors of JavaScript and relevant frameworks."
+    />
     <link
       rel="icon"
       href="./public/andrew-icon.svg"
@@ -105,6 +110,90 @@
           </ul>
         </aside>
         <main class="col-lg-10 pt-4 mx-auto">
+          <!-- Add an explainer section explaining my most recent experience and lay off with a news article link -->
+          <section id="explainer" class="py-5">
+            <p class="lead text-center"></p>
+            <div class="tip">
+              <svg
+                viewBox="0 0 24 24"
+                version="1.1"
+                width="37"
+                height="37"
+                aria-hidden="true"
+              >
+                <path
+                  d="M10 2H14C15.1046 2 16 2.89543 16 4V6H20C21.1046 6 22 6.89543 22 8V20C22 21.1046 21.1046 22 20 22H4C2.89543 22 2 21.1046 2 20V8C2 6.89543 2.89543 6 4 6H8V4C8 2.89543 8.89543 2 10 2ZM10 4V6H14V4H10ZM20 8H4V20H20V8Z"
+                />
+              </svg>
+              <span id="explainer-title">#OpenToWork</span>
+              <span id="explainer-text"
+                >I am actively seeking new opportunities following an unexpected
+                end to my tenure at ON Platform
+                <svg
+                  class="gameon-logo-color"
+                  width="11.102"
+                  height="16"
+                  viewBox="0 0 340 490"
+                  fill="none"
+                >
+                  <path
+                    d="M340 98L170 0L0 98L170 196L340 98Z"
+                    fill="#FC0360"
+                  ></path>
+                  <path
+                    d="M0 98V294L170 196L0 98Z"
+                    fill="url(#paint0_linear_239_110)"
+                  ></path>
+                  <path
+                    d="M0 490L170 392L170 196L0 294V490Z"
+                    fill="#FC0360"
+                  ></path>
+                  <path
+                    d="M170 392L340 294L170 196L170 392Z"
+                    fill="#FCC700"
+                  ></path>
+                  <path
+                    d="M340 294V98L170 196L340 294Z"
+                    fill="url(#paint1_linear_239_110)"
+                  ></path>
+                  <defs>
+                    <linearGradient
+                      id="paint0_linear_239_110"
+                      x1="84.3918"
+                      y1="209.125"
+                      x2="110.683"
+                      y2="316.241"
+                      gradientUnits="userSpaceOnUse"
+                    >
+                      <stop stop-color="#AF0140"></stop>
+                      <stop offset="1" stop-color="#690026"></stop>
+                    </linearGradient>
+                    <linearGradient
+                      id="paint1_linear_239_110"
+                      x1="139.802"
+                      y1="183.312"
+                      x2="339.97"
+                      y2="183.312"
+                      gradientUnits="userSpaceOnUse"
+                    >
+                      <stop stop-color="#FCC700"></stop>
+                      <stop offset="1" stop-color="#FF8E25"></stop>
+                    </linearGradient>
+                  </defs>
+                </svg>
+                The departure was due to the sudden resignation of the CEO and
+                subsequent layoff of the entire staff after $11 million went
+                missing,
+                <a
+                  href="https://venturebeat.com/games/on-enterprise-ai-startup-ceo-resigns-staff-laid-off-after-11m-in-cash-goes-missing/"
+                  target="_blank"
+                  >as reported by VentureBeat.</a
+                >
+              </span>
+            </div>
+            <span id="explainer-end"></span>
+          </section>
+
           <section id="bio" class="py-5">
             <h2 class="text-center">Andrew Hyte Bio</h2>
             <p class="lead text-center"></p>
@@ -489,53 +578,7 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
-    <script>
-      // Initialize controller
-      var controller = new ScrollMagic.Controller();
-
-      // Define the animation for fading out as the content moves up
-      function fadeOutAnimation(section) {
-        // Configure the animation
-        var tween = gsap.timeline();
-        tween.fromTo(
-          '#' + section,
-          { autoAlpha: 1, scale: 1 },
-          { autoAlpha: 0, scale: 0.8, duration: 1 }
-        );
-
-        // Create a ScrollMagic scene
-        new ScrollMagic.Scene({
-          triggerElement: '#' + section + '-end',
-          duration: '100%',
-          triggerHook: 0.5,
-        })
-          .setTween(tween)
-          .addTo(controller);
-      }
-
-      // Apply the animation to each section
-      ['bio', 'resume'].forEach(function (section) {
-        fadeOutAnimation(section);
-      });
-    </script>
-    <script>
-      // Calculate years of experience
-      const experience = new Date().getFullYear() - 2013;
-      document.getElementById('years-of-experience').textContent = experience;
-
-      // Get the current year for the footer
-      document.getElementById('current-year').textContent =
-        new Date().getFullYear();
-
-      function trackDownloadResume() {
-        gtag('event', 'download_resume', {
-          event_category: 'button',
-          event_label: 'Download Resume',
-        });
-
-        generatePDF();
-      }
-    </script>
+    <script src="./src/main.js"></script>
     <script src="./src/generatePDF.js"></script>
   </body>
 </html>

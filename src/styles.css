@@ -137,3 +137,41 @@ aside ul.nav a.nav-link {
 aside ul.nav a.nav-link:hover {
   color: var(--primary-color-hover);
 }
+
+#explainer {
+  padding: 2rem 0;
+}
+
+#explainer .tip {
+  display: flex;
+  align-items: center;
+  background-color: #f6f8fa;
+  border-left: 3px solid #28a745;
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 5px;
+}
+
+#explainer .tip svg {
+  fill: #28a745;
+  margin-right: 0.5rem;
+}
+
+#explainer .tip strong {
+  color: #24292e;
+  margin-right: 0.5rem;
+}
+
+#explainer .tip span {
+  color: #586069;
+}
+
+#explainer-title {
+  margin-top: 6px;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+#explainer-text {
+  margin-left: 1rem;
+}
