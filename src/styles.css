@@ -138,6 +138,11 @@ aside ul.nav a.nav-link:hover {
   color: var(--primary-color-hover);
 }
 
+#on-platform-name {
+  white-space: nowrap;
+  font-weight: bold;
+}
+
 #explainer {
   padding: 2rem 0;
 }
@@ -150,15 +155,11 @@ aside ul.nav a.nav-link:hover {
   padding: 1rem;
   margin: 1rem 0;
   border-radius: 5px;
+  flex-wrap: wrap;
 }
 
 #explainer .tip svg {
   fill: #28a745;
-  margin-right: 0.5rem;
-}
-
-#explainer .tip strong {
-  color: #24292e;
   margin-right: 0.5rem;
 }
 
@@ -167,11 +168,29 @@ aside ul.nav a.nav-link:hover {
 }
 
 #explainer-title {
-  margin-top: 6px;
-  font-size: 1rem;
+  font-size: 1.5rem;
   font-weight: bold;
+  margin-top: 0.5rem;
 }
 
 #explainer-text {
-  margin-left: 1rem;
+  flex-basis: 100%;
+  margin-top: 1rem;
+}
+
+@media (min-width: 576px) {
+  #explainer .tip {
+    flex-wrap: nowrap;
+  }
+
+  #explainer-text {
+    margin-top: 0;
+    margin-left: 1rem;
+    flex-basis: auto;
+  }
+
+  #explainer-title {
+    font-size: 1rem;
+    font-weight: bold;
+  }
 }
