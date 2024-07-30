@@ -115,6 +115,8 @@ ul li {
 }
 .nav-link-button {
   margin-left: 10px;
+  top: 2.5px;
+  position: relative;
 }
 .navbar-nav .nav-item .nav-link {
   padding: 10px 15px;
