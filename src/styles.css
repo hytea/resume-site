@@ -12,6 +12,7 @@ body {
   --bs-primary-rgb: 107, 157, 58;
   font-family: Arial, sans-serif;
 }
+
 .hero {
   background: url('../public/Provo_Canyon.jpg') center center/cover no-repeat;
   height: calc(100vh - 56px); /* 56px is the height of the navbar */
@@ -21,37 +22,46 @@ body {
   color: #fff;
   text-align: center;
 }
+
 .glass {
   background: rgba(8, 8, 8, 0.4);
   padding: 20px;
   border-radius: 10px;
 }
+
 .footer {
   padding: 20px 0;
   background: #f8f9fa;
   text-align: center;
 }
+
 .resume-header {
   font-size: 18px;
   font-weight: bold;
 }
+
 .date-range {
   font-size: 14px;
   font-weight: bold;
   color: var(--text-color);
 }
+
 #resume {
   padding: 20px;
 }
+
 .resume-content {
   padding: 10px 0;
 }
+
 .resume-item {
   margin: 0 0 20px 0;
 }
+
 .resume-section {
   margin-bottom: 30px;
 }
+
 .section-title {
   margin-left: 0;
   font-size: 24px;
@@ -62,22 +72,27 @@ body {
   padding-top: 5px;
   padding-bottom: 5px;
 }
+
 .position-title {
   font-size: 16px;
   color: var(--text-color);
   margin-top: 0;
 }
+
 .company-details,
 .location {
   font-size: 14px;
   color: var(--secondary-text-color);
 }
+
 ul {
   padding-left: 20px;
 }
+
 ul li {
   margin-bottom: 5px;
 }
+
 /* Responsive adjustments */
 @media (max-width: 576px) {
   .d-flex {
@@ -98,34 +113,41 @@ ul li {
     padding: 10px;
   }
 }
+
 /* Bio section image adjustment */
 .bio-image {
   max-height: 100%;
   object-fit: cover;
 }
+
 @media (min-width: 768px) {
   .bio-image {
     height: 100%;
   }
 }
+
 /* Navbar adjustments */
 .navbar-nav .nav-item {
   padding-left: 10px;
   padding-right: 10px;
 }
+
 .nav-link-button {
   margin-left: 10px;
   top: 2.5px;
   position: relative;
 }
+
 .navbar-nav .nav-item .nav-link {
   padding: 10px 15px;
 }
+
 .btn-custom {
   background-color: var(--primary-color);
   border-color: var(--primary-color);
   color: white;
 }
+
 .btn-custom:hover {
   background-color: var(--primary-color-hover);
   border-color: var(--primary-color-hover);
@@ -136,6 +158,7 @@ ul li {
 aside ul.nav a.nav-link {
   color: var(--primary-color);
 }
+
 aside ul.nav a.nav-link:hover {
   color: var(--primary-color-hover);
 }
@@ -194,5 +217,258 @@ aside ul.nav a.nav-link:hover {
   #explainer-title {
     font-size: 1rem;
     font-weight: bold;
+  }
+}
+
+/* Portfolio Section */
+#portfolio {
+  padding: 20px;
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.portfolio-item {
+  padding: 8px;
+  border-radius: 10px;
+  transition: box-shadow 0.3s ease-in-out;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  perspective: 1000px;
+  cursor: pointer;
+  aspect-ratio: 1 / 1; /* Ensures the item is square */
+}
+
+.portfolio-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  border: 5px solid #ccc;
+  transition: border 0.3s ease-in-out;
+  z-index: 1; /* Ensure the border is above the content */
+}
+
+.portfolio-item:hover::before {
+  border: 7px solid transparent;
+  border-image: linear-gradient(
+    45deg,
+    red,
+    orange,
+    yellow,
+    green,
+    blue,
+    indigo,
+    violet,
+    red
+  );
+  border-image-slice: 1;
+  animation: glow 5s linear;
+}
+
+@keyframes glow {
+  0% {
+    border-image-source: linear-gradient(
+      45deg,
+      red,
+      orange,
+      yellow,
+      green,
+      blue,
+      indigo,
+      violet,
+      red
+    );
+  }
+  14.28% {
+    border-image-source: linear-gradient(
+      90deg,
+      red,
+      orange,
+      yellow,
+      green,
+      blue,
+      indigo,
+      violet,
+      red
+    );
+  }
+  28.56% {
+    border-image-source: linear-gradient(
+      135deg,
+      red,
+      orange,
+      yellow,
+      green,
+      blue,
+      indigo,
+      violet,
+      red
+    );
+  }
+  42.84% {
+    border-image-source: linear-gradient(
+      180deg,
+      red,
+      orange,
+      yellow,
+      green,
+      blue,
+      indigo,
+      violet,
+      red
+    );
+  }
+  57.12% {
+    border-image-source: linear-gradient(
+      225deg,
+      red,
+      orange,
+      yellow,
+      green,
+      blue,
+      indigo,
+      violet,
+      red
+    );
+  }
+  71.4% {
+    border-image-source: linear-gradient(
+      270deg,
+      red,
+      orange,
+      yellow,
+      green,
+      blue,
+      indigo,
+      violet,
+      red
+    );
+  }
+  85.68% {
+    border-image-source: linear-gradient(
+      315deg,
+      red,
+      orange,
+      yellow,
+      green,
+      blue,
+      indigo,
+      violet,
+      red
+    );
+  }
+  100% {
+    border-image-source: linear-gradient(
+      360deg,
+      red,
+      orange,
+      yellow,
+      green,
+      blue,
+      indigo,
+      violet,
+      red
+    );
+  }
+}
+
+.portfolio-header {
+  display: flex;
+  align-items: center;
+}
+
+.portfolio-header h4 {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  font-size: 1.75rem;
+  margin: 1rem;
+}
+
+.portfolio-icon {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+
+.portfolio-description {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: calc(100% - 10px);
+  height: calc(100% - 10px);
+  background: white;
+  color: var(--text-color);
+  text-align: left;
+  padding: 20px;
+  border-radius: 5px;
+  backface-visibility: hidden;
+  transform: rotateY(180deg);
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2; /* Ensure the description is above the border */
+}
+
+.portfolio-item:hover .portfolio-description {
+  transform: rotateY(0deg);
+}
+
+.portfolio-image-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 0; /* Ensure the image is below the description */
+}
+
+.portfolio-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+@media (max-width: 576px) {
+  .portfolio-grid {
+    display: block;
+  }
+
+  .portfolio-item {
+    width: 100%;
+    height: auto;
+    aspect-ratio: auto; /* Remove aspect ratio on mobile */
+    margin-bottom: 16px;
+  }
+
+  .portfolio-item:last-child {
+    margin-bottom: 0;
+  }
+
+  .portfolio-item:hover .portfolio-description {
+    transform: none;
+  }
+
+  .portfolio-description {
+    position: static;
+    transform: none;
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    margin-top: 10px;
   }
 }

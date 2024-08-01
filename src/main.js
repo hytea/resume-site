@@ -47,7 +47,7 @@ function wateredDownFadeOutAnimation(section) {
 
 // Apply the watered down fade out animation to these sections
 // to prevent the content from disappearing too quickly
-['explainer'].forEach(function (section) {
+['explainer', 'portfolio'].forEach(function (section) {
   wateredDownFadeOutAnimation(section);
 });
 
