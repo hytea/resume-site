@@ -67,6 +67,24 @@ function trackDownloadResume() {
   generatePDF();
 }
 
+// Track the open of the venturebeat article
+function trackOpenVentureBeat() {
+  gtag('event', 'open_venturebeat', {
+    event_category: 'button',
+    event_label: 'Open VentureBeat Article',
+  });
+}
+
+// Open a portfolio item, track the event, and open the link in a new tab
+function openPortfolioItem(url, eventLabel) {
+  gtag('event', 'open_portfolio_item', {
+    event_category: 'button',
+    event_label: eventLabel,
+  });
+
+  window.open(url, '_blank');
+}
+
 // Update the meta description with the years of experience
 function updateMetaDescription() {
   const metaDescription = document.getElementById('meta-description');
