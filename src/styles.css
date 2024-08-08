@@ -93,6 +93,10 @@ ul li {
   margin-bottom: 5px;
 }
 
+.feature {
+  font-weight: bold;
+}
+
 /* Responsive adjustments */
 @media (max-width: 576px) {
   .d-flex {

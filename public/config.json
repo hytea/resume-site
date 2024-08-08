@@ -1,0 +1,92 @@
+{
+  "experience": [
+    {
+      "title": "Lead Software Engineer, Frontend",
+      "dateRange": "February 2023 - July 2024",
+      "company": "ON Platform DBA. GameOn",
+      "location": "Remote, San Francisco, CA",
+      "responsibilities": [
+        "Led development of B2B portal for customizing conversational AI chatbot, enhancing features and performance.",
+        "Developed no-code Canvas drag-and-drop solution for building reply flows.",
+        "Implemented robust CI/CD pipeline using Vite, Netlify, and GitHub Actions.",
+        "Directed all frontend work, leading a team of five engineers.",
+        "Translated high-fidelity mocks into actionable tasks with weekly releases.",
+        "Collaborated with Head of Product Management and Head of Design to align priorities.",
+        "Conducted bi-weekly meetings to support team members' professional development."
+      ]
+    },
+    {
+      "title": "Software Engineer",
+      "dateRange": "May 2022 - February 2023 (Promoted)",
+      "company": "GameOn Technologies",
+      "location": "Remote, San Francisco, CA",
+      "responsibilities": [
+        "Developed a design system with native web components using Lit for a conversational AI chatbot product.",
+        "Authored technical design documents for a new B2B customer portal supporting the AI chatbot.",
+        "Built MVP of the B2B customer portal and created tickets for future enhancements.",
+        "Proactively implemented a user feedback system using Netlify forms, Zapier, and Linear APIs, demonstrating ownership and initiative in improving the product."
+      ]
+    },
+    {
+      "title": "Software Engineer",
+      "dateRange": "February 2020 - April 2022",
+      "company": "Bark Technologies",
+      "location": "Remote, Atlanta, GA",
+      "responsibilities": [
+        "Maintained and integrated Router Limits technologies after acquisition.",
+        "Migrated front-end pages to a new UI kit and took ownership of Bark React Native app development."
+      ]
+    },
+    {
+      "title": "Software Developer",
+      "dateRange": "November 2015 - February 2020 (Acquired)",
+      "company": "Router Limits",
+      "location": "Layton, UT",
+      "responsibilities": [
+        "Led frontend development for a small software company.",
+        "Developed Android and iOS apps using C# with Xamarin forms.",
+        "Created a complex AngularJS progressive web app with Node mySQL REST API integration."
+      ]
+    },
+    {
+      "title": "Software Engineer Intern",
+      "dateRange": "June 2015 - August 2015",
+      "company": "Lockheed Martin Mission Systems and Training",
+      "location": "Orlando, FL",
+      "responsibilities": [
+        "Contributed to F-14 training simulation software using C# .NET and WPF."
+      ]
+    },
+    {
+      "title": "Full Stack Programmer",
+      "dateRange": "April 2014 - November 2015",
+      "company": "Missionary Training Center",
+      "location": "Provo, UT",
+      "responsibilities": [
+        "Developed a missionary chat application for Mormon.org with Java Spring and Oracle SQL backend.",
+        "Worked in an Agile Scrum environment using Jira for sprint management."
+      ]
+    },
+    {
+      "title": "Product Marketing Intern",
+      "dateRange": "Sept 2013 - Dec 2013",
+      "company": "Go GungHo Inc.",
+      "location": "Provo, UT",
+      "responsibilities": [
+        "Developed a Java program using the Twitter API to contact prospective customers."
+      ]
+    }
+  ],
+  "skills": {
+    "Computer_Science": "Excellent object-oriented programming background. Passionate for great UX. Experienced with <span class=\"feature\">JavaScript</span>, <span class=\"feature\">Typescript</span>, <span class=\"feature\">React</span>, <span class=\"feature\">HTML</span>, <span class=\"feature\">SASS</span>, <span class=\"feature\">Firebase</span>, <span class=\"feature\">AWS</span>, <span class=\"feature\">Docker</span>, <span class=\"feature\">Node</span>, <span class=\"feature\">Angular</span>, <span class=\"feature\">mySQL</span>, <span class=\"feature\">Lit</span>, <span class=\"feature\">Storybook</span>, <span class=\"feature\">Vite</span>, <span class=\"feature\">Netlify</span>, <span class=\"feature\">Figma</span>. Comfortable with <span class=\"feature\">React Native</span>, <span class=\"feature\">Webpack</span>, <span class=\"feature\">Java</span>, <span class=\"feature\">Python</span>, <span class=\"feature\">Ruby</span>, <span class=\"feature\">C#</span>, <span class=\"feature\">Postgres</span>, <span class=\"feature\">Xamarin</span>. Currently working on side projects developing Android and iOS apps using <span class=\"feature\">Flutter</span> and <span class=\"feature\">Firebase</span>.",
+    "Personal_and_Communication": "Autonomous self-starter. Consistent positive <span class=\"feature\">'Let's do it!' attitude</span>. Have worked on a distributed team for the last four years. Experienced in handling technical customer support, collections, and physical transactions. Developed communication skills through years of management experience in the workplace."
+  },
+  "education": [
+    {
+      "degree": "B.S. Computer Science",
+      "date": "December 2015",
+      "institution": "Brigham Young University",
+      "location": "Provo, UT"
+    }
+  ]
+}
