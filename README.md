@@ -65,7 +65,7 @@ The main idea of the website is to showcase a resume and only have to update it 
 
 7. **Update the resume:**
 
-   See the `Resume` section above.
+   See the `Configuration` section below.
 
 8. **Update the Social Links:**
 
