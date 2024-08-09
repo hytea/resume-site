@@ -77,7 +77,17 @@ The website configuration can be managed via the `config.json` file located in t
 
 ### Configurable Sections
 
-1. **Experience:**
+1. **Header**
+
+   - **name**: Your name
+   - **title**: Your title
+   - **location**: Your location
+   - **email**: Your email
+   - **phone**: Your phone number
+   - **website**: Your website
+   - **social**: List of social links
+
+2. **Experience**
 
    - **title**: Job title
    - **dateRange**: Duration of the job
@@ -85,19 +95,30 @@ The website configuration can be managed via the `config.json` file located in t
    - **location**: Job location
    - **responsibilities**: List of responsibilities
 
-2. **Skills:**
+3. **Skills:**
    You can add zero or more skills sections. The title of the section is the key and the value is the content. The key should use underscores instead of spaces and all the correct capitalization as you would like it to appear on the resume. You can also use HTML tags to style the content. For example, you can use `<span class="feature">` to feature some important text.
 
-3. **Education:**
+4. **Education:**
+
    - **degree**: Degree obtained
    - **date**: Graduation date
    - **institution**: Name of the institution
    - **location**: Location of the institution
 
+5. **PDF File Name:**
+   - **outputFileName**: Name of the PDF file to be generated
+
 ### Example `config.json`
 
 ```json
 {
+  "header": {
+    "title": "Andrew Hyte",
+    "phoneNumber": "+1 801-200-8453",
+    "email": "Andrew.D.Hyte@gmail.com",
+    "website": "Andrew.Hyte.us"
+  },
+  "outputFileName": "Andrew_Hyte_Resume.pdf",
   "experience": [
     {
       "title": "Lead Software Engineer",
