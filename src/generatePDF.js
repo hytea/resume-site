@@ -64,6 +64,59 @@ window.generatePDF = async () => {
     doc.setDrawColor(0);
   };
 
+  const parseHTMLAndAddToPDF = (doc, htmlContent, x, y) => {
+    const parser = new DOMParser();
+    const docElement = parser.parseFromString(htmlContent, 'text/html').body;
+
+    const processNode = (node, y) => {
+      if (node.nodeType === Node.TEXT_NODE) {
+        const text = node.textContent.replace(/\s+/g, ' '); // Replace multiple spaces with a single space
+        if (text.length > 0) {
+          const words = text.split(' ');
+          words.forEach((word, index) => {
+            const wordWidth = doc.getTextWidth(word);
+            if (x + wordWidth > doc.internal.pageSize.width - margin) {
+              y += 5; // Move to the next line if word exceeds page width
+              x = margin; // Reset X position to margin
+              y = checkPageOverflow(doc, y);
+            }
+            if (index > 0 && x > margin) {
+              x += doc.getTextWidth(' '); // Add space between words, but not before the first word in a line
+            }
+            doc.text(word, x, y);
+            x += wordWidth; // Update X position for next word
+          });
+        }
+      } else if (node.nodeType === Node.ELEMENT_NODE) {
+        if (node.tagName === 'SPAN' && node.classList.contains('feature')) {
+          if (x > margin) {
+            const prevChar = node.previousSibling?.textContent?.slice(-1);
+            if (prevChar && !/[\s.,!?]/.test(prevChar)) {
+              x += doc.getTextWidth(' '); // Add space before bold text if not punctuation
+            }
+          }
+          doc.setFont(undefined, 'bold');
+          y = processNode(node.firstChild, y);
+          doc.setFont(undefined, 'normal');
+          const nextChar = node.nextSibling?.textContent?.[0];
+          if (nextChar && !/[\s.,!?]/.test(nextChar)) {
+            x += doc.getTextWidth(' '); // Add space after bold text if not punctuation
+          }
+        } else {
+          y = processNode(node.firstChild, y);
+        }
+      }
+
+      if (node.nextSibling) {
+        y = processNode(node.nextSibling, y);
+      }
+
+      return y;
+    };
+
+    return processNode(docElement, y);
+  };
+
   const addSkillDetails = (doc, skillCategory, skillsHTML, y) => {
     doc.setFontSize(12);
     doc.setFont(fontFamily, 'bolditalic');
@@ -71,27 +124,9 @@ window.generatePDF = async () => {
     doc.setFontSize(10);
     doc.setFont(fontFamily, 'normal');
 
-    const skillsElement = document.createElement('div');
-    skillsElement.innerHTML = skillsHTML;
+    let x = margin; // Start X position for new text
+    y = parseHTMLAndAddToPDF(doc, skillsHTML, x, y + 5);
 
-    const spans = skillsElement.querySelectorAll('span.feature');
-    spans.forEach((span) => {
-      span.style.fontWeight = 'bold';
-    });
-
-    const skillText = skillsElement.innerText;
-    const skillLines = doc.splitTextToSize(
-      skillText,
-      doc.internal.pageSize.width - margin * 2,
-      {}
-    );
-    y += 5;
-    skillLines[skillLines.length - 1] += '.';
-    skillLines.forEach((line) => {
-      y = checkPageOverflow(doc, y);
-      doc.text(line, margin, y);
-      y += 5;
-    });
     y += 10;
     return y;
   };
@@ -131,8 +166,9 @@ window.generatePDF = async () => {
     y += SECTION_TITLE_BUFFER + 5;
 
     Object.keys(data.skills).forEach((key) => {
+      const skillCategory = key.replace(/_/g, ' ');
       if (data.skills[key].trim()) {
-        y = addSkillDetails(doc, key + ':', data.skills[key], y);
+        y = addSkillDetails(doc, skillCategory + ':', data.skills[key], y);
       }
     });
   }
