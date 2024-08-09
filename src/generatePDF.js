@@ -19,15 +19,15 @@ window.generatePDF = async () => {
     return currentY;
   };
 
-  const addHeader = (doc) => {
+  const addHeader = (doc, headerData) => {
     doc.setFontSize(56);
     doc.setFont('helvetica', 'bold');
-    doc.text('Andrew Hyte', margin, 29);
+    doc.text(headerData.title, margin, 29);
 
     doc.setFontSize(12);
     doc.setFont('helvetica', 'normal');
     doc.text(
-      '+1 801-200-8453',
+      headerData.phoneNumber,
       doc.internal.pageSize.width - margin,
       15,
       null,
@@ -35,7 +35,7 @@ window.generatePDF = async () => {
       'right'
     );
     doc.text(
-      'Andrew.D.Hyte@gmail.com',
+      headerData.email,
       doc.internal.pageSize.width - margin,
       25,
       null,
@@ -43,7 +43,7 @@ window.generatePDF = async () => {
       'right'
     );
     doc.text(
-      'Andrew.Hyte.us',
+      headerData.website,
       doc.internal.pageSize.width - margin,
       35,
       null,
@@ -155,7 +155,7 @@ window.generatePDF = async () => {
   const data = await response.json();
 
   // Add Header
-  addHeader(doc);
+  addHeader(doc, data.header);
 
   // Start from Skills Profile Section
   let y = 50;
@@ -225,6 +225,5 @@ window.generatePDF = async () => {
     'right'
   );
 
-  // Save the PDF
-  doc.save('Andrew_Hyte_Resume.pdf');
+  doc.save(data.outputFileName);
 };

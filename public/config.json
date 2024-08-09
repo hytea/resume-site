@@ -1,4 +1,11 @@
 {
+  "header": {
+    "title": "Andrew Hyte",
+    "phoneNumber": "+1 801-200-8453",
+    "email": "Andrew.D.Hyte@gmail.com",
+    "website": "Andrew.Hyte.us"
+  },
+  "outputFileName": "Andrew_Hyte_Resume.pdf",
   "experience": [
     {
       "title": "Lead Software Engineer, Frontend",
