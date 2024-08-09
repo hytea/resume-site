@@ -136,7 +136,3 @@ The website configuration can be managed via the `config.json` file located in t
    - Select the `main` branch and click `Save`.
    - Your site will be published at `https://<username>.github.io/<repository-name>`.
    - You can also add a custom domain by following the instructions [here](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site).
-
-```
-
-```
