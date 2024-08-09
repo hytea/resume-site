@@ -114,7 +114,7 @@ The website configuration can be managed via the `config.json` file located in t
 {
   "header": {
     "title": "Andrew Hyte",
-    "phoneNumber": "+1 801-200-8453",
+    "phoneNumber": "+1 801-123-4567",
     "email": "Andrew.D.Hyte@gmail.com",
     "website": "Andrew.Hyte.us"
   },
