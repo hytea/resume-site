@@ -146,7 +146,7 @@ window.generatePDF = async () => {
     doc.setFont(fontFamily, 'italic');
     doc.setFontSize(10);
     doc.text(company + ', ' + location, margin, y + 5);
-    y += 10;
+    y += 12;
     return y;
   };
 
@@ -171,6 +171,8 @@ window.generatePDF = async () => {
         y = addSkillDetails(doc, skillCategory + ':', data.skills[key], y);
       }
     });
+
+    y += 3;
   }
 
   // Add Education Section
@@ -188,12 +190,23 @@ window.generatePDF = async () => {
     );
   });
 
+  const checkNewPageForJobTitle = (doc, y) => {
+    const threshold = pageHeight * 0.9; // 90% of the page height
+    if (y > threshold) {
+      doc.addPage();
+      y = margin + newPageMargin;
+    }
+    return y;
+  };
+
   // Add Experience Section
   y = checkPageOverflow(doc, y);
   y += SECTION_TITLE_BUFFER;
   addSectionTitle(doc, 'Relevant Experience', y);
   y += SECTION_TITLE_BUFFER + 5;
   data.experience.forEach((exp) => {
+    y = checkNewPageForJobTitle(doc, y); // Ensure a new job starts on a new page if needed
+
     y = addJobDetails(
       doc,
       exp.title,
@@ -205,9 +218,21 @@ window.generatePDF = async () => {
     doc.setFontSize(11);
     doc.setFont(fontFamily, 'normal');
     exp.responsibilities.forEach((line) => {
-      y = checkPageOverflow(doc, y);
-      doc.text('• ' + line, margin, y);
-      y += 5;
+      const wrappedText = doc.splitTextToSize(
+        line,
+        doc.internal.pageSize.width - 2 * margin
+      );
+      wrappedText.forEach((textLine, index) => {
+        y = checkPageOverflow(doc, y);
+        if (index === 0) {
+          // Add the bullet point for the first line
+          doc.text('• ' + textLine, margin, y);
+        } else {
+          // Indent wrapped lines without the bullet point
+          doc.text(textLine, margin + 2.5, y);
+        }
+        y += 5;
+      });
     });
     y += 5;
   });
