@@ -135,10 +135,16 @@ window.generatePDF = async () => {
     doc.setFontSize(12);
     doc.setFont(fontFamily, 'bold');
     doc.text(jobTitle, margin, y);
+
+    doc.setFont(fontFamily, 'italic');
+    doc.setFontSize(10);
+    const companyDetails = `${company}, ${location}`;
+    doc.text(companyDetails, margin, y + 5);
+
     doc.text(
       dateRange,
       doc.internal.pageSize.width - margin,
-      y,
+      y + 5,
       null,
       null,
       'right'
