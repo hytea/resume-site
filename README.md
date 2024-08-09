@@ -15,62 +15,7 @@ Welcome to my personal resume website! This site showcases my professional exper
 
 ### Resume
 
-The main idea of the website is to showcase my resume and only have to update it in one place. The resume is written in the site HTML and is then automatically converted to a PDF when the user clicks the download button.
-
-#### 🛠 Important IDs and Classes for PDF Generation
-
-To ensure the `generatePDF` function works correctly, make sure your HTML elements have the following IDs and classes:
-
-##### Skills Section
-
-- **Computer Science Skills:**
-  - Class: `.computer-science-skills`
-- **Personal and Communication Skills:**
-  - Class: `.personal-communication-skills`
-
-##### Education Section
-
-- **Education Item:**
-  - ID: `#education-section`
-  - Classes: `.resume-item`, `.resume-header`, `.date-range`, `.company-details`, `.location`
-
-##### Experience Section
-
-- **Experience Section:**
-  - ID: `#experience-section`
-- **Experience Items:**
-  - Classes: `.resume-item`, `.resume-header`, `.date-range`, `.company-details`, `.location`, `.responsibilities`
-
-##### Example HTML Structure
-
-```html
-<div id="education-section">
-  <div class="resume-item">
-    <h4 class="resume-header">B.S. Computer Science</h4>
-    <p class="date-range">Dec 2015</p>
-    <p class="company-details">Brigham Young University</p>
-    <p class="location">Provo, UT</p>
-  </div>
-</div>
-
-<div id="experience-section">
-  <div class="resume-item">
-    <h4 class="resume-header">Lead Software Engineer</h4>
-    <p class="date-range">Feb 2023 - Jul 2024</p>
-    <p class="company-details">ON Platform DBA. GameOn</p>
-    <p class="location">Remote, Heber City, UT</p>
-    <ul class="responsibilities">
-      <li>Led development of B2B portal.</li>
-      <li>Implemented robust CI/CD pipeline.</li>
-    </ul>
-  </div>
-</div>
-
-<div class="skills-section">
-  <div class="computer-science-skills">JavaScript. Typescript. React.</div>
-  <div class="personal-communication-skills">Self-starter. Team player.</div>
-</div>
-```
+The main idea of the website is to showcase a resume and only have to update it in one place. The resume is written in the site config.json (see below for detailed documentation) and is then automatically converted to a PDF when the user clicks the download button.
 
 ## 🚀 Getting Started
 
@@ -120,11 +65,64 @@ To ensure the `generatePDF` function works correctly, make sure your HTML elemen
 
 7. **Update the resume:**
 
-   See the `Resume` section above.
+   See the `Configuration` section below.
 
 8. **Update the Social Links:**
 
    Open the `index.html` file and update the social links with your own information.
+
+## 🛠 Configuration
+
+The website configuration can be managed via the `config.json` file located in the `public` directory. This allows for easy updates to the resume content without modifying the HTML directly.
+
+### Configurable Sections
+
+1. **Experience:**
+
+   - **title**: Job title
+   - **dateRange**: Duration of the job
+   - **company**: Name of the company
+   - **location**: Job location
+   - **responsibilities**: List of responsibilities
+
+2. **Skills:**
+   You can add zero or more skills sections. The title of the section is the key and the value is the content. The key should use underscores instead of spaces and all the correct capitalization as you would like it to appear on the resume. You can also use HTML tags to style the content. For example, you can use `<span class="feature">` to feature some important text.
+
+3. **Education:**
+   - **degree**: Degree obtained
+   - **date**: Graduation date
+   - **institution**: Name of the institution
+   - **location**: Location of the institution
+
+### Example `config.json`
+
+```json
+{
+  "experience": [
+    {
+      "title": "Lead Software Engineer",
+      "dateRange": "Feb 2023 - Jul 2024",
+      "company": "ON Platform DBA. GameOn",
+      "location": "Remote, Heber City, UT",
+      "responsibilities": [
+        "Led development of B2B portal.",
+        "Implemented robust CI/CD pipeline."
+      ]
+    }
+  ],
+  "skills": {
+    "Computer_Science": "JavaScript. <span class=\"feature\">Typescript</span>. React.",
+    "Personal_and_Communication": "Self-starter. <span class=\"feature\">Team player</span>."
+  },
+  "education": [
+    {
+      "degree": "B.S. Computer Science",
+      "date": "Dec 2015",
+      "institution": "Brigham Young University",
+      "location": "Provo, UT"
+    }
+  ]
+}
 
 ### Hosting
 
@@ -137,3 +135,4 @@ To ensure the `generatePDF` function works correctly, make sure your HTML elemen
    - Select the `main` branch and click `Save`.
    - Your site will be published at `https://<username>.github.io/<repository-name>`.
    - You can also add a custom domain by following the instructions [here](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site).
+```

@@ -1,3 +1,6 @@
+import './configure.js';
+import './generatePDF.js';
+
 // Initialize controller
 var controller = new ScrollMagic.Controller();
 
@@ -58,14 +61,14 @@ document.getElementById('years-of-experience').textContent = yearsOfExperience;
 // Get the current year for the footer
 document.getElementById('current-year').textContent = new Date().getFullYear();
 
-function trackDownloadResume() {
+window.trackDownloadResume = () => {
   gtag('event', 'download_resume', {
     event_category: 'button',
     event_label: 'Download Resume',
   });
 
   generatePDF();
-}
+};
 
 // Track the open of the venturebeat article
 function trackOpenVentureBeat() {
