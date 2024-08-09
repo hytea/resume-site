@@ -1,9 +1,9 @@
-async function generatePDF() {
+window.generatePDF = async () => {
   const { jsPDF } = window.jspdf;
   const doc = new jsPDF();
 
-  const fontFamily = 'Helvetica'; // Set the font family here
-  const lineColor = '#e7e7e7'; // Set the line color here (light grey)
+  const fontFamily = 'Helvetica';
+  const lineColor = '#e7e7e7';
 
   const pageHeight = doc.internal.pageSize.height;
   const margin = 8;
@@ -14,7 +14,7 @@ async function generatePDF() {
   const checkPageOverflow = (doc, currentY, lineHeight = 10) => {
     if (currentY + lineHeight > pageHeight - margin) {
       doc.addPage();
-      return margin + newPageMargin; // add extra space at the top of a new page
+      return margin + newPageMargin;
     }
     return currentY;
   };
@@ -50,50 +50,87 @@ async function generatePDF() {
       null,
       'right'
     );
-
-    // Icons can be added here if necessary using `doc.addImage()`
-    // Example: doc.addImage(iconData, 'PNG', x, y, width, height);
   };
 
-  // Define a function to add section titles with top and bottom lines
   const addSectionTitle = (doc, title, y) => {
     doc.setFontSize(16);
     doc.setFont(fontFamily, 'bold');
     doc.setDrawColor(lineColor);
-    doc.line(margin, y - 6, doc.internal.pageSize.width - margin, y - 6); // adjust top line position
+    doc.line(margin, y - 6, doc.internal.pageSize.width - margin, y - 6);
     doc.text(title, margin, y);
-    doc.line(margin, y + 2, doc.internal.pageSize.width - margin, y + 2); // add bottom line
+    doc.line(margin, y + 2, doc.internal.pageSize.width - margin, y + 2);
     doc.setFontSize(12);
     doc.setFont(fontFamily, 'normal');
-    doc.setDrawColor(0); // Reset to default color for other lines
+    doc.setDrawColor(0);
   };
 
-  // Define a function to add skill details
-  const addSkillDetails = (doc, skillCategory, skills, y) => {
+  const parseHTMLAndAddToPDF = (doc, htmlContent, x, y) => {
+    const parser = new DOMParser();
+    const docElement = parser.parseFromString(htmlContent, 'text/html').body;
+
+    const processNode = (node, y) => {
+      if (node.nodeType === Node.TEXT_NODE) {
+        const text = node.textContent.replace(/\s+/g, ' '); // Replace multiple spaces with a single space
+        if (text.length > 0) {
+          const words = text.split(' ');
+          words.forEach((word, index) => {
+            const wordWidth = doc.getTextWidth(word);
+            if (x + wordWidth > doc.internal.pageSize.width - margin) {
+              y += 5; // Move to the next line if word exceeds page width
+              x = margin; // Reset X position to margin
+              y = checkPageOverflow(doc, y);
+            }
+            if (index > 0 && x > margin) {
+              x += doc.getTextWidth(' '); // Add space between words, but not before the first word in a line
+            }
+            doc.text(word, x, y);
+            x += wordWidth; // Update X position for next word
+          });
+        }
+      } else if (node.nodeType === Node.ELEMENT_NODE) {
+        if (node.tagName === 'SPAN' && node.classList.contains('feature')) {
+          if (x > margin) {
+            const prevChar = node.previousSibling?.textContent?.slice(-1);
+            if (prevChar && !/[\s.,!?]/.test(prevChar)) {
+              x += doc.getTextWidth(' '); // Add space before bold text if not punctuation
+            }
+          }
+          doc.setFont(undefined, 'bold');
+          y = processNode(node.firstChild, y);
+          doc.setFont(undefined, 'normal');
+          const nextChar = node.nextSibling?.textContent?.[0];
+          if (nextChar && !/[\s.,!?]/.test(nextChar)) {
+            x += doc.getTextWidth(' '); // Add space after bold text if not punctuation
+          }
+        } else {
+          y = processNode(node.firstChild, y);
+        }
+      }
+
+      if (node.nextSibling) {
+        y = processNode(node.nextSibling, y);
+      }
+
+      return y;
+    };
+
+    return processNode(docElement, y);
+  };
+
+  const addSkillDetails = (doc, skillCategory, skillsHTML, y) => {
     doc.setFontSize(12);
     doc.setFont(fontFamily, 'bolditalic');
     doc.text(skillCategory, margin, y);
     doc.setFontSize(10);
     doc.setFont(fontFamily, 'normal');
-    // Concatenate all skills into a single string with periods
-    const skillText = skills.join('. ');
-    const skillLines = doc.splitTextToSize(
-      skillText,
-      doc.internal.pageSize.width - margin * 2,
-      {}
-    );
-    y += 5;
-    skillLines[skillLines.length - 1] += '.';
-    skillLines.forEach((line) => {
-      y = checkPageOverflow(doc, y);
-      doc.text(line, margin, y);
-      y += 5;
-    });
+
+    let x = margin; // Start X position for new text
+    y = parseHTMLAndAddToPDF(doc, skillsHTML, x, y + 5);
+
     y += 10;
     return y;
   };
 
-  // Define a function to add job details
   const addJobDetails = (doc, jobTitle, company, location, dateRange, y) => {
     doc.setFontSize(12);
     doc.setFont(fontFamily, 'bold');
@@ -113,22 +150,9 @@ async function generatePDF() {
     return y;
   };
 
-  // Extract skills from the DOM
-  const extractSkills = (selector) => {
-    const skillsElement = document.querySelector(selector);
-    if (skillsElement) {
-      return skillsElement.innerText
-        .split('.')
-        .map((skill) => skill.trim())
-        .filter((skill) => skill.length > 0);
-    }
-    return [];
-  };
-
-  const computerScienceSkills = extractSkills('.computer-science-skills');
-  const personalCommunicationSkills = extractSkills(
-    '.personal-communication-skills'
-  );
+  // Fetch config.json
+  const response = await fetch('./config.json');
+  const data = await response.json();
 
   // Add Header
   addHeader(doc);
@@ -136,62 +160,51 @@ async function generatePDF() {
   // Start from Skills Profile Section
   let y = 50;
 
-  // Add Skills Profile Section
-  addSectionTitle(doc, 'Skills Profile', y);
-  y += SECTION_TITLE_BUFFER + 5; // Adjusted to add more space after the section title
-  y = addSkillDetails(doc, 'Computer Science:', computerScienceSkills, y);
-  y = addSkillDetails(
-    doc,
-    'Personal and Communication:',
-    personalCommunicationSkills,
-    y
-  );
+  // Check if skills data exists and is not empty
+  if (data.skills && Object.keys(data.skills).length > 0) {
+    addSectionTitle(doc, 'Skills Profile', y);
+    y += SECTION_TITLE_BUFFER + 5;
+
+    Object.keys(data.skills).forEach((key) => {
+      const skillCategory = key.replace(/_/g, ' ');
+      if (data.skills[key].trim()) {
+        y = addSkillDetails(doc, skillCategory + ':', data.skills[key], y);
+      }
+    });
+  }
 
   // Add Education Section
   y = checkPageOverflow(doc, y);
   addSectionTitle(doc, 'Education', y);
-  y += SECTION_TITLE_BUFFER + 5; // Adjusted to add more space after the section title
-  y = addJobDetails(
-    doc,
-    'B.S. Computer Science',
-    'Brigham Young University',
-    'Provo, UT',
-    'Dec 2015',
-    y
-  );
+  y += SECTION_TITLE_BUFFER + 5;
+  data.education.forEach((edu) => {
+    y = addJobDetails(
+      doc,
+      edu.degree,
+      edu.institution,
+      edu.location,
+      edu.date,
+      y
+    );
+  });
 
   // Add Experience Section
   y = checkPageOverflow(doc, y);
-  y += SECTION_TITLE_BUFFER; // Add section buffer
+  y += SECTION_TITLE_BUFFER;
   addSectionTitle(doc, 'Relevant Experience', y);
-  y += SECTION_TITLE_BUFFER + 5; // Adjusted to add more space after the section title
-
-  const experienceItems = document.querySelectorAll(
-    '#experience-section .resume-item'
-  );
-  experienceItems.forEach((item) => {
-    const jobTitle = item.querySelector('.resume-header').innerText;
-    const dateRange = item.querySelector('.date-range').innerText;
-    const company = item.querySelector('.company-details').innerText;
-    const location = item.querySelector('.location').innerText;
-    const responsibilitiesElement = item.querySelector('.responsibilities');
-    const responsibilities = responsibilitiesElement.innerText.split('\n');
-
-    // Calculate height needed for the job details and responsibilities
-    const jobDetailsHeight = 20;
-    const responsibilitiesHeight = responsibilities.length * 5;
-    const totalHeight = jobDetailsHeight + responsibilitiesHeight;
-
-    // Check if the total height exceeds the remaining space on the page
-    if (y + totalHeight > pageHeight - margin) {
-      doc.addPage();
-      y = margin + newPageMargin; // Reset y position on the new page
-    }
-
-    y = addJobDetails(doc, jobTitle, company, location, dateRange, y);
+  y += SECTION_TITLE_BUFFER + 5;
+  data.experience.forEach((exp) => {
+    y = addJobDetails(
+      doc,
+      exp.title,
+      exp.company,
+      exp.location,
+      exp.dateRange,
+      y
+    );
     doc.setFontSize(11);
     doc.setFont(fontFamily, 'normal');
-    responsibilities.forEach((line) => {
+    exp.responsibilities.forEach((line) => {
       y = checkPageOverflow(doc, y);
       doc.text('• ' + line, margin, y);
       y += 5;
@@ -214,4 +227,4 @@ async function generatePDF() {
 
   // Save the PDF
   doc.save('Andrew_Hyte_Resume.pdf');
-}
+};
