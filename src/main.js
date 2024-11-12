@@ -104,3 +104,8 @@ updateMetaDescription();
 
 // Call the function to update the meta description when the page is loaded
 document.addEventListener('DOMContentLoaded', updateMetaDescription);
+
+// Attach functions to window
+window.trackOpenVentureBeat = trackOpenVentureBeat;
+window.openPortfolioItem = openPortfolioItem;
+window.updateMetaDescription = updateMetaDescription;
