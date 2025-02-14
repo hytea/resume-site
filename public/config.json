@@ -8,10 +8,23 @@
   "outputFileName": "Andrew_Hyte_Resume.pdf",
   "experience": [
     {
+      "title": "Senior Software Engineer",
+      "dateRange": "August 2024 - Present",
+      "company": "Fishbowl Inventory",
+      "location": "Orem, UT, Remote",
+      "responsibilities": [
+        "Built Netlify-hosted MFE POC proving path for Angular product integration into a React-based main product.",
+        "Unified the UI of multiple products by creating a native web component Lit-based design system.",
+        "Led 20-member pod as the Scrum Master to manage sprint planning and execution.",
+        "Scoped projects with Product & Engineering directors for 1-week sprints.",
+        "Led Codeium Windsurf agentic AI adoption, secured Team licensing, and trained 30+ engineers to enhance engineering and QA productivity."
+      ]
+    },
+    {
       "title": "Lead Software Engineer, Frontend",
       "dateRange": "February 2023 - July 2024",
       "company": "ON Platform DBA. GameOn",
-      "location": "Remote, San Francisco, CA",
+      "location": "San Francisco, CA, Remote",
       "responsibilities": [
         "Led development of B2B portal for customizing conversational AI chatbot, enhancing features and performance.",
         "Developed no-code Canvas drag-and-drop solution for building reply flows.",
@@ -25,8 +38,8 @@
     {
       "title": "Senior Software Engineer",
       "dateRange": "May 2022 - February 2023 (Promoted)",
-      "company": "GameOn Technologies",
-      "location": "Remote, San Francisco, CA",
+      "company": "ON Platform DBA. GameOn",
+      "location": "San Francisco, CA, Remote",
       "responsibilities": [
         "Developed a design system with native web components using Lit for a conversational AI chatbot product.",
         "Authored technical design documents for a new B2B customer portal supporting the AI chatbot.",
@@ -38,7 +51,7 @@
       "title": "Software Engineer",
       "dateRange": "February 2020 - April 2022",
       "company": "Bark Technologies",
-      "location": "Remote, Atlanta, GA",
+      "location": "Atlanta, GA, Remote",
       "responsibilities": [
         "Maintained and integrated Router Limits technologies after acquisition.",
         "Migrated front-end pages to a new UI kit and took ownership of Bark React Native app development."
@@ -85,8 +98,8 @@
     }
   ],
   "skills": {
-    "Computer_Science": "Excellent object-oriented programming background. Passionate for great UX. Experienced with <span class=\"feature\">JavaScript</span>, <span class=\"feature\">Typescript</span>, <span class=\"feature\">React</span>, <span class=\"feature\">HTML</span>, <span class=\"feature\">SASS</span>, <span class=\"feature\">Firebase</span>, <span class=\"feature\">AWS</span>, <span class=\"feature\">Docker</span>, <span class=\"feature\">Node</span>, <span class=\"feature\">Angular</span>, <span class=\"feature\">mySQL</span>, <span class=\"feature\">Lit</span>, <span class=\"feature\">Storybook</span>, <span class=\"feature\">Vite</span>, <span class=\"feature\">Netlify</span>, <span class=\"feature\">Figma</span>. Comfortable with <span class=\"feature\">React Native</span>, <span class=\"feature\">Webpack</span>, <span class=\"feature\">Java</span>, <span class=\"feature\">Python</span>, <span class=\"feature\">Ruby</span>, <span class=\"feature\">C#</span>, <span class=\"feature\">Postgres</span>, <span class=\"feature\">Xamarin</span>. Currently working on side projects developing Android and iOS apps using <span class=\"feature\">Flutter</span> and <span class=\"feature\">Firebase</span>.",
-    "Personal_and_Communication": "Autonomous self-starter. Consistent positive <span class=\"feature\">'Let's do it!' attitude</span>. Have worked on a distributed team for the last four years. Experienced in handling technical customer support, collections, and physical transactions. Developed communication skills through years of management experience in the workplace."
+    "Computer_Science": "Excellent object-oriented programming background. Passionate for great UX. Experienced with <span class=\"feature\">JavaScript</span>, <span class=\"feature\">Typescript</span>, <span class=\"feature\">React</span>, <span class=\"feature\">Angular</span>, <span class=\"feature\">Lit</span>, <span class=\"feature\">HTML</span>, <span class=\"feature\">SASS</span>, <span class=\"feature\">Node</span>, <span class=\"feature\">mySQL</span>, <span class=\"feature\">Postgres</span>, <span class=\"feature\">Firebase</span>, <span class=\"feature\">AWS</span>, <span class=\"feature\">Docker</span>, <span class=\"feature\">Netlify</span>, <span class=\"feature\">Vite</span>, <span class=\"feature\">Webpack</span>, <span class=\"feature\">Storybook</span>, <span class=\"feature\">Figma</span>. Comfortable with <span class=\"feature\">React Native</span>, <span class=\"feature\">Xamarin</span>, <span class=\"feature\">Flutter</span>, <span class=\"feature\">C#</span>, <span class=\"feature\">Java</span>, <span class=\"feature\">Python</span>, <span class=\"feature\">Ruby</span>. Agentic AI experience includes <span class=\"feature\">Github Copilot Edits</span> and <span class=\"feature\">Codeium Windsurf</span>. Strong interest in emerging AI trends, including <span class=\"feature\">ChatGPT Pro</span>, running open-source LLMs via <span class=\"feature\">Ollama</span>, and the potential of tools like <span class=\"feature\">Bolt.new</span> to generate fully functional web applications from a single prompt, streamlining end-to-end development.",
+    "Personal_and_Communication": "Autonomous self-starter. Consistent positive <span class=\"feature\">'Let's do it!' attitude</span>. Have worked on a distributed team for the last five years. Experienced in handling technical customer support, collections, and physical transactions. Developed communication skills through years of management experience in the workplace."
   },
   "education": [
     {
