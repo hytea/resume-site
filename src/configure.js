@@ -1,7 +1,7 @@
 // Description: This file contains the configuration for the resume page.
 //
 document.addEventListener('DOMContentLoaded', function () {
-  fetch('../public/config.json')
+  fetch('/config.json')
     .then((response) => response.json())
     .then((data) => {
       const experienceSection = document.getElementById('experience-section');

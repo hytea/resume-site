@@ -157,7 +157,7 @@ window.generatePDF = async () => {
   };
 
   // Fetch config.json
-  const response = await fetch('../public/config.json');
+  const response = await fetch('/config.json');
   const data = await response.json();
 
   // Add Header
