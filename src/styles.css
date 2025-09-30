@@ -21,6 +21,64 @@ body {
   align-items: center;
   color: #fff;
   text-align: center;
+  position: relative;
+  overflow: hidden;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 0;
+}
+
+.hero .glass {
+  position: relative;
+  z-index: 1;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  min-height: 1.2em;
+}
+
+.hero .lead {
+  font-size: 1.5rem;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+#years-of-experience {
+  display: inline-block;
+  font-weight: 700;
+  color: #ffd700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  font-size: 1.8rem;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    background-attachment: scroll;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero .lead {
+    font-size: 1.2rem;
+  }
+
+  #years-of-experience {
+    font-size: 1.4rem;
+  }
 }
 
 .glass {
@@ -56,6 +114,34 @@ body {
 
 .resume-item {
   margin: 0 0 20px 0;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.resume-item.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.responsibilities li {
+  opacity: 0;
+  transform: translateX(-20px);
+}
+
+.responsibilities li.stagger-in {
+  animation: slideInLeft 0.5s ease forwards;
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 .resume-section {
@@ -140,6 +226,152 @@ ul li {
   margin-left: 10px;
   top: 2.5px;
   position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.download-icon {
+  width: 18px;
+  height: 18px;
+}
+
+/* Download Resume Container */
+.download-resume-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  position: relative;
+}
+
+/* PDF Tech Badge */
+.pdf-tech-badge {
+  position: relative;
+  cursor: help;
+}
+
+.badge-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+  border-radius: 50%;
+  font-size: 16px;
+  box-shadow: 0 2px 8px rgba(255, 215, 0, 0.4);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+/* Border chase animation */
+.badge-icon::before {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  padding: 3px;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0%,
+    transparent 70%,
+    #ffd700 80%,
+    #ffed4e 90%,
+    transparent 100%
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: borderChase 3s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes borderChase {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.pdf-tech-badge:hover .badge-icon {
+  transform: rotate(20deg) scale(1.2);
+  box-shadow: 0 4px 12px rgba(255, 215, 0, 0.6);
+}
+
+.pdf-tech-badge:hover .badge-icon::before {
+  animation-play-state: paused;
+}
+
+/* Stop animation once tooltip has been viewed */
+.pdf-tech-badge.tooltip-viewed .badge-icon::before {
+  animation: none;
+}
+
+/* Tooltip */
+.tooltip-content {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  background: white;
+  border: 2px solid var(--primary-color);
+  border-radius: 12px;
+  padding: 1rem;
+  width: 320px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+  z-index: 1000;
+  pointer-events: none;
+}
+
+.pdf-tech-badge:hover .tooltip-content {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.tooltip-content::before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  right: 20px;
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 8px solid var(--primary-color);
+}
+
+.tooltip-content strong {
+  display: block;
+  color: var(--primary-color);
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.tooltip-content p {
+  color: var(--text-color);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-bottom: 0.75rem;
+}
+
+.tooltip-link {
+  display: inline-block;
+  color: var(--primary-color);
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.tooltip-link:hover {
+  color: var(--primary-color-hover);
+  transform: translateX(3px);
 }
 
 .navbar-nav .nav-item .nav-link {
@@ -158,13 +390,41 @@ ul li {
   color: white;
 }
 
-/* Left nav links adjustments */
-aside ul.nav a.nav-link {
-  color: var(--primary-color);
+/* Left nav links adjustments - Minimal & Clean */
+.side-nav-sticky {
+  position: sticky;
+  top: 70px;
+  height: fit-content;
+  max-height: calc(100vh - 90px);
+  overflow-y: auto;
 }
 
-aside ul.nav a.nav-link:hover {
-  color: var(--primary-color-hover);
+.side-nav {
+  padding: 1.5rem 0;
+}
+
+.side-nav-link {
+  display: block;
+  padding: 0.75rem 1rem !important;
+  margin: 0.125rem 0;
+  color: var(--secondary-text-color) !important;
+  transition: color 0.2s ease, border-color 0.2s ease;
+  position: relative;
+  font-weight: 400;
+  font-size: 0.95rem;
+  border-left: 3px solid transparent;
+  text-decoration: none;
+}
+
+.side-nav-link:hover {
+  color: var(--text-color) !important;
+  border-left-color: #d0d0d0;
+}
+
+.side-nav-link.active {
+  color: var(--primary-color) !important;
+  font-weight: 600;
+  border-left-color: var(--primary-color);
 }
 
 #on-platform-name {
@@ -447,6 +707,21 @@ aside ul.nav a.nav-link:hover {
   border-radius: 10px;
 }
 
+/* Architecture Diagram Styling */
+.architecture-diagram {
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.arch-svg {
+  width: 100%;
+  height: auto;
+  max-width: 400px;
+}
+
 @media (max-width: 576px) {
   .portfolio-grid {
     display: block;
@@ -474,5 +749,216 @@ aside ul.nav a.nav-link:hover {
     height: auto;
     padding: 10px;
     margin-top: 10px;
+  }
+}
+
+/* Contact Section Styles */
+#contact {
+  position: relative;
+}
+
+#contact h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text-color);
+}
+
+#contact .lead {
+  color: var(--secondary-text-color);
+  font-size: 1.1rem;
+}
+
+/* Primary Contact Buttons */
+.primary-contact-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-primary-contact {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  min-width: 180px;
+}
+
+.btn-primary-contact:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+}
+
+.btn-primary-contact:active {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-email {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.btn-email:hover {
+  background: linear-gradient(135deg, #5568d3 0%, #61398e 100%);
+  color: white;
+}
+
+.btn-phone {
+  background: linear-gradient(135deg, var(--primary-color) 0%, #2b4926 100%);
+  color: white;
+}
+
+.btn-phone:hover {
+  background: linear-gradient(135deg, #2b4926 0%, #1a2e17 100%);
+  color: white;
+}
+
+.contact-icon {
+  width: 24px;
+  height: 24px;
+}
+
+/* Social Media Buttons */
+.social-links {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.social-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.social-btn svg {
+  width: 30px;
+  height: 30px;
+  position: relative;
+  z-index: 2;
+  transition: transform 0.3s ease;
+}
+
+.social-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+  z-index: 1;
+}
+
+.social-btn:hover {
+  transform: translateY(-5px) scale(1.1);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+}
+
+.social-btn:hover svg {
+  transform: scale(1.1);
+}
+
+.social-btn:active {
+  transform: translateY(-3px) scale(1.05);
+}
+
+/* LinkedIn Styling */
+.social-btn-linkedin {
+  background-color: #0077b5;
+  color: white;
+}
+
+.social-btn-linkedin::before {
+  background: linear-gradient(135deg, #0077b5 0%, #00a0dc 100%);
+}
+
+.social-btn-linkedin:hover {
+  background-color: #006399;
+}
+
+/* GitHub Styling */
+.social-btn-github {
+  background-color: #333;
+  color: white;
+}
+
+.social-btn-github::before {
+  background: linear-gradient(135deg, #24292e 0%, #444 100%);
+}
+
+.social-btn-github:hover {
+  background-color: #24292e;
+}
+
+/* Twitter/X Styling */
+.social-btn-twitter {
+  background-color: #000;
+  color: white;
+}
+
+.social-btn-twitter::before {
+  background: linear-gradient(135deg, #000 0%, #333 100%);
+}
+
+.social-btn-twitter:hover {
+  background-color: #14171a;
+}
+
+/* Responsive Contact Section */
+@media (max-width: 768px) {
+  .primary-contact-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn-primary-contact {
+    width: 100%;
+    min-width: auto;
+  }
+
+  .social-links {
+    gap: 1rem;
+  }
+
+  .social-btn {
+    width: 50px;
+    height: 50px;
+  }
+
+  .social-btn svg {
+    width: 25px;
+    height: 25px;
+  }
+
+  #contact h2 {
+    font-size: 2rem;
+  }
+
+  #contact .lead {
+    font-size: 1rem;
   }
 }
