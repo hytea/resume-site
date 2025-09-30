@@ -6,6 +6,7 @@
     "website": "Andrew.Hyte.us"
   },
   "outputFileName": "Andrew-Hyte-Resume.pdf",
+  "summary": "Senior Software Engineer with proven expertise in applied AI and modern frontend architectures. Applied AI Hackathon winner, demonstrating ability to rapidly build functional AI-powered solutions with <span class=\"feature\">MCP servers</span> and conversational interfaces. Track record of taking concepts from prototype to production using <span class=\"feature\">Bolt.new</span> and <span class=\"feature\">Lovable</span> for rapid iteration, then integrating into enterprise systems. Specializes in solving complex architectural challenges, including implementing <span class=\"feature\">MicroFrontend solutions</span> to unify disparate technology stacks.",
   "experience": [
     {
       "title": "Senior Software Engineer",
@@ -13,11 +14,11 @@
       "company": "Fishbowl Inventory",
       "location": "Orem, UT, Remote",
       "responsibilities": [
-        "Built Netlify-hosted MFE POC proving path for Angular product integration into a React-based main product.",
+        "Architected and implemented MicroFrontend solution using SingleSPA to unify multiple products built in different JS technologies (React, Angular), eliminating dependency on legacy product architecture and enabling independent deployment.",
+        "Won company-wide Applied AI Hackathon as team lead and idea creator, building conversational agent with MCP server and chat interface that automated common user workflows in 2 days.",
         "Unified the UI of multiple products by creating a native web component Lit-based design system.",
         "Led 20-member pod as the Scrum Master to manage sprint planning and execution.",
-        "Scoped projects with Product & Engineering directors for 1-week sprints.",
-        "Led Codeium Windsurf agentic AI adoption, secured Team licensing, and trained 30+ engineers to enhance engineering and QA productivity."
+        "Served as team admin identifying and championing adoption of cutting-edge AI coding tools, leading multiple iterations from Codeium Windsurf to Claude Code, accelerating productivity across engineering department."
       ]
     },
     {
@@ -44,7 +45,7 @@
         "Developed a design system with native web components using Lit for a conversational AI chatbot product.",
         "Authored technical design documents for a new B2B customer portal supporting the AI chatbot.",
         "Built MVP of the B2B customer portal and created tickets for future enhancements.",
-        "Proactively implemented a user feedback system using Netlify forms, Zapier, and Linear APIs, demonstrating ownership and initiative in improving the product."
+        "Proactively implemented a user feedback system using Netlify forms, Zapier, and Linear APIs to improve product development cycle."
       ]
     },
     {
@@ -86,20 +87,11 @@
         "Developed a missionary chat application for Mormon.org with Java Spring and Oracle SQL backend.",
         "Worked in an Agile Scrum environment using Jira for sprint management."
       ]
-    },
-    {
-      "title": "Product Marketing Intern",
-      "dateRange": "Sept 2013 - Dec 2013",
-      "company": "Go GungHo Inc.",
-      "location": "Provo, UT",
-      "responsibilities": [
-        "Developed a Java program using the Twitter API to contact prospective customers."
-      ]
     }
   ],
   "skills": {
-    "Computer_Science": "Excellent object-oriented programming background. Passionate for great UX. Experienced with <span class=\"feature\">JavaScript</span>, <span class=\"feature\">Typescript</span>, <span class=\"feature\">React</span>, <span class=\"feature\">Angular</span>, <span class=\"feature\">Lit</span>, <span class=\"feature\">HTML</span>, <span class=\"feature\">SASS</span>, <span class=\"feature\">Node</span>, <span class=\"feature\">mySQL</span>, <span class=\"feature\">Postgres</span>, <span class=\"feature\">Firebase</span>, <span class=\"feature\">AWS</span>, <span class=\"feature\">Docker</span>, <span class=\"feature\">Netlify</span>, <span class=\"feature\">Vite</span>, <span class=\"feature\">Webpack</span>, <span class=\"feature\">Storybook</span>, <span class=\"feature\">Figma</span>. Comfortable with <span class=\"feature\">React Native</span>, <span class=\"feature\">Xamarin</span>, <span class=\"feature\">Flutter</span>, <span class=\"feature\">C#</span>, <span class=\"feature\">Java</span>, <span class=\"feature\">Python</span>, <span class=\"feature\">Ruby</span>. Agentic AI experience includes <span class=\"feature\">Github Copilot Edits</span> and <span class=\"feature\">Codeium Windsurf</span>. Strong interest in emerging AI trends, including <span class=\"feature\">ChatGPT Pro</span>, running open-source LLMs via <span class=\"feature\">Ollama</span>, and the potential of tools like <span class=\"feature\">Bolt.new</span> to generate fully functional web applications from a single prompt, streamlining end-to-end development.",
-    "Personal_and_Communication": "Autonomous self-starter. Consistent positive <span class=\"feature\">'Let's do it!' attitude</span>. Have worked on a distributed team for the last five years. Experienced in handling technical customer support, collections, and physical transactions. Developed communication skills through years of management experience in the workplace."
+    "Computer_Science": "Excellent object-oriented programming background. Passionate for great UX. Experienced with <span class=\"feature\">JavaScript</span>, <span class=\"feature\">Typescript</span>, <span class=\"feature\">React</span>, <span class=\"feature\">Angular</span>, <span class=\"feature\">Lit</span>, <span class=\"feature\">HTML</span>, <span class=\"feature\">SASS</span>, <span class=\"feature\">Node</span>, <span class=\"feature\">mySQL</span>, <span class=\"feature\">Postgres</span>, <span class=\"feature\">Firebase</span>, <span class=\"feature\">AWS</span>, <span class=\"feature\">Docker</span>, <span class=\"feature\">Netlify</span>, <span class=\"feature\">Vite</span>, <span class=\"feature\">Webpack</span>, <span class=\"feature\">Storybook</span>, <span class=\"feature\">Figma</span>, <span class=\"feature\">SingleSPA</span>. Comfortable with <span class=\"feature\">React Native</span>, <span class=\"feature\">Xamarin</span>, <span class=\"feature\">Flutter</span>, <span class=\"feature\">C#</span>, <span class=\"feature\">Java</span>, <span class=\"feature\">Python</span>, <span class=\"feature\">Ruby</span>. Applied AI expertise with <span class=\"feature\">Claude Code</span>, <span class=\"feature\">Codeium Windsurf</span>, <span class=\"feature\">Model Context Protocol (MCP)</span>, <span class=\"feature\">Bolt.new</span>, and <span class=\"feature\">Lovable</span> for rapid concept-to-prototype-to-production development. Proven track record taking AI-assisted prototypes and integrating them into production systems.",
+    "Personal_and_Communication": "Autonomous self-starter. Consistent positive <span class=\"feature\">'Let's do it!' attitude</span>. Have worked on distributed teams for over five years. Experienced in handling technical customer support, collections, and physical transactions. Developed communication skills through years of management experience in the workplace."
   },
   "education": [
     {
