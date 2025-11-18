@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume Site Configuration Editor</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      padding: 2rem 0;
+    }
+    .editor-container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 15px;
+      padding: 2rem;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+    }
+    .section-header {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 1rem;
+      border-radius: 8px;
+      margin: 2rem 0 1rem;
+    }
+    .section-header:first-of-type {
+      margin-top: 0;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border: none;
+    }
+    .btn-primary:hover {
+      background: linear-gradient(135deg, #5568d3 0%, #653a8b 100%);
+    }
+    .array-item {
+      background: #f8f9fa;
+      padding: 1rem;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+      border-left: 4px solid #667eea;
+    }
+    .array-controls {
+      display: flex;
+      gap: 0.5rem;
+      margin-top: 0.5rem;
+    }
+    .help-text {
+      font-size: 0.875rem;
+      color: #6c757d;
+      margin-top: 0.25rem;
+    }
+    .color-preview {
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+      border: 2px solid #dee2e6;
+      display: inline-block;
+      vertical-align: middle;
+      margin-left: 10px;
+    }
+    .sticky-actions {
+      position: sticky;
+      bottom: 0;
+      background: white;
+      padding: 1.5rem 0;
+      border-top: 2px solid #dee2e6;
+      margin-top: 2rem;
+      z-index: 100;
+    }
+  </style>
+</head>
+<body>
+  <div class="editor-container">
+    <h1 class="text-center mb-4">Resume Site Configuration Editor</h1>
+    <p class="text-center text-muted mb-4">Customize your resume website by filling out the form below, then download your config.json file.</p>
+
+    <form id="config-form">
+      <!-- Personal Information -->
+      <div class="section-header">
+        <h3>Personal Information</h3>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Full Name</label>
+        <input type="text" class="form-control" name="personal.name" required>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Professional Title</label>
+        <input type="text" class="form-control" name="personal.title" placeholder="e.g., Full Stack Web Developer">
+        <div class="help-text">This appears in the hero section</div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label class="form-label">Email</label>
+          <input type="email" class="form-control" name="personal.email" required>
+        </div>
+        <div class="col-md-6 mb-3">
+          <label class="form-label">Phone</label>
+          <input type="tel" class="form-control" name="personal.phone">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label class="form-label">Website</label>
+          <input type="text" class="form-control" name="personal.website">
+        </div>
+        <div class="col-md-6 mb-3">
+          <label class="form-label">Location</label>
+          <input type="text" class="form-control" name="personal.location" placeholder="City, State">
+        </div>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Years of Experience</label>
+        <input type="number" class="form-control" name="personal.yearsOfExperience" min="0">
+      </div>
+
+      <!-- Site Metadata -->
+      <div class="section-header">
+        <h3>Site Metadata (SEO)</h3>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Site Title</label>
+        <input type="text" class="form-control" name="siteMetadata.title">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Site Description</label>
+        <textarea class="form-control" name="siteMetadata.description" rows="3"></textarea>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Keywords (comma-separated)</label>
+        <textarea class="form-control" name="siteMetadata.keywords" rows="2"></textarea>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">OG Image Path</label>
+        <input type="text" class="form-control" name="siteMetadata.ogImage" placeholder="./public/your-image.png">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Website URL</label>
+        <input type="url" class="form-control" name="siteMetadata.ogUrl">
+      </div>
+
+      <!-- Hero Section -->
+      <div class="section-header">
+        <h3>Hero Section</h3>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Hero Title</label>
+        <input type="text" class="form-control" name="hero.title">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Hero Subtitle</label>
+        <input type="text" class="form-control" name="hero.subtitle" placeholder="Use {years} for dynamic years calculation">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Background Image</label>
+        <input type="text" class="form-control" name="hero.backgroundImage" placeholder="./public/your-background.jpg">
+      </div>
+
+      <!-- Bio Section -->
+      <div class="section-header">
+        <h3>Bio Section</h3>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Bio Title</label>
+        <input type="text" class="form-control" name="bio.title">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Bio Image</label>
+        <input type="text" class="form-control" name="bio.image" placeholder="./public/profile-photo.png">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Bio Paragraphs</label>
+        <div id="bio-paragraphs-container"></div>
+        <button type="button" class="btn btn-sm btn-outline-primary" onclick="addBioParagraph()">+ Add Paragraph</button>
+      </div>
+
+      <!-- Portfolio -->
+      <div class="section-header">
+        <h3>Portfolio Items</h3>
+      </div>
+      <div id="portfolio-container"></div>
+      <button type="button" class="btn btn-sm btn-outline-primary" onclick="addPortfolioItem()">+ Add Portfolio Item</button>
+
+      <!-- Social Links -->
+      <div class="section-header">
+        <h3>Social Links</h3>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">LinkedIn URL</label>
+        <input type="url" class="form-control" name="socialLinks.linkedin">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">GitHub URL</label>
+        <input type="url" class="form-control" name="socialLinks.github">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Twitter/X URL</label>
+        <input type="url" class="form-control" name="socialLinks.twitter">
+      </div>
+
+      <!-- Contact Section -->
+      <div class="section-header">
+        <h3>Contact Section</h3>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Contact Title</label>
+        <input type="text" class="form-control" name="contact.title">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Contact Subtitle</label>
+        <input type="text" class="form-control" name="contact.subtitle">
+      </div>
+      <div class="form-check mb-2">
+        <input class="form-check-input" type="checkbox" name="contact.showEmail" id="showEmail" checked>
+        <label class="form-check-label" for="showEmail">Show Email Button</label>
+      </div>
+      <div class="form-check mb-3">
+        <input class="form-check-input" type="checkbox" name="contact.showPhone" id="showPhone" checked>
+        <label class="form-check-label" for="showPhone">Show Phone Button</label>
+      </div>
+
+      <!-- Theme Colors -->
+      <div class="section-header">
+        <h3>Theme Colors</h3>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Primary Color</label>
+        <div class="d-flex align-items-center">
+          <input type="color" class="form-control form-control-color" name="theme.primaryColor" value="#667eea">
+          <span class="color-preview ms-2" id="primary-preview"></span>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Secondary Color</label>
+        <div class="d-flex align-items-center">
+          <input type="color" class="form-control form-control-color" name="theme.secondaryColor" value="#764ba2">
+          <span class="color-preview ms-2" id="secondary-preview"></span>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Accent Color</label>
+        <div class="d-flex align-items-center">
+          <input type="color" class="form-control form-control-color" name="theme.accentColor" value="#3e7135">
+          <span class="color-preview ms-2" id="accent-preview"></span>
+        </div>
+      </div>
+
+      <!-- Analytics -->
+      <div class="section-header">
+        <h3>Analytics</h3>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Google Analytics ID</label>
+        <input type="text" class="form-control" name="analytics.googleAnalyticsId" placeholder="G-XXXXXXXXXX">
+        <div class="help-text">Leave empty if you don't want analytics</div>
+      </div>
+
+      <!-- Resume Summary -->
+      <div class="section-header">
+        <h3>Resume Summary</h3>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Professional Summary</label>
+        <textarea class="form-control" name="summary" rows="4"></textarea>
+        <div class="help-text">You can use HTML tags like &lt;span class="feature"&gt;text&lt;/span&gt; to highlight key skills</div>
+      </div>
+
+      <!-- PDF Output -->
+      <div class="mb-3">
+        <label class="form-label">PDF File Name</label>
+        <input type="text" class="form-control" name="outputFileName" placeholder="Your-Name-Resume.pdf">
+      </div>
+
+      <!-- Sticky Action Buttons -->
+      <div class="sticky-actions">
+        <div class="d-flex gap-3 justify-content-center">
+          <button type="button" class="btn btn-outline-secondary" onclick="loadExampleConfig()">Load Example</button>
+          <button type="button" class="btn btn-outline-secondary" onclick="loadFromFile()">Import config.json</button>
+          <button type="submit" class="btn btn-primary btn-lg">Download config.json</button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <input type="file" id="file-input" accept=".json" style="display: none;">
+
+  <script>
+    let bioParagraphCount = 0;
+    let portfolioItemCount = 0;
+
+    function addBioParagraph(value = '') {
+      const container = document.getElementById('bio-paragraphs-container');
+      const index = bioParagraphCount++;
+      const div = document.createElement('div');
+      div.className = 'mb-2';
+      div.innerHTML = `
+        <textarea class="form-control" name="bio.paragraphs.${index}" rows="3" placeholder="Bio paragraph ${index + 1}">${value}</textarea>
+        <button type="button" class="btn btn-sm btn-outline-danger mt-1" onclick="this.parentElement.remove()">Remove</button>
+      `;
+      container.appendChild(div);
+    }
+
+    function addPortfolioItem(item = {}) {
+      const container = document.getElementById('portfolio-container');
+      const index = portfolioItemCount++;
+      const div = document.createElement('div');
+      div.className = 'array-item';
+      div.innerHTML = `
+        <h5>Portfolio Item ${index + 1}</h5>
+        <div class="mb-2">
+          <label class="form-label">Title</label>
+          <input type="text" class="form-control" name="portfolio.${index}.title" value="${item.title || ''}">
+        </div>
+        <div class="mb-2">
+          <label class="form-label">URL</label>
+          <input type="url" class="form-control" name="portfolio.${index}.url" value="${item.url || ''}">
+        </div>
+        <div class="mb-2">
+          <label class="form-label">Image URL</label>
+          <input type="text" class="form-control" name="portfolio.${index}.image" value="${item.image || ''}" placeholder="URL or 'architecture-diagram'">
+        </div>
+        <div class="mb-2">
+          <label class="form-label">Description</label>
+          <textarea class="form-control" name="portfolio.${index}.description" rows="3">${item.description || ''}</textarea>
+        </div>
+        <button type="button" class="btn btn-sm btn-outline-danger" onclick="this.parentElement.remove()">Remove Item</button>
+      `;
+      container.appendChild(div);
+    }
+
+    function setNestedValue(obj, path, value) {
+      const parts = path.split('.');
+      let current = obj;
+
+      for (let i = 0; i < parts.length - 1; i++) {
+        const part = parts[i];
+        if (!current[part]) {
+          current[part] = isNaN(parts[i + 1]) ? {} : [];
+        }
+        current = current[part];
+      }
+
+      const lastPart = parts[parts.length - 1];
+      if (Array.isArray(current)) {
+        current[parseInt(lastPart)] = value;
+      } else {
+        current[lastPart] = value;
+      }
+    }
+
+    function getNestedValue(obj, path) {
+      return path.split('.').reduce((current, part) => current?.[part], obj);
+    }
+
+    document.getElementById('config-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const config = {
+        personal: {},
+        siteMetadata: {},
+        hero: { showYearsCalculation: true },
+        bio: { paragraphs: [] },
+        portfolio: [],
+        socialLinks: {},
+        analytics: {},
+        theme: {},
+        navigation: [
+          { label: "Bio", href: "#bio" },
+          { label: "Portfolio", href: "#portfolio" },
+          { label: "Resume", href: "#resume" },
+          { label: "Contact", href: "#contact" }
+        ],
+        contact: {},
+        experience: [],
+        skills: {},
+        education: []
+      };
+
+      const formData = new FormData(e.target);
+
+      for (let [key, value] of formData.entries()) {
+        if (key.includes('.paragraphs.')) {
+          const index = parseInt(key.split('.').pop());
+          if (value.trim()) {
+            config.bio.paragraphs[index] = value;
+          }
+        } else if (key.includes('.portfolio.')) {
+          const match = key.match(/portfolio\.(\d+)\.(.+)/);
+          if (match) {
+            const [, index, field] = match;
+            if (!config.portfolio[index]) {
+              config.portfolio[index] = {};
+            }
+            config.portfolio[index][field] = value;
+          }
+        } else if (key.startsWith('contact.show')) {
+          const field = key.split('.')[1];
+          config.contact[field] = e.target.elements[key].checked;
+        } else {
+          setNestedValue(config, key, value);
+        }
+      }
+
+      // Clean up bio paragraphs array (remove empty slots)
+      config.bio.paragraphs = config.bio.paragraphs.filter(p => p);
+
+      // Clean up portfolio array (remove empty slots)
+      config.portfolio = config.portfolio.filter(item => item && item.title);
+
+      // Download the config file
+      const blob = new Blob([JSON.stringify(config, null, 2)], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'config.json';
+      a.click();
+      URL.revokeObjectURL(url);
+
+      alert('Config file downloaded! Replace your public/config.json with this file.');
+    });
+
+    function loadExampleConfig() {
+      fetch('/config.json')
+        .then(res => res.json())
+        .then(data => {
+          populateForm(data);
+        })
+        .catch(err => {
+          alert('Could not load example config. Make sure you are running this from the project directory.');
+        });
+    }
+
+    function loadFromFile() {
+      const input = document.getElementById('file-input');
+      input.onchange = function(e) {
+        const file = e.target.files[0];
+        if (file) {
+          const reader = new FileReader();
+          reader.onload = function(e) {
+            try {
+              const data = JSON.parse(e.target.result);
+              populateForm(data);
+            } catch (err) {
+              alert('Invalid JSON file');
+            }
+          };
+          reader.readAsText(file);
+        }
+      };
+      input.click();
+    }
+
+    function populateForm(data) {
+      // Clear existing dynamic fields
+      document.getElementById('bio-paragraphs-container').innerHTML = '';
+      document.getElementById('portfolio-container').innerHTML = '';
+      bioParagraphCount = 0;
+      portfolioItemCount = 0;
+
+      // Populate form fields
+      Object.keys(data).forEach(key => {
+        if (key === 'bio' && data.bio.paragraphs) {
+          data.bio.paragraphs.forEach(para => addBioParagraph(para));
+          const titleInput = document.querySelector('[name="bio.title"]');
+          const imageInput = document.querySelector('[name="bio.image"]');
+          if (titleInput) titleInput.value = data.bio.title || '';
+          if (imageInput) imageInput.value = data.bio.image || '';
+        } else if (key === 'portfolio') {
+          data.portfolio.forEach(item => addPortfolioItem(item));
+        } else if (typeof data[key] === 'object' && !Array.isArray(data[key])) {
+          Object.keys(data[key]).forEach(subKey => {
+            const input = document.querySelector(`[name="${key}.${subKey}"]`);
+            if (input) {
+              if (input.type === 'checkbox') {
+                input.checked = data[key][subKey];
+              } else {
+                input.value = data[key][subKey] || '';
+              }
+            }
+          });
+        } else if (typeof data[key] === 'string') {
+          const input = document.querySelector(`[name="${key}"]`);
+          if (input) input.value = data[key];
+        }
+      });
+    }
+
+    // Initialize with one bio paragraph and one portfolio item
+    addBioParagraph();
+    addPortfolioItem();
+
+    // Color preview updates
+    document.querySelector('[name="theme.primaryColor"]').addEventListener('input', function(e) {
+      document.getElementById('primary-preview').style.backgroundColor = e.target.value;
+    });
+    document.querySelector('[name="theme.secondaryColor"]').addEventListener('input', function(e) {
+      document.getElementById('secondary-preview').style.backgroundColor = e.target.value;
+    });
+    document.querySelector('[name="theme.accentColor"]').addEventListener('input', function(e) {
+      document.getElementById('accent-preview').style.backgroundColor = e.target.value;
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,151 @@
+{
+  "personal": {
+    "name": "Alex Rivera",
+    "title": "UX/UI Designer & Creative Director",
+    "yearsOfExperience": 6,
+    "phone": "+1 555-0456",
+    "email": "alex@alexrivera.design",
+    "website": "alexrivera.design",
+    "location": "Brooklyn, NY"
+  },
+  "siteMetadata": {
+    "title": "Alex Rivera | UX/UI Designer",
+    "description": "UX/UI Designer and Creative Director specializing in user-centered design, brand identity, and digital experiences. 6 years of experience crafting beautiful, functional designs.",
+    "author": "Alex Rivera",
+    "keywords": "Alex Rivera, UX Designer, UI Designer, Creative Director, Graphic Design, Brand Identity, Figma, Adobe Creative Suite, User Experience, New York Designer",
+    "ogImage": "./public/alex-portfolio-preview.jpg",
+    "ogUrl": "https://alexrivera.design",
+    "twitterHandle": "@alexriveradesign"
+  },
+  "hero": {
+    "title": "Designing Experiences That Matter",
+    "subtitle": "UX/UI Designer with {years} years of creative passion",
+    "backgroundImage": "./public/creative-background.jpg",
+    "showYearsCalculation": true
+  },
+  "bio": {
+    "title": "About Alex",
+    "image": "./public/alex-headshot.jpg",
+    "imageAlt": "Photo of Alex Rivera in a creative workspace",
+    "paragraphs": [
+      "I'm a UX/UI Designer and Creative Director passionate about creating meaningful digital experiences. With 6 years in the industry, I've helped startups and established brands craft user-centered designs that drive engagement and deliver results.",
+      "My approach combines empathy with data—understanding user needs through research, then translating insights into beautiful, functional interfaces. I believe great design is invisible: it just works.",
+      "I specialize in end-to-end product design, from user research and wireframing to high-fidelity prototypes and design systems. My work has helped increase user engagement by up to 40% and conversion rates by 25%.",
+      "When I'm not designing, you'll find me exploring Brooklyn's art scene, experimenting with photography, or mentoring junior designers through Design Buddies."
+    ]
+  },
+  "portfolio": [
+    {
+      "title": "FinTech App Redesign",
+      "url": "https://www.behance.net/alexrivera/fintech-redesign",
+      "image": "./public/fintech-app.jpg",
+      "description": "Complete redesign of a mobile banking app, improving user flows and modernizing the visual design. Increased user satisfaction scores by 35% and reduced support tickets by 20%."
+    },
+    {
+      "title": "E-Commerce Brand Identity",
+      "url": "https://www.behance.net/alexrivera/ecommerce-brand",
+      "image": "./public/brand-identity.jpg",
+      "description": "Full brand identity system for a sustainable fashion e-commerce startup. Includes logo design, color palette, typography system, and brand guidelines."
+    },
+    {
+      "title": "Design System: Palette UI",
+      "url": "https://www.figma.com/@alexrivera/palette-ui",
+      "image": "./public/design-system.jpg",
+      "description": "Comprehensive design system with 50+ components, built in Figma with dark mode support. Used by 3 product teams to maintain consistency across platforms."
+    },
+    {
+      "title": "Food Delivery UX Research",
+      "url": "https://www.behance.net/alexrivera/ux-research",
+      "image": "./public/ux-research.jpg",
+      "description": "User research project uncovering pain points in food delivery apps. Led to 3 key product improvements that increased order completion by 15%."
+    }
+  ],
+  "socialLinks": {
+    "linkedin": "https://www.linkedin.com/in/alexrivera",
+    "github": "https://github.com/alexrivera",
+    "twitter": "https://x.com/alexriveradesign"
+  },
+  "analytics": {
+    "googleAnalyticsId": ""
+  },
+  "theme": {
+    "primaryColor": "#ec4899",
+    "secondaryColor": "#8b5cf6",
+    "accentColor": "#f59e0b"
+  },
+  "navigation": [
+    {"label": "About", "href": "#bio"},
+    {"label": "Work", "href": "#portfolio"},
+    {"label": "Experience", "href": "#resume"},
+    {"label": "Contact", "href": "#contact"}
+  ],
+  "contact": {
+    "title": "Let's Create Something Beautiful",
+    "subtitle": "Available for freelance projects and full-time opportunities",
+    "showEmail": true,
+    "showPhone": true
+  },
+  "outputFileName": "Alex-Rivera-Resume.pdf",
+  "summary": "Creative UX/UI Designer with 6 years of experience crafting user-centered digital experiences. Expertise in <span class=\"feature\">user research</span>, <span class=\"feature\">interaction design</span>, and <span class=\"feature\">design systems</span>. Proven track record of increasing user engagement and conversion through thoughtful, data-driven design. Passionate about accessibility and inclusive design practices.",
+  "experience": [
+    {
+      "title": "Senior UX/UI Designer",
+      "dateRange": "March 2022 - Present",
+      "company": "InnovateTech",
+      "location": "New York, NY",
+      "responsibilities": [
+        "Lead design for B2B SaaS platform serving 10,000+ users across enterprise clients",
+        "Conduct user research including interviews, usability testing, and A/B testing",
+        "Design and maintain comprehensive design system used across 4 product teams",
+        "Collaborate with product managers and engineers to define product roadmap",
+        "Mentor 2 junior designers, conducting design critiques and career development"
+      ]
+    },
+    {
+      "title": "UX/UI Designer",
+      "dateRange": "June 2020 - February 2022",
+      "company": "CreativeStudio NYC",
+      "location": "New York, NY",
+      "responsibilities": [
+        "Designed web and mobile experiences for diverse clients in fintech, e-commerce, and healthcare",
+        "Created wireframes, prototypes, and high-fidelity mockups using Figma",
+        "Conducted user research and synthesized findings into actionable design insights",
+        "Collaborated with development teams to ensure design implementation quality",
+        "Delivered 15+ successful projects from concept to launch"
+      ]
+    },
+    {
+      "title": "Graphic & UI Designer",
+      "dateRange": "July 2018 - May 2020",
+      "company": "Digital Branding Co",
+      "location": "Brooklyn, NY",
+      "responsibilities": [
+        "Designed brand identities, marketing materials, and digital assets for startups",
+        "Created website designs and landing pages optimized for conversion",
+        "Managed multiple client projects simultaneously while meeting tight deadlines",
+        "Developed visual design skills across print and digital media"
+      ]
+    }
+  ],
+  "skills": {
+    "Design_Tools": "<span class=\"feature\">Figma</span>, <span class=\"feature\">Adobe XD</span>, Sketch, <span class=\"feature\">Adobe Creative Suite</span> (Photoshop, Illustrator, InDesign), Principle, Framer",
+    "UX_Methods": "<span class=\"feature\">User Research</span>, Personas & Journey Maps, Wireframing, Prototyping, <span class=\"feature\">Usability Testing</span>, A/B Testing, Information Architecture",
+    "UI_Skills": "<span class=\"feature\">Design Systems</span>, <span class=\"feature\">Responsive Design</span>, Mobile-First Design, <span class=\"feature\">Accessibility (WCAG)</span>, Micro-interactions, Animation",
+    "Technical": "HTML, CSS, Basic JavaScript, Understanding of React, Git for version control, Familiarity with design tokens",
+    "Soft_Skills": "<span class=\"feature\">Creative problem-solving</span>, cross-functional collaboration, presentation skills, <span class=\"feature\">design thinking</span>, mentorship"
+  },
+  "education": [
+    {
+      "degree": "B.F.A. Graphic Design",
+      "date": "May 2018",
+      "institution": "Pratt Institute",
+      "location": "Brooklyn, NY"
+    },
+    {
+      "degree": "UX Design Immersive Certificate",
+      "date": "August 2019",
+      "institution": "General Assembly",
+      "location": "New York, NY"
+    }
+  ]
+}

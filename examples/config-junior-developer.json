@@ -1,0 +1,130 @@
+{
+  "personal": {
+    "name": "Jane Smith",
+    "title": "Junior Full Stack Developer",
+    "yearsOfExperience": 2,
+    "phone": "+1 555-0123",
+    "email": "jane.smith@email.com",
+    "website": "janesmith.dev",
+    "location": "Austin, TX"
+  },
+  "siteMetadata": {
+    "title": "Jane Smith | Junior Full Stack Developer",
+    "description": "Junior Full Stack Developer passionate about building web applications with JavaScript, React, and Node.js. Recent coding bootcamp graduate with 2 years of professional experience.",
+    "author": "Jane Smith",
+    "keywords": "Jane Smith, Junior Developer, Full Stack Developer, Web Developer, JavaScript, React, Node.js, Portfolio, Austin, Texas, Coding Bootcamp Graduate",
+    "ogImage": "./public/jane-profile.jpg",
+    "ogUrl": "https://janesmith.dev",
+    "twitterHandle": "@janesmithdev"
+  },
+  "hero": {
+    "title": "Junior Full Stack Developer",
+    "subtitle": "Passionate about creating beautiful web experiences",
+    "backgroundImage": "./public/tech-background.jpg",
+    "showYearsCalculation": false
+  },
+  "bio": {
+    "title": "About Me",
+    "image": "./public/jane-profile.jpg",
+    "imageAlt": "Photo of Jane Smith smiling in a professional setting",
+    "paragraphs": [
+      "I'm a Junior Full Stack Developer with a passion for creating intuitive and engaging web applications. After completing an intensive coding bootcamp, I've been working professionally for 2 years, constantly learning and improving my skills.",
+      "I specialize in JavaScript technologies, with experience in React for frontend development and Node.js for backend services. I love solving problems, learning new technologies, and collaborating with teams to build amazing products.",
+      "When I'm not coding, you can find me contributing to open source projects, reading tech blogs, or enjoying the Austin food scene. I'm always excited to take on new challenges and grow as a developer!"
+    ]
+  },
+  "portfolio": [
+    {
+      "title": "Task Management App",
+      "url": "https://github.com/janesmith/task-app",
+      "image": "./public/task-app-screenshot.png",
+      "description": "A full-stack task management application built with React, Node.js, and MongoDB. Features include user authentication, real-time updates, and a clean, intuitive UI."
+    },
+    {
+      "title": "Weather Dashboard",
+      "url": "https://github.com/janesmith/weather-dashboard",
+      "image": "./public/weather-screenshot.png",
+      "description": "An interactive weather dashboard that fetches data from multiple APIs and displays current conditions and forecasts. Built with React and styled with Tailwind CSS."
+    },
+    {
+      "title": "Personal Blog",
+      "url": "https://jane-dev-blog.netlify.app",
+      "image": "./public/blog-screenshot.png",
+      "description": "A personal blog built with Gatsby and hosted on Netlify. I write about my learning journey, tech tips, and project walkthroughs."
+    }
+  ],
+  "socialLinks": {
+    "linkedin": "https://www.linkedin.com/in/janesmith",
+    "github": "https://github.com/janesmith",
+    "twitter": "https://x.com/janesmithdev"
+  },
+  "analytics": {
+    "googleAnalyticsId": ""
+  },
+  "theme": {
+    "primaryColor": "#3b82f6",
+    "secondaryColor": "#8b5cf6",
+    "accentColor": "#10b981"
+  },
+  "navigation": [
+    {"label": "About", "href": "#bio"},
+    {"label": "Projects", "href": "#portfolio"},
+    {"label": "Resume", "href": "#resume"},
+    {"label": "Contact", "href": "#contact"}
+  ],
+  "contact": {
+    "title": "Let's Build Something Together",
+    "subtitle": "I'm always excited to discuss new opportunities and collaborate on interesting projects",
+    "showEmail": true,
+    "showPhone": true
+  },
+  "outputFileName": "Jane-Smith-Resume.pdf",
+  "summary": "Motivated Junior Full Stack Developer with a strong foundation in modern web technologies. Recent coding bootcamp graduate with 2 years of hands-on experience building responsive web applications. Proficient in <span class=\"feature\">JavaScript</span>, <span class=\"feature\">React</span>, and <span class=\"feature\">Node.js</span>. Quick learner with a passion for clean code and user-centered design.",
+  "experience": [
+    {
+      "title": "Junior Full Stack Developer",
+      "dateRange": "June 2023 - Present",
+      "company": "StartupXYZ",
+      "location": "Austin, TX",
+      "responsibilities": [
+        "Developed and maintained responsive web applications using React and Node.js",
+        "Collaborated with senior developers to implement new features and fix bugs",
+        "Wrote clean, maintainable code following best practices and team standards",
+        "Participated in code reviews and contributed to improving team processes",
+        "Integrated RESTful APIs and managed state with Redux"
+      ]
+    },
+    {
+      "title": "Web Developer Intern",
+      "dateRange": "January 2023 - May 2023",
+      "company": "Tech Solutions Inc",
+      "location": "Austin, TX",
+      "responsibilities": [
+        "Built responsive landing pages and components using HTML, CSS, and JavaScript",
+        "Assisted in migrating legacy jQuery code to modern React components",
+        "Collaborated with design team to implement pixel-perfect UIs",
+        "Learned agile development methodologies and participated in daily standups"
+      ]
+    }
+  ],
+  "skills": {
+    "Frontend": "<span class=\"feature\">JavaScript (ES6+)</span>, <span class=\"feature\">React</span>, <span class=\"feature\">HTML5</span>, <span class=\"feature\">CSS3</span>, <span class=\"feature\">Tailwind CSS</span>, Redux, Responsive Design, Accessibility (A11Y)",
+    "Backend": "<span class=\"feature\">Node.js</span>, <span class=\"feature\">Express</span>, RESTful APIs, MongoDB, PostgreSQL, Authentication (JWT)",
+    "Tools_and_Workflow": "<span class=\"feature\">Git</span>, <span class=\"feature\">GitHub</span>, VS Code, npm, Webpack, Vite, Postman, Chrome DevTools",
+    "Soft_Skills": "Quick learner, team collaboration, problem-solving, <span class=\"feature\">communication</span>, attention to detail"
+  },
+  "education": [
+    {
+      "degree": "Full Stack Web Development Certificate",
+      "date": "December 2022",
+      "institution": "Austin Coding Academy",
+      "location": "Austin, TX"
+    },
+    {
+      "degree": "B.A. Communications",
+      "date": "May 2020",
+      "institution": "University of Texas at Austin",
+      "location": "Austin, TX"
+    }
+  ]
+}

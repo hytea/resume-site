@@ -1,0 +1,113 @@
+{
+  "personal": {
+    "name": "John Doe",
+    "title": "Software Engineer",
+    "yearsOfExperience": 5,
+    "phone": "+1 555-0789",
+    "email": "john.doe@email.com",
+    "website": "johndoe.com",
+    "location": "Seattle, WA"
+  },
+  "siteMetadata": {
+    "title": "John Doe | Software Engineer",
+    "description": "Software Engineer with 5 years of experience building scalable web applications.",
+    "author": "John Doe",
+    "keywords": "John Doe, Software Engineer, Web Developer, Seattle",
+    "ogImage": "./public/profile.jpg",
+    "ogUrl": "https://johndoe.com",
+    "twitterHandle": ""
+  },
+  "hero": {
+    "title": "Software Engineer",
+    "subtitle": "Building reliable software solutions",
+    "backgroundImage": "",
+    "showYearsCalculation": false
+  },
+  "bio": {
+    "title": "About",
+    "image": "./public/profile.jpg",
+    "imageAlt": "Profile photo",
+    "paragraphs": [
+      "I'm a Software Engineer with 5 years of experience building web applications. I focus on writing clean, maintainable code and solving complex problems.",
+      "I enjoy working with modern technologies and continuously learning new skills to stay current in the field."
+    ]
+  },
+  "portfolio": [
+    {
+      "title": "Project One",
+      "url": "https://github.com/johndoe/project-one",
+      "image": "./public/project1.jpg",
+      "description": "A web application built with React and Node.js."
+    },
+    {
+      "title": "Project Two",
+      "url": "https://github.com/johndoe/project-two",
+      "image": "./public/project2.jpg",
+      "description": "An API service built with Python and FastAPI."
+    }
+  ],
+  "socialLinks": {
+    "linkedin": "https://www.linkedin.com/in/johndoe",
+    "github": "https://github.com/johndoe",
+    "twitter": ""
+  },
+  "analytics": {
+    "googleAnalyticsId": ""
+  },
+  "theme": {
+    "primaryColor": "#2563eb",
+    "secondaryColor": "#1e40af",
+    "accentColor": "#059669"
+  },
+  "navigation": [
+    {"label": "About", "href": "#bio"},
+    {"label": "Projects", "href": "#portfolio"},
+    {"label": "Resume", "href": "#resume"},
+    {"label": "Contact", "href": "#contact"}
+  ],
+  "contact": {
+    "title": "Get in Touch",
+    "subtitle": "Open to new opportunities",
+    "showEmail": true,
+    "showPhone": true
+  },
+  "outputFileName": "John-Doe-Resume.pdf",
+  "summary": "Software Engineer with 5 years of experience building web applications. Proficient in <span class=\"feature\">JavaScript</span>, <span class=\"feature\">Python</span>, and <span class=\"feature\">React</span>. Strong problem-solving skills and experience working in agile teams.",
+  "experience": [
+    {
+      "title": "Software Engineer",
+      "dateRange": "2021 - Present",
+      "company": "Tech Company",
+      "location": "Seattle, WA",
+      "responsibilities": [
+        "Develop and maintain web applications using React and Node.js",
+        "Collaborate with cross-functional teams to deliver features",
+        "Write unit tests and participate in code reviews",
+        "Debug and optimize application performance"
+      ]
+    },
+    {
+      "title": "Junior Developer",
+      "dateRange": "2019 - 2021",
+      "company": "Startup Inc",
+      "location": "Seattle, WA",
+      "responsibilities": [
+        "Built frontend components using React",
+        "Integrated RESTful APIs",
+        "Fixed bugs and implemented new features",
+        "Learned development best practices"
+      ]
+    }
+  ],
+  "skills": {
+    "Technical": "JavaScript, Python, React, Node.js, SQL, Git, HTML, CSS"
+  },
+  "education": [
+    {
+      "degree": "B.S. Computer Science",
+      "date": "2019",
+      "institution": "University of Washington",
+      "location": "Seattle, WA"
+    }
+  ]
+}
