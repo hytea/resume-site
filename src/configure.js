@@ -1,7 +1,7 @@
 // Description: This file contains the configuration for the resume page.
 //
 document.addEventListener('DOMContentLoaded', function () {
-  fetch('/config.json')
+  fetch('./config.json')
     .then((response) => response.json())
     .then((data) => {
       const experienceSection = document.getElementById('experience-section');
@@ -148,5 +148,21 @@ document.addEventListener('DOMContentLoaded', function () {
     })
     .catch((error) => {
       console.error('Error fetching config:', error);
+
+      // Display user-facing error message
+      const sections = ['experience-section', 'skills-section', 'education-section'];
+      sections.forEach(sectionId => {
+        const section = document.getElementById(sectionId);
+        if (section) {
+          section.innerHTML = `
+            <div class="alert alert-danger" role="alert">
+              <h4 class="alert-heading">Unable to Load Content</h4>
+              <p>We're having trouble loading the resume data. Please try refreshing the page.</p>
+              <hr>
+              <p class="mb-0">If the problem persists, please contact the site administrator.</p>
+            </div>
+          `;
+        }
+      });
     });
 });
