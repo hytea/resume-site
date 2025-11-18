@@ -113,7 +113,10 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // Get the current year for the footer
-document.getElementById('current-year').textContent = new Date().getFullYear();
+const currentYearElement = document.getElementById('current-year');
+if (currentYearElement) {
+  currentYearElement.textContent = new Date().getFullYear();
+}
 
 window.trackDownloadResume = () => {
   gtag('event', 'download_resume', {
