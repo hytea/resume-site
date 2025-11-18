@@ -1,9 +1,83 @@
 {
-  "header": {
-    "title": "Andrew Hyte",
-    "phoneNumber": "+1 801-200-8453",
+  "personal": {
+    "name": "Andrew Hyte",
+    "title": "Polyglot Full Stack Web Engineer",
+    "yearsOfExperience": 12,
+    "phone": "+1 801-200-8453",
     "email": "a@hyte.us",
-    "website": "Andrew.Hyte.us"
+    "website": "Andrew.Hyte.us",
+    "location": "Orem, UT"
+  },
+  "siteMetadata": {
+    "title": "Andrew Hyte | Software Engineer",
+    "description": "Andrew Hyte's resume website. Andrew is a Software Engineer with 12 years of professional experience developing web and mobile apps with various flavors of JavaScript and relevant frameworks.",
+    "author": "Andrew Hyte",
+    "keywords": "Andrew Hyte, Frontend Software Engineer, Full Stack Developer, Web Developer, Mobile Developer, Resume, Job Search, Programmer, Utah, Silicon Slopes, React, Angular, Typescript, JavaScript, Firebase, AWS, Docker, Node.js, mySQL, Lit, Storybook, Vite, Netlify, Figma, React Native, Webpack, Java, Python, Ruby, C#, Postgres, Xamarin, Flutter, Lead Developer, Frontend Engineer, Software Development, Tech Resume",
+    "ogImage": "./public/andrew_in_the_mountains_cropped.png",
+    "ogUrl": "https://andrew.hyte.us",
+    "twitterHandle": "@hyteandrew"
+  },
+  "hero": {
+    "title": "Polyglot Full Stack Web Engineer",
+    "subtitle": "With {years} years professional experience.",
+    "backgroundImage": "./public/Provo_Canyon.jpg",
+    "showYearsCalculation": true
+  },
+  "bio": {
+    "title": "Andrew Hyte Bio",
+    "image": "./public/andrew_in_the_mountains_cropped.png",
+    "imageAlt": "Photo of Andrew Hyte in the mountains, smiling, wearing a Zion National Park hat.",
+    "paragraphs": [
+      "Andrew Hyte is a Senior Software Engineer specializing in modern frontend architectures and applied AI solutions. At Fishbowl Inventory, he architected and implemented a production MicroFrontend solution using SingleSPA that unified multiple products built in different JS technologies, eliminating legacy dependencies. He won the company-wide Applied AI Hackathon as team lead, building a conversational agent with MCP server integration that automated common user workflows. He also led a 20-member engineering pod as Scrum Master and championed adoption of cutting-edge AI coding tools from Codeium Windsurf to Claude Code across the engineering department.",
+      "Previously, as Lead Frontend Engineer at ON Platform (GameOn), he developed a B2B portal for customizing conversational AI Chatbots and built a no-code Canvas drag-and-drop reply flow editor. He also optimized CI/CD with Vite, Netlify, and GitHub Actions.",
+      "Earlier roles at Bark Technologies and Router Limits saw him leading integration and development projects in fast-paced environments. His software journey began at the Missionary Training Center, where he built a missionary chat app and honed his engineering skills.",
+      "Outside of work, Andrew enjoys hiking, skiing, and spending time with his wife and two kids. A hands-on builder, he's always working on new projects—ask him about his latest carpentry endeavor."
+    ]
+  },
+  "portfolio": [
+    {
+      "title": "ReactFireStarter Template",
+      "url": "https://github.com/hytea/react-fire-starter",
+      "image": "https://raw.githubusercontent.com/hytea/react-fire-starter/main/public/login_screenshot.png",
+      "description": "The ReactFireStarter project template is a comprehensive boilerplate for quickly setting up a web application using React, TypeScript, Vite, Firebase, Recoil, and React Router DOM. This project is an excellent example of my skills in React, TypeScript, and system design."
+    },
+    {
+      "title": "ON UI Components",
+      "url": "https://on-ui-components.netlify.app/?path=/story/on-base-button--primary",
+      "image": "./public/On_ui_storybook_screenshot.png",
+      "description": "ON UI Components is a design system I built while in a Frontend Lead role at On Platform. It is built with Lit, a reactive native web components library. It includes a variety of components like buttons, modals, form elements and tons more. This project demonstrates my skills in web components, Lit, design systems as well as my ability to build pixel perfect UIs from high fidelity Figma mocks."
+    },
+    {
+      "title": "Resume Site Architecture",
+      "url": "https://github.com/hytea/resume-site",
+      "image": "architecture-diagram",
+      "description": "This resume website demonstrates modern full-stack architecture thinking. A single JSON config file serves as the source of truth, dynamically rendering both the website content and generating PDFs on-the-fly using custom jsPDF logic. This approach eliminates duplication, ensures consistency, and showcases my ability to design scalable, maintainable systems. Check out the code on GitHub!"
+    }
+  ],
+  "socialLinks": {
+    "linkedin": "https://www.linkedin.com/in/andrew-hyte",
+    "github": "https://github.com/hytea",
+    "twitter": "https://x.com/hyteandrew"
+  },
+  "analytics": {
+    "googleAnalyticsId": "G-SX0REXJ6CG"
+  },
+  "theme": {
+    "primaryColor": "#667eea",
+    "secondaryColor": "#764ba2",
+    "accentColor": "#3e7135"
+  },
+  "navigation": [
+    {"label": "Bio", "href": "#bio"},
+    {"label": "Portfolio", "href": "#portfolio"},
+    {"label": "Resume", "href": "#resume"},
+    {"label": "Contact", "href": "#contact"}
+  ],
+  "contact": {
+    "title": "Let's Connect",
+    "subtitle": "I'm always open to discussing new opportunities and interesting projects",
+    "showEmail": true,
+    "showPhone": true
   },
   "outputFileName": "Andrew-Hyte-Resume.pdf",
   "summary": "Senior Software Engineer with proven expertise in applied AI and modern frontend architectures. Applied AI Hackathon winner, demonstrating ability to rapidly build functional AI-powered solutions with <span class=\"feature\">MCP servers</span> and conversational interfaces. Track record of taking concepts from prototype to production using <span class=\"feature\">Bolt.new</span> and <span class=\"feature\">Lovable</span> for rapid iteration, then integrating into enterprise systems. Specializes in solving complex architectural challenges, including implementing <span class=\"feature\">MicroFrontend solutions</span> to unify disparate technology stacks.",
