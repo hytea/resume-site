@@ -9,8 +9,22 @@
   "summary": "Senior Software Engineer with proven expertise in applied AI and modern frontend architectures. Applied AI Hackathon winner, demonstrating ability to rapidly build functional AI-powered solutions with <span class=\"feature\">MCP servers</span> and conversational interfaces. Track record of taking concepts from prototype to production using <span class=\"feature\">Bolt.new</span> and <span class=\"feature\">Lovable</span> for rapid iteration, then integrating into enterprise systems. Specializes in solving complex architectural challenges, including implementing <span class=\"feature\">MicroFrontend solutions</span> to unify disparate technology stacks.",
   "experience": [
     {
+      "title": "Software Engineering Manager",
+      "dateRange": "December 2025 - Present",
+      "company": "Fishbowl Inventory",
+      "location": "Orem, UT, Remote",
+      "responsibilities": [
+        "Lead and manage the Fishbowl Inventory cloud application engineering team.",
+        "Drive technical strategy and roadmap for cloud-based inventory management solutions.",
+        "Mentor and develop engineering talent, conducting performance reviews and career development planning.",
+        "Coordinate cross-functional collaboration between product, design, and engineering teams.",
+        "Championed internal context sharing framework and other AI tools that make the whole team more efficient when using Agentic AI tools.",
+        "Streamlined onboarding process from two hours to five minutes, significantly improving developer experience and time-to-productivity."
+      ]
+    },
+    {
       "title": "Senior Software Engineer",
-      "dateRange": "August 2024 - Present",
+      "dateRange": "August 2024 - December 2025 (Promoted)",
       "company": "Fishbowl Inventory",
       "location": "Orem, UT, Remote",
       "responsibilities": [
