@@ -6,11 +6,24 @@
     "website": "Andrew.Hyte.us"
   },
   "outputFileName": "Andrew-Hyte-Resume.pdf",
-  "summary": "Senior Software Engineer with proven expertise in applied AI and modern frontend architectures. Applied AI Hackathon winner, demonstrating ability to rapidly build functional AI-powered solutions with <span class=\"feature\">MCP servers</span> and conversational interfaces. Track record of taking concepts from prototype to production using <span class=\"feature\">Bolt.new</span> and <span class=\"feature\">Lovable</span> for rapid iteration, then integrating into enterprise systems. Specializes in solving complex architectural challenges, including implementing <span class=\"feature\">MicroFrontend solutions</span> to unify disparate technology stacks.",
+  "summary": "Principal AI Engineer building internal AI platforms that let engineering teams ship software faster without sacrificing quality. Expertise across three layers of the agentic stack: <span class=\"feature\">context engineering</span> to transform stakeholder requirements and institutional knowledge into structured inputs, agentic execution environments where <span class=\"feature\">Claude Code</span> and <span class=\"feature\">MCP</span>-based systems plan, implement, and iterate against real codebases, and <span class=\"feature\">LLM evaluation</span> loops that verify agent output against business intent before human review. Applied AI Hackathon winner with a track record of taking concepts from prototype to production and solving complex architectural challenges, including <span class=\"feature\">MicroFrontend solutions</span> that unify disparate technology stacks.",
   "experience": [
     {
+      "title": "Principal AI Engineer",
+      "dateRange": "April 2026 - Present",
+      "company": "Fishbowl Inventory",
+      "location": "Orem, UT, Remote",
+      "responsibilities": [
+        "Architect the internal AI platform that enables the engineering team to ship software faster without sacrificing quality, letting engineers focus on judgment and architecture while agents handle mechanical translation of intent into code.",
+        "Design context engineering systems that gather requirements, constraints, and institutional knowledge from stakeholders and transform them into structured inputs that agentic coding systems can reliably consume.",
+        "Provision and operate the cloud execution environment where agentic coding systems plan, implement, test, and iterate against real production codebases.",
+        "Build the evaluation and automated review loop that verifies agent output matches business intent before work ever reaches a human reviewer.",
+        "Drive adoption of Claude Code, MCP, and custom tooling across engineering, positioning the org for what software teams will look like in three years."
+      ]
+    },
+    {
       "title": "Software Engineering Manager",
-      "dateRange": "December 2025 - Present",
+      "dateRange": "December 2025 - April 2026 (Promoted)",
       "company": "Fishbowl Inventory",
       "location": "Orem, UT, Remote",
       "responsibilities": [
@@ -104,7 +117,7 @@
     }
   ],
   "skills": {
-    "Computer_Science": "Excellent object-oriented programming background. Passionate for great UX. Experienced with <span class=\"feature\">JavaScript</span>, <span class=\"feature\">Typescript</span>, <span class=\"feature\">React</span>, <span class=\"feature\">Angular</span>, <span class=\"feature\">Lit</span>, <span class=\"feature\">HTML</span>, <span class=\"feature\">SASS</span>, <span class=\"feature\">Node</span>, <span class=\"feature\">mySQL</span>, <span class=\"feature\">Postgres</span>, <span class=\"feature\">Firebase</span>, <span class=\"feature\">AWS</span>, <span class=\"feature\">Docker</span>, <span class=\"feature\">Netlify</span>, <span class=\"feature\">Vite</span>, <span class=\"feature\">Webpack</span>, <span class=\"feature\">Storybook</span>, <span class=\"feature\">Figma</span>, <span class=\"feature\">SingleSPA</span>. Comfortable with <span class=\"feature\">React Native</span>, <span class=\"feature\">Xamarin</span>, <span class=\"feature\">Flutter</span>, <span class=\"feature\">C#</span>, <span class=\"feature\">Java</span>, <span class=\"feature\">Python</span>, <span class=\"feature\">Ruby</span>. Applied AI expertise with <span class=\"feature\">Claude Code</span>, <span class=\"feature\">Codeium Windsurf</span>, <span class=\"feature\">Model Context Protocol (MCP)</span>, <span class=\"feature\">Bolt.new</span>, and <span class=\"feature\">Lovable</span> for rapid concept-to-prototype-to-production development. Proven track record taking AI-assisted prototypes and integrating them into production systems.",
+    "Computer_Science": "Excellent object-oriented programming background. Passionate for great UX. Applied AI focus areas: <span class=\"feature\">agentic systems</span>, <span class=\"feature\">context engineering</span>, <span class=\"feature\">LLM evaluation</span>, <span class=\"feature\">internal developer platforms</span>, <span class=\"feature\">Claude Code</span>, <span class=\"feature\">Model Context Protocol (MCP)</span>, <span class=\"feature\">Codeium Windsurf</span>, <span class=\"feature\">Bolt.new</span>, and <span class=\"feature\">Lovable</span> for rapid concept-to-prototype-to-production development. Experienced with <span class=\"feature\">JavaScript</span>, <span class=\"feature\">Typescript</span>, <span class=\"feature\">React</span>, <span class=\"feature\">Angular</span>, <span class=\"feature\">Lit</span>, <span class=\"feature\">HTML</span>, <span class=\"feature\">SASS</span>, <span class=\"feature\">Node</span>, <span class=\"feature\">mySQL</span>, <span class=\"feature\">Postgres</span>, <span class=\"feature\">Firebase</span>, <span class=\"feature\">AWS</span>, <span class=\"feature\">Docker</span>, <span class=\"feature\">Netlify</span>, <span class=\"feature\">Vite</span>, <span class=\"feature\">Webpack</span>, <span class=\"feature\">Storybook</span>, <span class=\"feature\">Figma</span>, <span class=\"feature\">SingleSPA</span>. Comfortable with <span class=\"feature\">React Native</span>, <span class=\"feature\">Xamarin</span>, <span class=\"feature\">Flutter</span>, <span class=\"feature\">C#</span>, <span class=\"feature\">Java</span>, <span class=\"feature\">Python</span>, <span class=\"feature\">Ruby</span>. Proven track record taking AI-assisted prototypes and integrating them into production systems.",
     "Personal_and_Communication": "Autonomous self-starter. Consistent positive <span class=\"feature\">'Let's do it!' attitude</span>. Have worked on distributed teams for over five years. Experienced in handling technical customer support, collections, and physical transactions. Developed communication skills through years of management experience in the workplace."
   },
   "education": [
