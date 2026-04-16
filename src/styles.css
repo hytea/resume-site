@@ -226,7 +226,12 @@ body {
   border-radius: 2px;
 }
 
-.role-timeline-single::before {
+.role-timeline-single {
+  padding-left: 0;
+}
+
+.role-timeline-single::before,
+.role-timeline-single .role-marker {
   display: none;
 }
 
@@ -241,18 +246,15 @@ body {
 
 .role-marker {
   position: absolute;
-  left: -1.75rem;
-  top: 8px;
-  width: 16px;
-  height: 16px;
+  left: calc(-1.75rem + 2px);
+  top: 0.3rem;
+  width: 12px;
+  height: 12px;
   border-radius: 50%;
   background: #fff;
-  border: 3px solid var(--primary-color);
+  border: 2px solid var(--primary-color);
   box-shadow: 0 0 0 3px #fff;
-}
-
-.role-timeline-single .role-marker {
-  background: var(--primary-color);
+  z-index: 1;
 }
 
 .role-title {
@@ -316,11 +318,8 @@ body {
   }
 
   .role-marker {
-    left: -1.4rem;
-    width: 14px;
-    height: 14px;
-    border-width: 2px;
-    top: 7px;
+    left: calc(-1.4rem + 1px);
+    top: 0.3rem;
   }
 
   .role-timeline::before {
