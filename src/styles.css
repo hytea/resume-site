@@ -133,6 +133,201 @@ body {
   animation: slideInLeft 0.5s ease forwards;
 }
 
+/* Company card + role timeline (grouped experience) */
+.company-card {
+  background: #fff;
+  border: 1px solid var(--light-grey);
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem 1.5rem;
+  margin: 0 0 1.25rem 0;
+  transition: opacity 0.6s ease, transform 0.6s ease, box-shadow 0.25s ease;
+}
+
+.company-card.animate-in:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+.company-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.company-logo {
+  flex: 0 0 auto;
+  width: 56px;
+  height: 56px;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  border: 1px solid var(--light-grey);
+}
+
+.company-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 4px;
+}
+
+.company-logo-fallback {
+  background: linear-gradient(135deg, #f4f7f1 0%, #e4ecdb 100%);
+  border-color: #d7e3c7;
+}
+
+.company-logo-initials {
+  font-weight: 700;
+  color: var(--primary-color);
+  font-size: 1.1rem;
+  letter-spacing: 0.04em;
+}
+
+.company-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+}
+
+.company-name {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-color);
+  margin: 0;
+  line-height: 1.2;
+}
+
+.company-tenure {
+  font-size: 0.85rem;
+  color: var(--secondary-text-color);
+  margin: 0.15rem 0 0 0;
+}
+
+.role-timeline {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  padding-left: 1.75rem;
+}
+
+.role-timeline::before {
+  content: '';
+  position: absolute;
+  left: 7px;
+  top: 10px;
+  bottom: 10px;
+  width: 2px;
+  background: var(--light-grey);
+  border-radius: 2px;
+}
+
+.role-timeline-single::before {
+  display: none;
+}
+
+.role-item {
+  position: relative;
+  padding-bottom: 1.25rem;
+}
+
+.role-item:last-child {
+  padding-bottom: 0;
+}
+
+.role-marker {
+  position: absolute;
+  left: -1.75rem;
+  top: 8px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #fff;
+  border: 3px solid var(--primary-color);
+  box-shadow: 0 0 0 3px #fff;
+}
+
+.role-timeline-single .role-marker {
+  background: var(--primary-color);
+}
+
+.role-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-color);
+  margin: 0 0 0.15rem 0;
+  line-height: 1.3;
+}
+
+.role-meta {
+  font-size: 0.85rem;
+  color: var(--secondary-text-color);
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.role-meta .role-sep {
+  color: #bbb;
+}
+
+.role-duration {
+  color: var(--secondary-text-color);
+}
+
+.role-content .responsibilities {
+  margin: 0.6rem 0 0 0;
+  padding-left: 1.1rem;
+}
+
+.role-content .responsibilities li {
+  font-size: 0.92rem;
+  color: var(--text-color);
+  line-height: 1.5;
+  margin-bottom: 0.3rem;
+}
+
+@media (max-width: 576px) {
+  .company-card {
+    padding: 1rem 1rem 1.1rem;
+  }
+
+  .company-header {
+    gap: 0.75rem;
+  }
+
+  .company-logo {
+    width: 48px;
+    height: 48px;
+  }
+
+  .company-name {
+    font-size: 1.05rem;
+  }
+
+  .role-timeline {
+    padding-left: 1.4rem;
+  }
+
+  .role-marker {
+    left: -1.4rem;
+    width: 14px;
+    height: 14px;
+    border-width: 2px;
+    top: 7px;
+  }
+
+  .role-timeline::before {
+    left: 6px;
+  }
+}
+
 @keyframes slideInLeft {
   from {
     opacity: 0;

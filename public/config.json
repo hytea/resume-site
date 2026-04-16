@@ -9,110 +9,137 @@
   "summary": "Principal AI Engineer building internal AI platforms that let engineering teams ship software faster without sacrificing quality. Expertise across three layers of the agentic stack: <span class=\"feature\">context engineering</span> to transform stakeholder requirements and institutional knowledge into structured inputs, agentic execution environments where <span class=\"feature\">Claude Code</span> and <span class=\"feature\">MCP</span>-based systems plan, implement, and iterate against real codebases, and <span class=\"feature\">LLM evaluation</span> loops that verify agent output against business intent before human review. Applied AI Hackathon winner with a track record of taking concepts from prototype to production and solving complex architectural challenges, including <span class=\"feature\">MicroFrontend solutions</span> that unify disparate technology stacks.",
   "experience": [
     {
-      "title": "Principal AI Engineer",
-      "dateRange": "April 2026 - Present",
       "company": "Fishbowl Inventory",
-      "location": "Orem, UT, Remote",
-      "responsibilities": [
-        "Architect the internal AI platform that enables the engineering team to ship software faster without sacrificing quality, letting engineers focus on judgment and architecture while agents handle mechanical translation of intent into code.",
-        "Design context engineering systems that gather requirements, constraints, and institutional knowledge from stakeholders and transform them into structured inputs that agentic coding systems can reliably consume.",
-        "Provision and operate the cloud execution environment where agentic coding systems plan, implement, test, and iterate against real production codebases.",
-        "Build the evaluation and automated review loop that verifies agent output matches business intent before work ever reaches a human reviewer.",
-        "Drive adoption of Claude Code, MCP, and custom tooling across engineering, positioning the org for what software teams will look like in three years."
+      "logo": "",
+      "roles": [
+        {
+          "title": "Principal AI Engineer",
+          "dateRange": "April 2026 - Present",
+          "location": "Orem, UT, Remote",
+          "responsibilities": [
+            "Architect the internal AI platform that enables the engineering team to ship software faster without sacrificing quality, letting engineers focus on judgment and architecture while agents handle mechanical translation of intent into code.",
+            "Design context engineering systems that gather requirements, constraints, and institutional knowledge from stakeholders and transform them into structured inputs that agentic coding systems can reliably consume.",
+            "Provision and operate the cloud execution environment where agentic coding systems plan, implement, test, and iterate against real production codebases.",
+            "Build the evaluation and automated review loop that verifies agent output matches business intent before work ever reaches a human reviewer.",
+            "Drive adoption of Claude Code, MCP, and custom tooling across engineering, positioning the org for what software teams will look like in three years."
+          ]
+        },
+        {
+          "title": "Software Engineering Manager",
+          "dateRange": "December 2025 - April 2026 (Promoted)",
+          "location": "Orem, UT, Remote",
+          "responsibilities": [
+            "Lead and manage the Fishbowl Inventory cloud application engineering team.",
+            "Drive technical strategy and roadmap for cloud-based inventory management solutions.",
+            "Mentor and develop engineering talent, conducting performance reviews and career development planning.",
+            "Coordinate cross-functional collaboration between product, design, and engineering teams.",
+            "Championed internal context sharing framework and other AI tools that make the whole team more efficient when using Agentic AI tools.",
+            "Streamlined onboarding process from two hours to five minutes, significantly improving developer experience and time-to-productivity."
+          ]
+        },
+        {
+          "title": "Senior Software Engineer",
+          "dateRange": "August 2024 - December 2025 (Promoted)",
+          "location": "Orem, UT, Remote",
+          "responsibilities": [
+            "Architected and implemented MicroFrontend solution using SingleSPA to unify multiple products built in different JS technologies (React, Angular), eliminating dependency on legacy product architecture and enabling independent deployment.",
+            "Won company-wide Applied AI Hackathon as team lead and idea creator, building conversational agent with MCP server and chat interface that automated common user workflows in 2 days.",
+            "Unified the UI of multiple products by creating a native web component Lit-based design system.",
+            "Led 20-member pod as the Scrum Master to manage sprint planning and execution.",
+            "Served as team admin identifying and championing adoption of cutting-edge AI coding tools, leading multiple iterations from Codeium Windsurf to Claude Code, accelerating productivity across engineering department."
+          ]
+        }
       ]
     },
     {
-      "title": "Software Engineering Manager",
-      "dateRange": "December 2025 - April 2026 (Promoted)",
-      "company": "Fishbowl Inventory",
-      "location": "Orem, UT, Remote",
-      "responsibilities": [
-        "Lead and manage the Fishbowl Inventory cloud application engineering team.",
-        "Drive technical strategy and roadmap for cloud-based inventory management solutions.",
-        "Mentor and develop engineering talent, conducting performance reviews and career development planning.",
-        "Coordinate cross-functional collaboration between product, design, and engineering teams.",
-        "Championed internal context sharing framework and other AI tools that make the whole team more efficient when using Agentic AI tools.",
-        "Streamlined onboarding process from two hours to five minutes, significantly improving developer experience and time-to-productivity."
-      ]
-    },
-    {
-      "title": "Senior Software Engineer",
-      "dateRange": "August 2024 - December 2025 (Promoted)",
-      "company": "Fishbowl Inventory",
-      "location": "Orem, UT, Remote",
-      "responsibilities": [
-        "Architected and implemented MicroFrontend solution using SingleSPA to unify multiple products built in different JS technologies (React, Angular), eliminating dependency on legacy product architecture and enabling independent deployment.",
-        "Won company-wide Applied AI Hackathon as team lead and idea creator, building conversational agent with MCP server and chat interface that automated common user workflows in 2 days.",
-        "Unified the UI of multiple products by creating a native web component Lit-based design system.",
-        "Led 20-member pod as the Scrum Master to manage sprint planning and execution.",
-        "Served as team admin identifying and championing adoption of cutting-edge AI coding tools, leading multiple iterations from Codeium Windsurf to Claude Code, accelerating productivity across engineering department."
-      ]
-    },
-    {
-      "title": "Lead Software Engineer, Frontend",
-      "dateRange": "February 2023 - July 2024",
       "company": "ON Platform (formerly GameOn)",
-      "location": "San Francisco, CA, Remote",
-      "responsibilities": [
-        "Led development of B2B portal for customizing conversational AI chatbot, enhancing features and performance.",
-        "Developed no-code Canvas drag-and-drop solution for building reply flows.",
-        "Implemented robust CI/CD pipeline using Vite, Netlify, and GitHub Actions.",
-        "Directed all frontend work, leading a team of five engineers.",
-        "Translated high-fidelity mocks into actionable tasks with weekly releases.",
-        "Collaborated with Head of Product Management and Head of Design to align priorities.",
-        "Conducted bi-weekly meetings to support team members' professional development."
+      "logo": "",
+      "roles": [
+        {
+          "title": "Lead Software Engineer, Frontend",
+          "dateRange": "February 2023 - July 2024",
+          "location": "San Francisco, CA, Remote",
+          "responsibilities": [
+            "Led development of B2B portal for customizing conversational AI chatbot, enhancing features and performance.",
+            "Developed no-code Canvas drag-and-drop solution for building reply flows.",
+            "Implemented robust CI/CD pipeline using Vite, Netlify, and GitHub Actions.",
+            "Directed all frontend work, leading a team of five engineers.",
+            "Translated high-fidelity mocks into actionable tasks with weekly releases.",
+            "Collaborated with Head of Product Management and Head of Design to align priorities.",
+            "Conducted bi-weekly meetings to support team members' professional development."
+          ]
+        },
+        {
+          "title": "Senior Software Engineer",
+          "dateRange": "May 2022 - February 2023 (Promoted)",
+          "location": "San Francisco, CA, Remote",
+          "responsibilities": [
+            "Developed a design system with native web components using Lit for a conversational AI chatbot product.",
+            "Authored technical design documents for a new B2B customer portal supporting the AI chatbot.",
+            "Built MVP of the B2B customer portal and created tickets for future enhancements.",
+            "Proactively implemented a user feedback system using Netlify forms, Zapier, and Linear APIs to improve product development cycle."
+          ]
+        }
       ]
     },
     {
-      "title": "Senior Software Engineer",
-      "dateRange": "May 2022 - February 2023 (Promoted)",
-      "company": "ON Platform (formerly GameOn)",
-      "location": "San Francisco, CA, Remote",
-      "responsibilities": [
-        "Developed a design system with native web components using Lit for a conversational AI chatbot product.",
-        "Authored technical design documents for a new B2B customer portal supporting the AI chatbot.",
-        "Built MVP of the B2B customer portal and created tickets for future enhancements.",
-        "Proactively implemented a user feedback system using Netlify forms, Zapier, and Linear APIs to improve product development cycle."
-      ]
-    },
-    {
-      "title": "Software Engineer",
-      "dateRange": "February 2020 - April 2022",
       "company": "Bark Technologies",
-      "location": "Atlanta, GA, Remote",
-      "responsibilities": [
-        "Maintained and integrated Router Limits technologies after acquisition.",
-        "Migrated front-end pages to a new UI kit and took ownership of Bark React Native app development."
+      "logo": "",
+      "roles": [
+        {
+          "title": "Software Engineer",
+          "dateRange": "February 2020 - April 2022",
+          "location": "Atlanta, GA, Remote",
+          "responsibilities": [
+            "Maintained and integrated Router Limits technologies after acquisition.",
+            "Migrated front-end pages to a new UI kit and took ownership of Bark React Native app development."
+          ]
+        }
       ]
     },
     {
-      "title": "Software Developer",
-      "dateRange": "November 2015 - February 2020 (Acquired)",
       "company": "Router Limits",
-      "location": "Layton, UT",
-      "responsibilities": [
-        "Led frontend development for a small software company.",
-        "Developed Android and iOS apps using C# with Xamarin forms.",
-        "Created a complex AngularJS progressive web app with Node mySQL REST API integration."
+      "logo": "",
+      "roles": [
+        {
+          "title": "Software Developer",
+          "dateRange": "November 2015 - February 2020 (Acquired)",
+          "location": "Layton, UT",
+          "responsibilities": [
+            "Led frontend development for a small software company.",
+            "Developed Android and iOS apps using C# with Xamarin forms.",
+            "Created a complex AngularJS progressive web app with Node mySQL REST API integration."
+          ]
+        }
       ]
     },
     {
-      "title": "Software Engineer Intern",
-      "dateRange": "June 2015 - August 2015",
       "company": "Lockheed Martin Mission Systems and Training",
-      "location": "Orlando, FL",
-      "responsibilities": [
-        "Contributed to F-14 training simulation software using C# .NET and WPF."
+      "logo": "",
+      "roles": [
+        {
+          "title": "Software Engineer Intern",
+          "dateRange": "June 2015 - August 2015",
+          "location": "Orlando, FL",
+          "responsibilities": [
+            "Contributed to F-14 training simulation software using C# .NET and WPF."
+          ]
+        }
       ]
     },
     {
-      "title": "Full Stack Programmer",
-      "dateRange": "April 2014 - November 2015",
       "company": "Missionary Training Center",
-      "location": "Provo, UT",
-      "responsibilities": [
-        "Developed a missionary chat application for Mormon.org with Java Spring and Oracle SQL backend.",
-        "Worked in an Agile Scrum environment using Jira for sprint management."
+      "logo": "",
+      "roles": [
+        {
+          "title": "Full Stack Programmer",
+          "dateRange": "April 2014 - November 2015",
+          "location": "Provo, UT",
+          "responsibilities": [
+            "Developed a missionary chat application for Mormon.org with Java Spring and Oracle SQL backend.",
+            "Worked in an Agile Scrum environment using Jira for sprint management."
+          ]
+        }
       ]
     }
   ],
