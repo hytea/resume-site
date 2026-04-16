@@ -442,6 +442,7 @@ ul li {
 .pdf-tech-badge {
   position: relative;
   cursor: help;
+  transform: translateY(2px);
 }
 
 .badge-icon {
