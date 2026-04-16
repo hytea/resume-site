@@ -1,3 +1,5 @@
+import { computeCompanyTenure } from './experienceUtils.js';
+
 window.generatePDF = async () => {
   const { jsPDF } = window.jspdf;
   const doc = new jsPDF();
@@ -6,9 +8,12 @@ window.generatePDF = async () => {
   const lineColor = '#e7e7e7';
 
   const pageHeight = doc.internal.pageSize.height;
+  const pageWidth = doc.internal.pageSize.width;
   const margin = 8;
   const newPageMargin = 10;
   const SECTION_TITLE_BUFFER = 8;
+  const ROLE_INDENT = 4;
+  const BULLET_INDENT = ROLE_INDENT + 2.5;
 
   // Function to check if a new page is needed
   const checkPageOverflow = (doc, currentY, lineHeight = 10) => {
@@ -26,39 +31,18 @@ window.generatePDF = async () => {
 
     doc.setFontSize(12);
     doc.setFont('helvetica', 'normal');
-    doc.text(
-      headerData.phoneNumber,
-      doc.internal.pageSize.width - margin,
-      15,
-      null,
-      null,
-      'right'
-    );
-    doc.text(
-      headerData.email,
-      doc.internal.pageSize.width - margin,
-      25,
-      null,
-      null,
-      'right'
-    );
-    doc.text(
-      headerData.website,
-      doc.internal.pageSize.width - margin,
-      35,
-      null,
-      null,
-      'right'
-    );
+    doc.text(headerData.phoneNumber, pageWidth - margin, 15, null, null, 'right');
+    doc.text(headerData.email, pageWidth - margin, 25, null, null, 'right');
+    doc.text(headerData.website, pageWidth - margin, 35, null, null, 'right');
   };
 
   const addSectionTitle = (doc, title, y) => {
     doc.setFontSize(16);
     doc.setFont(fontFamily, 'bold');
     doc.setDrawColor(lineColor);
-    doc.line(margin, y - 6, doc.internal.pageSize.width - margin, y - 6);
+    doc.line(margin, y - 6, pageWidth - margin, y - 6);
     doc.text(title, margin, y);
-    doc.line(margin, y + 2, doc.internal.pageSize.width - margin, y + 2);
+    doc.line(margin, y + 2, pageWidth - margin, y + 2);
     doc.setFontSize(12);
     doc.setFont(fontFamily, 'normal');
     doc.setDrawColor(0);
@@ -70,21 +54,21 @@ window.generatePDF = async () => {
 
     const processNode = (node, y) => {
       if (node.nodeType === Node.TEXT_NODE) {
-        const text = node.textContent.replace(/\s+/g, ' '); // Replace multiple spaces with a single space
+        const text = node.textContent.replace(/\s+/g, ' ');
         if (text.length > 0) {
           const words = text.split(' ');
           words.forEach((word, index) => {
             const wordWidth = doc.getTextWidth(word);
-            if (x + wordWidth > doc.internal.pageSize.width - margin) {
-              y += 5; // Move to the next line if word exceeds page width
-              x = margin; // Reset X position to margin
+            if (x + wordWidth > pageWidth - margin) {
+              y += 5;
+              x = margin;
               y = checkPageOverflow(doc, y);
             }
             if (index > 0 && x > margin) {
-              x += doc.getTextWidth(' '); // Add space between words, but not before the first word in a line
+              x += doc.getTextWidth(' ');
             }
             doc.text(word, x, y);
-            x += wordWidth; // Update X position for next word
+            x += wordWidth;
           });
         }
       } else if (node.nodeType === Node.ELEMENT_NODE) {
@@ -92,7 +76,7 @@ window.generatePDF = async () => {
           if (x > margin) {
             const prevChar = node.previousSibling?.textContent?.slice(-1);
             if (prevChar && !/[\s.,!?]/.test(prevChar)) {
-              x += doc.getTextWidth(' '); // Add space before bold text if not punctuation
+              x += doc.getTextWidth(' ');
             }
           }
           doc.setFont(undefined, 'bold');
@@ -100,7 +84,7 @@ window.generatePDF = async () => {
           doc.setFont(undefined, 'normal');
           const nextChar = node.nextSibling?.textContent?.[0];
           if (nextChar && !/[\s.,!?]/.test(nextChar)) {
-            x += doc.getTextWidth(' '); // Add space after bold text if not punctuation
+            x += doc.getTextWidth(' ');
           }
         } else {
           y = processNode(node.firstChild, y);
@@ -124,35 +108,77 @@ window.generatePDF = async () => {
     doc.setFontSize(10);
     doc.setFont(fontFamily, 'normal');
 
-    let x = margin; // Start X position for new text
+    let x = margin;
     y = parseHTMLAndAddToPDF(doc, skillsHTML, x, y + 5);
 
     y += 10;
     return y;
   };
 
-  const addJobDetails = (doc, jobTitle, company, location, dateRange, y) => {
+  const addEducationDetails = (doc, degree, institution, location, date, y) => {
     doc.setFontSize(12);
     doc.setFont(fontFamily, 'bold');
-    doc.text(jobTitle, margin, y);
+    doc.text(degree, margin, y);
 
     doc.setFont(fontFamily, 'italic');
     doc.setFontSize(10);
-    const companyDetails = `${company}, ${location}`;
-    doc.text(companyDetails, margin, y + 5);
-
-    doc.text(
-      dateRange,
-      doc.internal.pageSize.width - margin,
-      y + 5,
-      null,
-      null,
-      'right'
-    );
-    doc.setFont(fontFamily, 'italic');
-    doc.setFontSize(10);
-    doc.text(company + ', ' + location, margin, y + 5);
+    doc.text(`${institution}, ${location}`, margin, y + 5);
+    doc.text(date, pageWidth - margin, y + 5, null, null, 'right');
     y += 12;
+    return y;
+  };
+
+  const addCompanyHeader = (doc, company, tenure, y) => {
+    doc.setFontSize(13);
+    doc.setFont(fontFamily, 'bold');
+    doc.setTextColor(30);
+    doc.text(company, margin, y);
+
+    if (tenure) {
+      doc.setFontSize(10);
+      doc.setFont(fontFamily, 'italic');
+      doc.setTextColor(120);
+      doc.text(tenure, pageWidth - margin, y, null, null, 'right');
+    }
+
+    // Subtle underline to ground the company header
+    doc.setDrawColor(lineColor);
+    doc.line(margin, y + 1.8, pageWidth - margin, y + 1.8);
+    doc.setDrawColor(0);
+    doc.setTextColor(0);
+    return y + 6;
+  };
+
+  const addRoleDetails = (doc, role, y) => {
+    doc.setFontSize(11);
+    doc.setFont(fontFamily, 'bold');
+    doc.setTextColor(30);
+    doc.text(role.title, margin + ROLE_INDENT, y);
+
+    doc.setFont(fontFamily, 'normal');
+    doc.setFontSize(9.5);
+    doc.setTextColor(90);
+    doc.text(role.dateRange, pageWidth - margin, y, null, null, 'right');
+
+    if (role.location) {
+      doc.setFont(fontFamily, 'italic');
+      doc.setFontSize(9);
+      doc.setTextColor(120);
+      doc.text(role.location, margin + ROLE_INDENT, y + 4.2);
+      y += 4.2;
+    }
+
+    doc.setTextColor(0);
+    return y + 5;
+  };
+
+  // Reserve enough space so a company or role header isn't left alone
+  // at the bottom of a page with its content flowing to the next.
+  const ensureSpace = (doc, y, minSpace) => {
+    if (y + minSpace > pageHeight - margin) {
+      doc.addPage();
+      return margin + newPageMargin;
+    }
     return y;
   };
 
@@ -163,10 +189,9 @@ window.generatePDF = async () => {
   // Add Header
   addHeader(doc, data.header);
 
-  // Start from Skills Profile Section
   let y = 50;
 
-  // Check if skills data exists and is not empty
+  // Skills Profile
   if (data.skills && Object.keys(data.skills).length > 0) {
     addSectionTitle(doc, 'Skills Profile', y);
     y += SECTION_TITLE_BUFFER + 5;
@@ -181,12 +206,12 @@ window.generatePDF = async () => {
     y += 3;
   }
 
-  // Add Education Section
+  // Education
   y = checkPageOverflow(doc, y);
   addSectionTitle(doc, 'Education', y);
   y += SECTION_TITLE_BUFFER + 5;
   data.education.forEach((edu) => {
-    y = addJobDetails(
+    y = addEducationDetails(
       doc,
       edu.degree,
       edu.institution,
@@ -196,60 +221,54 @@ window.generatePDF = async () => {
     );
   });
 
-  const checkNewPageForJobTitle = (doc, y) => {
-    const threshold = pageHeight * 0.9; // 90% of the page height
-    if (y > threshold) {
-      doc.addPage();
-      y = margin + newPageMargin;
-    }
-    return y;
-  };
-
-  // Add Experience Section
+  // Experience
   y = checkPageOverflow(doc, y);
   y += SECTION_TITLE_BUFFER;
   addSectionTitle(doc, 'Relevant Experience', y);
   y += SECTION_TITLE_BUFFER + 5;
-  data.experience.forEach((exp) => {
-    y = checkNewPageForJobTitle(doc, y); // Ensure a new job starts on a new page if needed
 
-    y = addJobDetails(
-      doc,
-      exp.title,
-      exp.company,
-      exp.location,
-      exp.dateRange,
-      y
-    );
-    doc.setFontSize(11);
-    doc.setFont(fontFamily, 'normal');
-    exp.responsibilities.forEach((line) => {
-      const wrappedText = doc.splitTextToSize(
-        line,
-        doc.internal.pageSize.width - 2 * margin
-      );
-      wrappedText.forEach((textLine, index) => {
-        y = checkPageOverflow(doc, y);
-        if (index === 0) {
-          // Add the bullet point for the first line
-          doc.text('• ' + textLine, margin, y);
-        } else {
-          // Indent wrapped lines without the bullet point
-          doc.text(textLine, margin + 2.5, y);
-        }
-        y += 5;
+  data.experience.forEach((group) => {
+    // Keep company header with its first role to avoid orphans
+    y = ensureSpace(doc, y, 32);
+    const tenure = computeCompanyTenure(group.roles || []);
+    y = addCompanyHeader(doc, group.company, tenure, y);
+    y += 2;
+
+    (group.roles || []).forEach((role, idx) => {
+      // Keep role title with at least one bullet line
+      if (idx > 0) y = ensureSpace(doc, y, 18);
+      y = addRoleDetails(doc, role, y);
+
+      doc.setFontSize(10);
+      doc.setFont(fontFamily, 'normal');
+      doc.setTextColor(0);
+      (role.responsibilities || []).forEach((line) => {
+        const wrappedText = doc.splitTextToSize(
+          line,
+          pageWidth - 2 * margin - ROLE_INDENT
+        );
+        wrappedText.forEach((textLine, index) => {
+          y = checkPageOverflow(doc, y);
+          if (index === 0) {
+            doc.text('• ' + textLine, margin + ROLE_INDENT, y);
+          } else {
+            doc.text(textLine, margin + BULLET_INDENT, y);
+          }
+          y += 4.5;
+        });
       });
+      y += 3;
     });
-    y += 5;
+    y += 3;
   });
 
-  // Add note at the bottom of the last page
+  // Footer note
   doc.setFontSize(8);
   doc.setFont(fontFamily, 'italic');
   doc.setTextColor(150);
   doc.text(
     'This resume was generated dynamically from the content of https://andrew.hyte.us',
-    doc.internal.pageSize.width - margin,
+    pageWidth - margin,
     pageHeight - margin,
     null,
     null,
