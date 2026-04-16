@@ -10,7 +10,7 @@
   "experience": [
     {
       "company": "Fishbowl Inventory",
-      "logo": "",
+      "logo": "/logos/fishbowl.png",
       "roles": [
         {
           "title": "Principal AI Engineer",
@@ -53,7 +53,7 @@
     },
     {
       "company": "ON Platform (formerly GameOn)",
-      "logo": "",
+      "logo": "/logos/gameon.png",
       "roles": [
         {
           "title": "Lead Software Engineer, Frontend",
@@ -84,7 +84,8 @@
     },
     {
       "company": "Bark Technologies",
-      "logo": "",
+      "logo": "/logos/bark.png",
+      "logoBackground": "#1943D8",
       "roles": [
         {
           "title": "Software Engineer",
@@ -99,7 +100,7 @@
     },
     {
       "company": "Router Limits",
-      "logo": "",
+      "logo": "/logos/router-limits.png",
       "roles": [
         {
           "title": "Software Developer",
@@ -115,7 +116,8 @@
     },
     {
       "company": "Lockheed Martin Mission Systems and Training",
-      "logo": "",
+      "logo": "/logos/lockheed-martin.png",
+      "logoBackground": "#023378",
       "roles": [
         {
           "title": "Software Engineer Intern",
@@ -129,7 +131,7 @@
     },
     {
       "company": "Missionary Training Center",
-      "logo": "",
+      "logo": "/logos/MTC.png",
       "roles": [
         {
           "title": "Full Stack Programmer",

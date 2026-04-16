@@ -10,6 +10,10 @@ function buildCompanyLogo(group) {
   const logoWrap = document.createElement('div');
   logoWrap.classList.add('company-logo');
 
+  if (group.logoBackground) {
+    logoWrap.style.backgroundColor = group.logoBackground;
+  }
+
   if (group.logo) {
     const img = document.createElement('img');
     img.src = group.logo;
