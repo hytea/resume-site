@@ -425,7 +425,22 @@ body {
 
 @media (max-width: 576px) {
   .company-card {
-    padding: 1rem 1rem 1.1rem;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    margin: 0 0 2rem 0;
+    border-top: 1px solid var(--line);
+    padding-top: 1.25rem;
+  }
+
+  .company-card:first-of-type {
+    border-top: none;
+    padding-top: 0;
+  }
+
+  .company-card.animate-in:hover {
+    box-shadow: none;
   }
 
   .company-header {
@@ -641,7 +656,8 @@ ul li {
   border: 2px solid var(--primary-color);
   border-radius: 12px;
   padding: 1rem;
-  width: 320px;
+  width: min(320px, calc(100vw - 24px));
+  max-width: 320px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
   opacity: 0;
   visibility: hidden;
@@ -650,6 +666,7 @@ ul li {
   z-index: 1000;
   pointer-events: none;
 }
+
 
 .pdf-tech-badge:hover .tooltip-content {
   opacity: 1;
@@ -964,6 +981,32 @@ ul li {
 .portfolio-header {
   display: flex;
   align-items: center;
+}
+
+.portfolio-badge {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 10px;
+  padding: 3px 10px;
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #57534e;
+  background: rgba(120, 113, 108, 0.08);
+  border: 1px solid rgba(120, 113, 108, 0.3);
+  border-radius: 999px;
+  vertical-align: middle;
+}
+
+.portfolio-badge::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  margin-right: 6px;
+  border-radius: 50%;
+  background: #a8a29e;
 }
 
 .portfolio-header h4 {
@@ -1498,6 +1541,20 @@ ul li {
   box-shadow: 0 40px 80px -40px rgba(11, 15, 13, 0.4);
 }
 
+@media (max-width: 576px) {
+  #contact {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  #contact > .container,
+  #contact > [class*='container'] {
+    max-width: none;
+    width: 100%;
+    box-shadow: none;
+  }
+}
+
 #contact > .container::before,
 #contact > [class*='container']::before {
   content: '';
@@ -1772,5 +1829,41 @@ a:hover {
   }
   .navbar .navbar-nav .nav-link.active::after {
     display: none;
+  }
+}
+
+/* Mobile PDF tooltip — anchor to the collapsed nav container (full-width),
+   so the tooltip spans the viewport with inset margins regardless of the
+   badge's own position. */
+@media (max-width: 991px) {
+  .navbar .navbar-collapse {
+    position: relative;
+  }
+
+  .navbar .pdf-tech-badge {
+    position: static;
+    transform: none;
+  }
+
+  .navbar .pdf-tech-badge .tooltip-content {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 12px;
+    right: 12px;
+    width: auto;
+    max-width: none;
+  }
+
+  .navbar .pdf-tech-badge .tooltip-content::before {
+    display: none;
+  }
+}
+
+@media (max-width: 576px) {
+  /* Contact panel — full-bleed on mobile, no rounded corners */
+  #contact > .container,
+  #contact > [class*='container'] {
+    border-radius: 0;
+    padding: 48px 20px;
   }
 }

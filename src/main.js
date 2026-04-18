@@ -126,7 +126,7 @@ function updateMetaDescription() {
   if (metaDescription) {
     metaDescription.setAttribute(
       'content',
-      `Andrew Hyte's resume website. Andrew is a Principal AI Engineer with ${yearsOfExperience} years of professional experience building internal AI platforms, agentic coding systems, and modern frontend architectures.`
+      `Andrew Hyte's personal site. Principal AI Engineer with ${yearsOfExperience} years of professional experience — a force multiplier for engineering teams building the agentic platforms that give teams the leverage to outpace the upstarts.`
     );
   }
 }
