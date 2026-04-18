@@ -87,30 +87,8 @@ if (yearsElement) {
   observer.observe(yearsElement);
 }
 
-// Typing animation for hero title
-function typeWriter(element, text, speed = 100) {
-  let i = 0;
-  element.textContent = '';
-
-  function type() {
-    if (i < text.length) {
-      element.textContent += text.charAt(i);
-      i++;
-      setTimeout(type, speed);
-    }
-  }
-
-  type();
-}
-
-// Apply typing animation to hero title
-document.addEventListener('DOMContentLoaded', () => {
-  const heroTitle = document.querySelector('.hero h1');
-  if (heroTitle) {
-    const originalText = heroTitle.textContent;
-    typeWriter(heroTitle, originalText, 80);
-  }
-});
+// Hero title is now rendered statically with brand styling
+// (lush highlight bar + gradient italic word). Animation handled in CSS.
 
 // Get the current year for the footer
 document.getElementById('current-year').textContent = new Date().getFullYear();

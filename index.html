@@ -56,6 +56,12 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./src/styles.css" />
     <!-- ScrollMagic and GSAP Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
@@ -80,9 +86,15 @@
     gtag('config', 'G-SX0REXJ6CG');
   </script>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
       <div class="container">
-        <a class="navbar-brand" href="#">Andrew Hyte</a>
+        <a class="navbar-brand" href="#">
+          <span class="brand-mark" aria-hidden="true">AH</span>
+          <span class="brand-word">
+            Andrew Hyte
+            <span class="brand-role">Principal AI Engineer</span>
+          </span>
+        </a>
         <button
           class="navbar-toggler"
           type="button"
@@ -136,10 +148,17 @@
 
     <header class="hero text-white text-center py-5 d-none d-sm-flex">
       <div class="fluid-container glass">
-        <h1>Polyglot Full Stack Web Engineer</h1>
+        <span class="hero-eyebrow">
+          <span class="pill">AI Engineer</span>
+          Available for AI &amp; product engineering leadership
+        </span>
+        <h1>
+          <span class="ital">Polyglot</span> Full Stack
+          <span class="lush-mark">Web Engineer</span>
+        </h1>
         <p class="lead">
-          With <span id="years-of-experience"></span> years professional
-          experience.
+          <span id="years-of-experience"></span> years building product, now
+          leading the agentic stack.
         </p>
       </div>
     </header>
@@ -259,7 +278,7 @@
           </section> -->
 
           <section id="bio" class="py-5">
-            <h2 class="text-center mb-5">Andrew Hyte Bio</h2>
+            <h2 class="text-center mb-5">Bio</h2>
             <div class="row d-flex align-items-center">
               <div class="col-md-4">
                 <img
@@ -416,13 +435,13 @@
 
           <section id="resume" class="py-5">
             <!-- Skills Section -->
-            <p class="lead section-title">Skills Profile</p>
+            <p class="lead section-title">Skills</p>
             <div id="skills-section" class="resume-section"></div>
             <!-- Education Section -->
             <p class="lead section-title">Education</p>
             <div id="education-section" class="resume-section"></div>
             <!-- Experience Profile Section -->
-            <p class="lead section-title">Relevant Experience</p>
+            <p class="lead section-title">Experience</p>
             <div id="experience-section" class="resume-section"></div>
             <span id="resume-end"></span>
           </section>
@@ -430,7 +449,7 @@
       </div>
     </div>
 
-    <section id="contact" class="bg-light py-5">
+    <section id="contact" class="py-5">
       <div class="container">
         <h2 class="text-center mb-4">Let's Connect</h2>
         <p class="lead text-center mb-4">I'm always open to discussing new opportunities and interesting projects</p>
@@ -516,8 +535,8 @@
     <footer class="footer">
       <div class="container">
         <p class="m-0">
-          &copy; <span id="current-year"></span> Andrew Hyte. All Rights
-          Reserved.
+          &copy; <span id="current-year"></span> Andrew Hyte
+          <span class="ital">&mdash; built in Silicon Slopes</span>
         </p>
       </div>
     </footer>
