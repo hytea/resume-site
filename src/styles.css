@@ -425,7 +425,22 @@ body {
 
 @media (max-width: 576px) {
   .company-card {
-    padding: 1rem 1rem 1.1rem;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    margin: 0 0 2rem 0;
+    border-top: 1px solid var(--line);
+    padding-top: 1.25rem;
+  }
+
+  .company-card:first-of-type {
+    border-top: none;
+    padding-top: 0;
+  }
+
+  .company-card.animate-in:hover {
+    box-shadow: none;
   }
 
   .company-header {
@@ -641,7 +656,8 @@ ul li {
   border: 2px solid var(--primary-color);
   border-radius: 12px;
   padding: 1rem;
-  width: 320px;
+  width: min(320px, calc(100vw - 24px));
+  max-width: 320px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
   opacity: 0;
   visibility: hidden;
@@ -650,6 +666,7 @@ ul li {
   z-index: 1000;
   pointer-events: none;
 }
+
 
 .pdf-tech-badge:hover .tooltip-content {
   opacity: 1;
@@ -1524,6 +1541,22 @@ ul li {
   box-shadow: 0 40px 80px -40px rgba(11, 15, 13, 0.4);
 }
 
+@media (max-width: 576px) {
+  #contact {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  #contact > .container,
+  #contact > [class*='container'] {
+    max-width: none;
+    width: 100%;
+    border-radius: 0;
+    padding: 48px 20px;
+    box-shadow: none;
+  }
+}
+
 #contact > .container::before,
 #contact > [class*='container']::before {
   content: '';
@@ -1798,5 +1831,34 @@ a:hover {
   }
   .navbar .navbar-nav .nav-link.active::after {
     display: none;
+  }
+}
+
+/* Mobile PDF tooltip — anchor to viewport, full width with margins */
+@media (max-width: 576px) {
+  .navbar .pdf-tech-badge,
+  .pdf-tech-badge {
+    transform: none;
+  }
+
+  .pdf-tech-badge .tooltip-content {
+    position: fixed;
+    top: auto;
+    bottom: 16px;
+    left: 12px;
+    right: 12px;
+    width: calc(100vw - 24px);
+    max-width: calc(100vw - 24px);
+  }
+
+  .pdf-tech-badge .tooltip-content::before {
+    display: none;
+  }
+
+  /* Contact panel — full-bleed on mobile, no rounded corners */
+  #contact > .container,
+  #contact > [class*='container'] {
+    border-radius: 0;
+    padding: 48px 20px;
   }
 }
