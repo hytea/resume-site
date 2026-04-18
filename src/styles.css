@@ -122,12 +122,6 @@ body {
   animation: hero-rise 0.85s 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
 }
 
-.hero .lead {
-  opacity: 0;
-  transform: translateY(8px);
-  animation: hero-rise 0.7s 1.4s ease-out forwards;
-}
-
 .hero h1 .lush-mark {
   position: relative;
   display: inline-block;
@@ -148,7 +142,7 @@ body {
   border-radius: 3px;
   transform: skewX(-6deg) scaleX(0);
   transform-origin: left;
-  animation: lush-swipe 0.7s 1.1s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+  animation: lush-swipe 0.7s 1.6s cubic-bezier(0.65, 0, 0.35, 1) forwards;
 }
 
 .hero h1 .ital {
@@ -170,6 +164,9 @@ body {
   color: rgba(255, 255, 255, 0.88);
   text-shadow: 0 1px 6px rgba(0, 0, 0, 0.45);
   margin: 0;
+  opacity: 0;
+  transform: translateY(8px);
+  animation: hero-rise 0.7s 1.4s ease-out forwards;
 }
 
 #years-of-experience {
@@ -204,7 +201,7 @@ body {
   }
 
   .hero .lead {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
 
   #years-of-experience {
@@ -731,26 +728,20 @@ ul li {
 
 .side-nav-link {
   display: block;
-  padding: 0.75rem 1rem !important;
   margin: 0.125rem 0;
-  color: var(--secondary-text-color) !important;
-  transition: color 0.2s ease, border-color 0.2s ease;
+  transition: color 0.2s ease, border-color 0.2s ease, background 0.15s ease, opacity 0.15s ease;
   position: relative;
   font-weight: 400;
-  font-size: 0.95rem;
   border-left: 3px solid transparent;
   text-decoration: none;
 }
 
 .side-nav-link:hover {
-  color: var(--text-color) !important;
-  border-left-color: #d0d0d0;
+  border-left-color: var(--lush-softer);
 }
 
 .side-nav-link.active {
-  color: var(--primary-color) !important;
-  font-weight: 600;
-  border-left-color: var(--primary-color);
+  border-left-color: var(--lush);
 }
 
 #on-platform-name {
@@ -1296,8 +1287,7 @@ ul li {
 #bio h2,
 #portfolio h2,
 #contact h2,
-#resume h2,
-#experience h2 {
+#resume h2 {
   font-family: var(--font-display);
   font-size: clamp(1.85rem, 3.6vw, 2.75rem);
   font-weight: 700;
@@ -1312,8 +1302,7 @@ ul li {
 #bio h2::before,
 #portfolio h2::before,
 #contact h2::before,
-#resume h2::before,
-#experience h2::before {
+#resume h2::before {
   content: '';
   display: block;
   width: 48px;
@@ -1348,10 +1337,9 @@ ul li {
 
 #bio .bio-image {
   border: 4px solid #fff;
-  outline: 2px solid var(--lush);
-  outline-offset: 2px;
   box-shadow:
-    0 0 0 14px var(--lush-softer),
+    0 0 0 6px var(--lush),
+    0 0 0 18px var(--lush-softer),
     0 30px 60px -28px rgba(11, 15, 13, 0.28);
 }
 
@@ -1585,8 +1573,6 @@ ul li {
   transform: translateY(-1px);
 }
 
-/* Hide hero's typewriter cursor (no longer used) */
-.hero h1::after { content: none !important; }
 
 /* Body link color */
 a {
