@@ -126,7 +126,7 @@ function updateMetaDescription() {
   if (metaDescription) {
     metaDescription.setAttribute(
       'content',
-      `Andrew Hyte's personal site. Principal AI Engineer with ${yearsOfExperience} years of professional experience — a force multiplier for engineering teams building the agentic platforms that give teams the leverage to outpace the upstarts.`
+      `Andrew Hyte's personal site. AI Architect with ${yearsOfExperience} years of professional experience making advanced AI accessible across an entire company, not just to engineers.`
     );
   }
 }
