@@ -862,11 +862,11 @@ ul li {
   pointer-events: none;
 }
 
-.portfolio-item:hover {
+.portfolio-item:not(.portfolio-item--static):hover {
   transform: translateY(-4px);
 }
 
-.portfolio-item:hover::before {
+.portfolio-item:not(.portfolio-item--static):hover::before {
   border-color: var(--lush);
   box-shadow: 0 18px 40px -20px rgba(63, 168, 120, 0.35);
 }
@@ -1389,6 +1389,13 @@ ul li {
 /* Portfolio cards — refined card surface */
 .portfolio-item {
   border-radius: 14px;
+}
+
+/* Cards without a destination link shouldn't look clickable: no pointer
+   cursor and none of the lift/glow affordances (the description flip on
+   hover stays — that reveals the card's text, it doesn't promise a link) */
+.portfolio-item--static {
+  cursor: default;
 }
 
 .portfolio-description {
