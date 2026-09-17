@@ -1391,6 +1391,11 @@ ul li {
   border-radius: 14px;
 }
 
+/* Cards without a destination link shouldn't look clickable */
+.portfolio-item--static {
+  cursor: default;
+}
+
 .portfolio-description {
   background: #fff;
   color: var(--ink);
