@@ -126,7 +126,7 @@ function updateMetaDescription() {
   if (metaDescription) {
     metaDescription.setAttribute(
       'content',
-      `Andrew Hyte's personal site. Principal Enterprise AI Architect with ${yearsOfExperience} years of professional experience, currently building a production agent harness: sandboxed runtime, permission-scoped tools, and accountable memory.`
+      `Andrew Hyte's personal site. Principal Enterprise AI Architect with ${yearsOfExperience} years of professional experience, who built Atlas: a governed MCP tool gateway and an AI workspace of chat, skills, scheduled agents, and apps for every employee.`
     );
   }
 }
