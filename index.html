@@ -10,17 +10,17 @@
     <meta
       name="description"
       id="meta-description"
-      content="Andrew Hyte's personal site. Principal Enterprise AI Architect who designed and built an agent harness, from sandboxed runtime and trust boundary to tool federation and accountable memory."
+      content="Andrew Hyte's personal site. Principal Enterprise AI Architect who built Atlas: a governed MCP tool gateway and an AI workspace of chat, skills, scheduled agents, and apps for every employee."
     />
     <meta name="author" content="Andrew Hyte" />
     <meta
       name="keywords"
-      content="Andrew Hyte, Principal Enterprise AI Architect, Agent Harness, Agent Runtime, Sandboxed Execution, Tool Calling, Trust and Permissions, Agent Memory, AI Platform Architecture, Applied AI, Agentic AI, Claude Code, MCP, Federated Connectors, Context Engineering, LLM Evaluation, AI Enablement, Frontend Software Engineer, Full Stack Developer, Web Developer, Resume, Utah, Silicon Slopes, React, Angular, Typescript, JavaScript, Firebase, AWS, Docker, Node.js, Lit, Storybook, Vite, Netlify, Figma, MicroFrontend, SingleSPA, Software Development, Tech Resume"
+      content="Andrew Hyte, Principal Enterprise AI Architect, Agent Harness, MCP Gateway, Desktop AI Workspace, AI Automations, Agent Runtime, Sandboxed Execution, Tool Calling, Trust and Permissions, Agent Memory, AI Platform Architecture, Applied AI, Agentic AI, Claude Code, MCP, Federated Connectors, Context Engineering, LLM Evaluation, AI Enablement, Frontend Software Engineer, Full Stack Developer, Web Developer, Resume, Utah, Silicon Slopes, React, Angular, Typescript, JavaScript, Firebase, AWS, Docker, Node.js, Lit, Storybook, Vite, Netlify, Figma, MicroFrontend, SingleSPA, Software Development, Tech Resume"
     />
     <meta property="og:title" content="Andrew Hyte - Principal Enterprise AI Architect" />
     <meta
       property="og:description"
-      content="Principal Enterprise AI Architect who built a production agent harness: sandboxed runtime, permission-scoped tools, and accountable memory."
+      content="Principal Enterprise AI Architect who built a governed MCP tool gateway and an AI workspace for every employee: chat, skills, scheduled agents, and apps."
     />
     <meta
       property="og:image"
@@ -32,7 +32,7 @@
     <meta name="twitter:title" content="Andrew Hyte - Principal Enterprise AI Architect" />
     <meta
       name="twitter:description"
-      content="Principal Enterprise AI Architect who built a production agent harness: sandboxed runtime, permission-scoped tools, and accountable memory."
+      content="Principal Enterprise AI Architect who built a governed MCP tool gateway and an AI workspace for every employee: chat, skills, scheduled agents, and apps."
     />
     <meta
       name="twitter:image"
@@ -157,9 +157,9 @@
           <span class="ital">Hire one.</span>
         </h1>
         <p class="lead">
-          Principal Enterprise AI Architect who built an agent harness from
-          the ground up: the runtime, trust boundary, tools, and memory that
-          turn an LLM into a reliable agent.
+          Principal Enterprise AI Architect who built a governed AI platform
+          from the ground up: one tool gateway, one identity, and a desktop
+          workspace every employee can use.
         </p>
       </div>
     </header>
@@ -293,10 +293,8 @@
                   Andrew Hyte is the Principal Enterprise AI Architect at
                   Fishbowl Inventory, where he leads a new AI Ops team in
                   IT. In four months he designed and built Atlas, the
-                  company's internal agent harness, largely on his own:
-                  1,854 commits across four core repositories, about 150K
-                  lines of TypeScript and Python, with TDD enforced
-                  throughout.
+                  company's internal AI platform, so that every employee,
+                  not only engineers, can put governed AI tools to work.
                 </p>
                 <p>
                   Atlas began as his proposal. He ran a structured build,
@@ -309,23 +307,26 @@
                   replaceable boundary.
                 </p>
                 <p>
-                  At its center is a harness-neutral supervisor that hands
-                  each phase of work to a pluggable coding harness, rejects
-                  any result that fails its schema, and checkpoints so runs
-                  survive pod loss. Its governing rule is that an agent
-                  never sees or does more than the person who owns it,
-                  enforced once at the platform layer through per-session
-                  sandboxes, brokered short-lived credentials, and per-user
-                  tool filtering.
+                  The foundation is the Atlas Gateway: 177 tools across 25
+                  provider modules, including 57 Fishbowl inventory and
+                  manufacturing tools that no vendor sells. Because it
+                  speaks plain MCP, the same tools, identity, and audit
+                  trail are live in Claude, ChatGPT, Codex, Cursor, and
+                  other clients. Every call carries the employee's own
+                  identity, and each person's tool list is computed from
+                  their directory groups, so an agent never sees or does
+                  more than the person who owns it.
                 </p>
                 <p>
-                  He also built what keeps agents honest over time: a triage
-                  agent that diagnoses failed runs with cited evidence, and
-                  a memory layer, now on dev, that promotes a fact only
-                  after the runs that relied on it succeed. All of it sits on
-                  a production MCP gateway of 170+ tools across 25 provider
-                  modules and a single model gateway with per-route cost
-                  tracking.
+                  On top of it he built Atlas Studio for the rest of the
+                  company: chat in the browser and a signed desktop app,
+                  reusable skills, scheduled agents, and apps that employees
+                  build and Atlas hosts with the same governed tools. In its
+                  first eleven days, 65 of Fishbowl's 222 employees used
+                  chat and at least 25 of them worked outside engineering.
+                  For engineers he also built Atlas Builder, which takes a
+                  ticket through a sandboxed, test-driven run to a draft
+                  merge request.
                 </p>
                 <p>
                   That work grew out of his time as Principal AI Engineer,
