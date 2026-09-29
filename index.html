@@ -6,21 +6,21 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-    <title>Andrew Hyte | AI Architect</title>
+    <title>Andrew Hyte | Principal Enterprise AI Architect</title>
     <meta
       name="description"
       id="meta-description"
-      content="Andrew Hyte's personal site. AI Architect making advanced AI accessible across an entire company, not just to engineers."
+      content="Andrew Hyte's personal site. Principal Enterprise AI Architect who designed and built an agent harness, from sandboxed runtime and trust boundary to tool federation and accountable memory."
     />
     <meta name="author" content="Andrew Hyte" />
     <meta
       name="keywords"
-      content="Andrew Hyte, AI Architect, AI Platform Architecture, Applied AI, Agentic AI, Claude Code, MCP, Federated Connectors, Context Engineering, LLM Evaluation, AI Enablement, Frontend Software Engineer, Full Stack Developer, Web Developer, Resume, Utah, Silicon Slopes, React, Angular, Typescript, JavaScript, Firebase, AWS, Docker, Node.js, Lit, Storybook, Vite, Netlify, Figma, MicroFrontend, SingleSPA, Software Development, Tech Resume"
+      content="Andrew Hyte, Principal Enterprise AI Architect, Agent Harness, Agent Runtime, Sandboxed Execution, Tool Calling, Trust and Permissions, Agent Memory, AI Platform Architecture, Applied AI, Agentic AI, Claude Code, MCP, Federated Connectors, Context Engineering, LLM Evaluation, AI Enablement, Frontend Software Engineer, Full Stack Developer, Web Developer, Resume, Utah, Silicon Slopes, React, Angular, Typescript, JavaScript, Firebase, AWS, Docker, Node.js, Lit, Storybook, Vite, Netlify, Figma, MicroFrontend, SingleSPA, Software Development, Tech Resume"
     />
-    <meta property="og:title" content="Andrew Hyte - AI Architect" />
+    <meta property="og:title" content="Andrew Hyte - Principal Enterprise AI Architect" />
     <meta
       property="og:description"
-      content="AI Architect making advanced AI accessible across an entire company, not just to engineers."
+      content="Principal Enterprise AI Architect who built a production agent harness: sandboxed runtime, permission-scoped tools, and accountable memory."
     />
     <meta
       property="og:image"
@@ -29,10 +29,10 @@
     <meta property="og:url" content="https://andrew.hyte.us" />
 
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Andrew Hyte - AI Architect" />
+    <meta name="twitter:title" content="Andrew Hyte - Principal Enterprise AI Architect" />
     <meta
       name="twitter:description"
-      content="AI Architect making advanced AI accessible across an entire company, not just to engineers."
+      content="Principal Enterprise AI Architect who built a production agent harness: sandboxed runtime, permission-scoped tools, and accountable memory."
     />
     <meta
       name="twitter:image"
@@ -92,7 +92,7 @@
           <span class="brand-mark" aria-hidden="true">AH</span>
           <span class="brand-word">
             Andrew Hyte
-            <span class="brand-role">AI Architect</span>
+            <span class="brand-role">Principal Enterprise AI Architect</span>
           </span>
         </a>
         <button
@@ -149,7 +149,7 @@
     <header class="hero text-white text-center py-5 d-none d-sm-flex">
       <div class="fluid-container glass">
         <span class="hero-eyebrow">
-          <span class="pill">AI Architect</span>
+          <span class="pill">Principal Enterprise AI Architect</span>
           Advanced AI for the whole company
         </span>
         <h1>
@@ -157,8 +157,9 @@
           <span class="ital">Hire one.</span>
         </h1>
         <p class="lead">
-          AI Architect who makes advanced AI accessible across an entire
-          company, not just to engineers.
+          Principal Enterprise AI Architect who designed and built an agent
+          harness: the runtime, trust boundary, tools, and memory that turn an
+          LLM into a reliable agent.
         </p>
       </div>
     </header>
@@ -289,43 +290,51 @@
               </div>
               <div class="col-md-8">
                 <p>
-                  Andrew Hyte is an AI Architect at Fishbowl Inventory, working
-                  in the IT department leading a new AI Ops team. His charter
-                  is to make advanced AI accessible across the company, giving
-                  technical and non-technical employees the same caliber of AI
-                  tooling an engineer uses.
+                  Andrew Hyte is the Principal Enterprise AI Architect at
+                  Fishbowl Inventory, leading a new AI Ops team in the IT
+                  department. Over the last four months he designed and built
+                  Atlas, the company's internal agent platform and harness,
+                  largely on his own: a sandboxed agent runtime, an MCP
+                  gateway with roughly 99 tools across 20+ connectors, chat and
+                  Slack surfaces, an autonomous build engine, and a shared
+                  memory layer, spanning six repositories and 1,800+ commits.
                 </p>
                 <p>
-                  Before that move, as Principal AI Engineer, Andrew built AI
-                  coding tools and workflows across Product and Engineering: a
-                  Claude Code agentic coding pipeline, MCP-based context and
-                  integration servers, context engineering systems that turn
-                  stakeholder requirements into agent-ready work, and LLM
-                  evaluation loops that verify quality before human review.
-                  Adoption was broad, with productivity gains visible in GitLab
-                  commit activity improving across the team.
+                  The runtime is a harness-neutral supervisor: a deterministic
+                  state machine that dispatches work to pluggable coding
+                  harnesses over a validated step contract, checkpoints after
+                  every phase so runs survive pod loss, and escalates to a
+                  human when it needs input. Each run executes in its own
+                  Kubernetes sandbox under short-lived, repo-scoped credentials
+                  brokered per action.
                 </p>
                 <p>
-                  That success led to a company-wide mandate: define an AI
-                  Baseline that narrows the divide between AI haves and
-                  have-nots inside the company. Andrew designed the platform as
-                  Policy, Kernel, Services, Shells, and Apps, with an Equity
-                  Lane separating centrally funded baseline access from an
-                  opt-in AI Power tier for technical roles.
+                  The governing rule is that an agent can never see or do more
+                  than the person who owns it. Atlas enforces that at the
+                  gateway with per-turn act-as-user tokens, per-user RBAC, and
+                  read-versus-write approval tiers, so the trust boundary is
+                  one platform-level decision and not a per-surface
+                  reimplementation. Every action lands in an audit trail and a
+                  queryable telemetry stream.
                 </p>
                 <p>
-                  Promoted from Software Engineering Manager and Senior Software
-                  Engineer, Andrew previously architected Fishbowl's production
-                  MicroFrontend solution with SingleSPA, unifying products built
-                  in React and Angular, and won the company-wide Applied AI
-                  Hackathon as team lead by building a conversational agent with
-                  an MCP server that automated common user workflows in two
-                  days. He led a 20-member pod as Scrum Master and drove
-                  adoption of cutting-edge AI coding tools across engineering.
-                  His recent AI platform work includes the Atlas federated MCP
-                  connector framework, where the first Salesforce connector was
-                  reduced to a roughly 1KB declarative definition, an 87% code
-                  reduction covered by 280+ TDD tests.
+                  Atlas also improves itself. Hermes, a resident quality
+                  supervisor, extracts candidate memories from each run and a
+                  background pass re-scores them on whether the runs that
+                  recalled them actually succeeded, promoting what earns it and
+                  routing destructive changes through human review. Model
+                  traffic runs through a provider-agnostic router with
+                  per-route cost accounting.
+                </p>
+                <p>
+                  That work grew out of his time as Principal AI Engineer,
+                  where he built Fishbowl's Claude Code agentic coding
+                  pipeline, MCP-based context servers, and LLM evaluation
+                  loops, with adoption visible in GitLab commit activity across
+                  the team. Earlier, as Senior Software Engineer, he
+                  architected Fishbowl's production MicroFrontend solution with
+                  SingleSPA, won the company-wide Applied AI Hackathon as team
+                  lead, and led a 20-member pod as Scrum Master.
                 </p>
                 <p>
                   Before Fishbowl, as Lead Frontend Engineer at ON Platform
@@ -622,7 +631,7 @@
           "https://www.linkedin.com/in/andrew-hyte",
           "https://github.com/hytea"
         ],
-        "jobTitle": "AI Architect",
+        "jobTitle": "Principal Enterprise AI Architect",
         "worksFor": {
           "@type": "Organization",
           "name": "Fishbowl Inventory"
