@@ -14,10 +14,13 @@ window.generatePDF = async () => {
   const SECTION_TITLE_BUFFER = 8;
   const ROLE_INDENT = 4;
   const BULLET_INDENT = ROLE_INDENT + 2.5;
+  const BULLET_LINE_HEIGHT = 4.5;
+  // Keep body text clear of the footer note on the last page
+  const bottomLimit = pageHeight - margin - 4;
 
   // Function to check if a new page is needed
   const checkPageOverflow = (doc, currentY, lineHeight = 10) => {
-    if (currentY + lineHeight > pageHeight - margin) {
+    if (currentY + lineHeight > bottomLimit) {
       doc.addPage();
       return margin + newPageMargin;
     }
@@ -29,11 +32,20 @@ window.generatePDF = async () => {
     doc.setFont('helvetica', 'bold');
     doc.text(headerData.title, margin, 29);
 
-    doc.setFontSize(12);
+    doc.setFontSize(11);
     doc.setFont('helvetica', 'normal');
-    doc.text(headerData.phoneNumber, pageWidth - margin, 15, null, null, 'right');
-    doc.text(headerData.email, pageWidth - margin, 25, null, null, 'right');
-    doc.text(headerData.website, pageWidth - margin, 35, null, null, 'right');
+    const contactLines = [
+      headerData.phoneNumber,
+      headerData.email,
+      headerData.website,
+      headerData.linkedin,
+      headerData.github,
+    ].filter(Boolean);
+    const contactStep = 6;
+    const contactTop = 29 - ((contactLines.length - 1) * contactStep) / 2;
+    contactLines.forEach((line, i) => {
+      doc.text(line, pageWidth - margin, contactTop + i * contactStep, null, null, 'right');
+    });
   };
 
   const addSectionTitle = (doc, title, y) => {
@@ -48,70 +60,116 @@ window.generatePDF = async () => {
     doc.setDrawColor(0);
   };
 
-  const parseHTMLAndAddToPDF = (doc, htmlContent, x, y) => {
-    const parser = new DOMParser();
-    const docElement = parser.parseFromString(htmlContent, 'text/html').body;
+  // Lays out inline HTML where <span class="feature"> is bold. Words
+  // glued together with no whitespace (for example a bold phrase and the
+  // comma after it) wrap as one unit, so punctuation never starts a line.
+  // Each line is drawn as runs of same-weight text so viewer font metrics
+  // handle the spacing inside a run.
+  const parseHTMLAndAddToPDF = (doc, htmlContent, x, y, lineHeight = 5) => {
+    const body = new DOMParser().parseFromString(htmlContent, 'text/html')
+      .body;
 
-    const processNode = (node, y) => {
+    const words = [];
+    let pendingSpace = false;
+    const walk = (node, bold) => {
       if (node.nodeType === Node.TEXT_NODE) {
-        const text = node.textContent.replace(/\s+/g, ' ');
-        if (text.length > 0) {
-          const words = text.split(' ');
-          words.forEach((word, index) => {
-            const wordWidth = doc.getTextWidth(word);
-            if (x + wordWidth > pageWidth - margin) {
-              y += 5;
-              x = margin;
-              y = checkPageOverflow(doc, y);
-            }
-            if (index > 0 && x > margin) {
-              x += doc.getTextWidth(' ');
-            }
-            doc.text(word, x, y);
-            x += wordWidth;
+        node.textContent.split(/(\s+)/).forEach((piece) => {
+          if (!piece) return;
+          if (/^\s+$/.test(piece)) {
+            pendingSpace = true;
+            return;
+          }
+          words.push({
+            text: piece,
+            bold,
+            spaceBefore: pendingSpace && words.length > 0,
           });
-        }
+          pendingSpace = false;
+        });
       } else if (node.nodeType === Node.ELEMENT_NODE) {
-        if (node.tagName === 'SPAN' && node.classList.contains('feature')) {
-          if (x > margin) {
-            const prevChar = node.previousSibling?.textContent?.slice(-1);
-            if (prevChar && !/[\s.,!?]/.test(prevChar)) {
-              x += doc.getTextWidth(' ');
-            }
-          }
-          doc.setFont(undefined, 'bold');
-          y = processNode(node.firstChild, y);
-          doc.setFont(undefined, 'normal');
-          const nextChar = node.nextSibling?.textContent?.[0];
-          if (nextChar && !/[\s.,!?]/.test(nextChar)) {
-            x += doc.getTextWidth(' ');
-          }
-        } else {
-          y = processNode(node.firstChild, y);
-        }
+        const isFeature =
+          node.tagName === 'SPAN' && node.classList.contains('feature');
+        node.childNodes.forEach((child) => walk(child, bold || isFeature));
       }
-
-      if (node.nextSibling) {
-        y = processNode(node.nextSibling, y);
-      }
-
-      return y;
     };
+    body.childNodes.forEach((child) => walk(child, false));
 
-    return processNode(docElement, y);
+    const widthOf = (text, bold) => {
+      doc.setFont(fontFamily, bold ? 'bold' : 'normal');
+      return doc.getTextWidth(text);
+    };
+    const spaceWidth = widthOf(' ', false);
+
+    // Group glued words into chunks that must stay on one line
+    const chunks = [];
+    words.forEach((word) => {
+      if (!word.spaceBefore && chunks.length) {
+        chunks[chunks.length - 1].push(word);
+      } else {
+        chunks.push([word]);
+      }
+    });
+
+    const lines = [];
+    let line = [];
+    let lineX = x;
+    let cursor = x;
+    chunks.forEach((chunk) => {
+      const chunkWidth = chunk.reduce((w, wd) => w + widthOf(wd.text, wd.bold), 0);
+      const gap = line.length ? spaceWidth : 0;
+      if (line.length && cursor + gap + chunkWidth > pageWidth - margin) {
+        lines.push({ x: lineX, words: line });
+        line = [];
+        lineX = margin;
+        cursor = margin;
+      }
+      if (!line.length) chunk[0] = { ...chunk[0], spaceBefore: false };
+      line.push(...chunk);
+      cursor += (line.length > chunk.length ? spaceWidth : 0) + chunkWidth;
+    });
+    if (line.length) lines.push({ x: lineX, words: line });
+
+    lines.forEach((ln, i) => {
+      if (i > 0) {
+        y += lineHeight;
+        y = checkPageOverflow(doc, y);
+      }
+      let cx = ln.x;
+      let run = null;
+      const flush = () => {
+        if (!run) return;
+        doc.setFont(fontFamily, run.bold ? 'bold' : 'normal');
+        doc.text(run.text, cx, y);
+        cx += doc.getTextWidth(run.text);
+        run = null;
+      };
+      ln.words.forEach((wd) => {
+        if (run && run.bold === wd.bold) {
+          run.text += (wd.spaceBefore ? ' ' : '') + wd.text;
+        } else {
+          flush();
+          if (wd.spaceBefore) cx += spaceWidth;
+          run = { bold: wd.bold, text: wd.text };
+        }
+      });
+      flush();
+    });
+    doc.setFont(fontFamily, 'normal');
+    return y;
   };
 
   const addSkillDetails = (doc, skillCategory, skillsHTML, y) => {
-    doc.setFontSize(12);
+    y = checkPageOverflow(doc, y);
+    doc.setFontSize(10);
     doc.setFont(fontFamily, 'bolditalic');
     doc.text(skillCategory, margin, y);
-    doc.setFontSize(10);
+    // Label metrics vary slightly across viewers, so leave a fixed gap
+    const labelWidth = doc.getTextWidth(skillCategory) + 1.5;
     doc.setFont(fontFamily, 'normal');
 
-    let x = margin;
-    y = parseHTMLAndAddToPDF(doc, skillsHTML, x, y + 5);
+    y = parseHTMLAndAddToPDF(doc, skillsHTML, margin + labelWidth, y);
 
-    y += 10;
+    y += 6.5;
     return y;
   };
 
@@ -175,7 +233,7 @@ window.generatePDF = async () => {
   // Reserve enough space so a company or role header isn't left alone
   // at the bottom of a page with its content flowing to the next.
   const ensureSpace = (doc, y, minSpace) => {
-    if (y + minSpace > pageHeight - margin) {
+    if (y + minSpace > bottomLimit) {
       doc.addPage();
       return margin + newPageMargin;
     }
@@ -191,10 +249,67 @@ window.generatePDF = async () => {
 
   let y = 50;
 
+  const bulletWidth = pageWidth - margin - (margin + BULLET_INDENT);
+  const wrapBullet = (line) => {
+    doc.setFontSize(10);
+    doc.setFont(fontFamily, 'normal');
+    return doc.splitTextToSize(line, bulletWidth);
+  };
+  const bulletHeight = (line) => wrapBullet(line).length * BULLET_LINE_HEIGHT;
+  const ROLE_HEADER_HEIGHT = 9.5;
+
+  // Experience
+  addSectionTitle(doc, 'Relevant Experience', y);
+  y += SECTION_TITLE_BUFFER + 5;
+
+  data.experience.forEach((group) => {
+    // Keep the company header with its first role and first bullet
+    const firstRole = (group.roles || [])[0];
+    const firstBullet = firstRole?.responsibilities?.[0];
+    y = ensureSpace(
+      doc,
+      y,
+      8 + ROLE_HEADER_HEIGHT + (firstBullet ? bulletHeight(firstBullet) : 0)
+    );
+    const tenure = computeCompanyTenure(group.roles || []);
+    y = addCompanyHeader(doc, group.company, tenure, y);
+    y += 2;
+
+    (group.roles || []).forEach((role) => {
+      // Keep the role title with at least its first bullet
+      const first = role.responsibilities?.[0];
+      y = ensureSpace(
+        doc,
+        y,
+        ROLE_HEADER_HEIGHT + (first ? bulletHeight(first) : 0)
+      );
+      y = addRoleDetails(doc, role, y);
+
+      (role.responsibilities || []).forEach((line) => {
+        const wrappedText = wrapBullet(line);
+        // Never split a bullet across pages
+        y = ensureSpace(doc, y, wrappedText.length * BULLET_LINE_HEIGHT);
+        doc.setFontSize(10);
+        doc.setFont(fontFamily, 'normal');
+        doc.setTextColor(0);
+        wrappedText.forEach((textLine, index) => {
+          if (index === 0) {
+            doc.text('\u2022', margin + ROLE_INDENT, y);
+          }
+          doc.text(textLine, margin + BULLET_INDENT, y);
+          y += BULLET_LINE_HEIGHT;
+        });
+      });
+      y += 2.5;
+    });
+    y += 2.5;
+  });
+
   // Skills Profile
   if (data.skills && Object.keys(data.skills).length > 0) {
+    y = ensureSpace(doc, y + 6, 30);
     addSectionTitle(doc, 'Skills Profile', y);
-    y += SECTION_TITLE_BUFFER + 5;
+    y += SECTION_TITLE_BUFFER + 3;
 
     Object.keys(data.skills).forEach((key) => {
       const skillCategory = key.replace(/_/g, ' ');
@@ -202,14 +317,12 @@ window.generatePDF = async () => {
         y = addSkillDetails(doc, skillCategory + ':', data.skills[key], y);
       }
     });
-
-    y += 3;
   }
 
   // Education
-  y = checkPageOverflow(doc, y);
+  y = ensureSpace(doc, y + 4, 18);
   addSectionTitle(doc, 'Education', y);
-  y += SECTION_TITLE_BUFFER + 5;
+  y += SECTION_TITLE_BUFFER + 3;
   data.education.forEach((edu) => {
     y = addEducationDetails(
       doc,
@@ -219,47 +332,6 @@ window.generatePDF = async () => {
       edu.date,
       y
     );
-  });
-
-  // Experience
-  y = checkPageOverflow(doc, y);
-  y += SECTION_TITLE_BUFFER;
-  addSectionTitle(doc, 'Relevant Experience', y);
-  y += SECTION_TITLE_BUFFER + 5;
-
-  data.experience.forEach((group) => {
-    // Keep company header with its first role to avoid orphans
-    y = ensureSpace(doc, y, 32);
-    const tenure = computeCompanyTenure(group.roles || []);
-    y = addCompanyHeader(doc, group.company, tenure, y);
-    y += 2;
-
-    (group.roles || []).forEach((role, idx) => {
-      // Keep role title with at least one bullet line
-      if (idx > 0) y = ensureSpace(doc, y, 18);
-      y = addRoleDetails(doc, role, y);
-
-      doc.setFontSize(10);
-      doc.setFont(fontFamily, 'normal');
-      doc.setTextColor(0);
-      (role.responsibilities || []).forEach((line) => {
-        const wrappedText = doc.splitTextToSize(
-          line,
-          pageWidth - 2 * margin - ROLE_INDENT
-        );
-        wrappedText.forEach((textLine, index) => {
-          y = checkPageOverflow(doc, y);
-          if (index === 0) {
-            doc.text('• ' + textLine, margin + ROLE_INDENT, y);
-          } else {
-            doc.text(textLine, margin + BULLET_INDENT, y);
-          }
-          y += 4.5;
-        });
-      });
-      y += 3;
-    });
-    y += 3;
   });
 
   // Footer note
