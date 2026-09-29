@@ -299,58 +299,51 @@
                   throughout.
                 </p>
                 <p>
-                  At its center is a harness-neutral supervisor, a
-                  deterministic state machine that hands each phase of work
-                  to a pluggable coding harness and rejects any result that
-                  fails its schema. Runs checkpoint after every phase,
-                  survive pod loss, and pause to ask a human when they need
-                  input.
+                  Atlas began as his proposal. He ran a structured build,
+                  buy, and hybrid evaluation that included Glean and
+                  RunLayer, weighed each layer on its own merits, and made
+                  the case to leadership to build, which they approved. His
+                  test was swap cost rather than feature count: the best
+                  model changes within a quarter, so Atlas keeps the model,
+                  tools, surface, execution, and memory each behind a
+                  replaceable boundary.
                 </p>
                 <p>
-                  His governing rule is that an agent never sees or does
-                  more than the person who owns it. Atlas enforces that
-                  once, at the platform layer, through per-session
-                  Kubernetes sandboxes, brokered short-lived credentials,
-                  per-user tool filtering, and approval modes keyed to
-                  whether a tool writes. Every action becomes an audited,
-                  queryable event.
+                  At its center is a harness-neutral supervisor that hands
+                  each phase of work to a pluggable coding harness, rejects
+                  any result that fails its schema, and checkpoints so runs
+                  survive pod loss. Its governing rule is that an agent
+                  never sees or does more than the person who owns it,
+                  enforced once at the platform layer through per-session
+                  sandboxes, brokered short-lived credentials, and per-user
+                  tool filtering.
                 </p>
                 <p>
                   He also built what keeps agents honest over time: a triage
                   agent that diagnoses failed runs with cited evidence, and
                   a memory layer, now on dev, that promotes a fact only
-                  after the runs that relied on it succeed. All of it sits on a
-                  production MCP gateway of roughly 99 tools and a single
-                  model gateway with per-route cost tracking.
+                  after the runs that relied on it succeed. All of it sits on
+                  a production MCP gateway of 170+ tools across 25 provider
+                  modules and a single model gateway with per-route cost
+                  tracking.
                 </p>
                 <p>
                   That work grew out of his time as Principal AI Engineer,
                   where he built Fishbowl's Claude Code agentic coding
-                  pipeline, MCP context servers, and LLM evaluation loops.
-                  Earlier, as Senior Software Engineer, he architected
-                  Fishbowl's production MicroFrontend solution with
-                  SingleSPA, won the company-wide Applied AI Hackathon as
-                  team lead, and led a 20-member pod as Scrum Master.
-                </p>
-                <p>
-                  Before Fishbowl, as Lead Frontend Engineer at ON Platform
-                  (GameOn), he shipped a B2B portal for customizing
-                  conversational AI chatbots and built a no-code Canvas
-                  drag-and-drop reply-flow editor, while optimizing CI/CD with
-                  Vite, Netlify, and GitHub Actions.
-                </p>
-                <p>
-                  Earlier roles at Bark Technologies and Router Limits saw him
-                  leading integration and development projects in fast-paced
-                  environments. His software journey began at the Missionary
-                  Training Center, where he built a missionary chat app and
-                  honed his engineering skills.
+                  pipeline and MCP context servers, and as Senior Software
+                  Engineer, where he architected a production MicroFrontend
+                  platform with SingleSPA and led the team that won the
+                  Applied AI Hackathon. Before Fishbowl he was Lead Frontend
+                  Engineer at ON Platform (GameOn), where he built a no-code
+                  editor for conversational AI reply flows, and he held
+                  earlier roles at Bark Technologies, Router Limits, and the
+                  Missionary Training Center.
                 </p>
                 <p>
                   Outside of work, Andrew enjoys hiking, skiing, and spending
-                  time with his wife and two kids. A hands-on builder, he's
-                  always working on new projects—ask him about his latest
-                  carpentry endeavor.
+                  time with his wife and two kids. A hands-on builder, he is
+                  always working on new projects, so ask him about his
+                  latest carpentry endeavor.
                 </p>
               </div>
             </div>
