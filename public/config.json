@@ -3,10 +3,12 @@
     "title": "Andrew Hyte",
     "phoneNumber": "+1 801-200-8453",
     "email": "a@hyte.us",
-    "website": "Andrew.Hyte.us"
+    "website": "andrew.hyte.us",
+    "linkedin": "linkedin.com/in/andrew-hyte",
+    "github": "github.com/hytea"
   },
-  "outputFileName": "Andrew-Hyte-Resume.pdf",
-  "summary": "Principal Enterprise AI Architect who identified Fishbowl's need for an internal AI platform, made the <span class=\"feature\">build-versus-buy case</span> to leadership, and built Atlas from the ground up on Fishbowl's own infrastructure. Its foundation is a <span class=\"feature\">governed MCP gateway</span> of 177 tools across 25 provider modules that carries <span class=\"feature\">each employee's own identity and permissions</span> into Claude, ChatGPT, Codex, Cursor, and other clients. On top of it, <span class=\"feature\">Atlas Studio</span> gives non-technical employees <span class=\"feature\">desktop and browser chat</span>, reusable <span class=\"feature\">skills</span>, <span class=\"feature\">scheduled agents</span>, and <span class=\"feature\">hosted employee-built apps</span> on one runtime, one identity, and one approval model, with <span class=\"feature\">provider-agnostic model routing</span> underneath. Engineering also gets a <span class=\"feature\">sandboxed agentic coding pipeline</span>. Applied AI Hackathon winner with deep frontend roots, including <span class=\"feature\">MicroFrontend solutions</span> that unify disparate technology stacks.",
+  "outputFileName": "Andrew_Hyte_Resume.pdf",
+  "summary": "Principal Enterprise AI Architect who identified Fishbowl's need for an internal AI platform, made the <span class=\"feature\">build-versus-buy case</span> to leadership, and built Atlas from the ground up on Fishbowl's own infrastructure. Its foundation is a <span class=\"feature\">governed MCP gateway</span> of 177 tools across 25 provider modules that carries <span class=\"feature\">each employee's own identity and permissions</span> into Claude, ChatGPT, Codex, Cursor, and other clients. On top of it, <span class=\"feature\">Atlas Studio</span> gives non-technical employees <span class=\"feature\">desktop and browser chat</span>, reusable <span class=\"feature\">skills</span>, <span class=\"feature\">scheduled agents</span>, and <span class=\"feature\">hosted employee-built apps</span> on one runtime, one identity, and one approval model, with <span class=\"feature\">provider-agnostic model routing</span> underneath. Engineering also gets a <span class=\"feature\">sandboxed agentic coding pipeline</span>. Applied AI Hackathon winner with deep frontend roots, including <span class=\"feature\">micro-frontend solutions</span> that unify disparate technology stacks.",
   "experience": [
     {
       "company": "Fishbowl Inventory",
@@ -14,54 +16,50 @@
       "roles": [
         {
           "title": "Principal Enterprise AI Architect",
-          "dateRange": "June 2026 - Present (Promoted)",
+          "dateRange": "June 2026 - Present",
           "location": "Orem, UT, Remote",
           "responsibilities": [
-            "Identified the need for an internal agent harness, made the build case to Fishbowl leadership, and secured approval to build rather than buy after a structured build, buy, and hybrid evaluation that included Glean and RunLayer. Built Atlas for low swap cost: models, tools, and surfaces stay replaceable, and the workflows, agents, and skills employees create stay on Fishbowl's own servers.",
-            "Built the Atlas Gateway, the foundation of every Atlas surface: 177 tools across 25 provider modules, including 57 Fishbowl inventory and manufacturing tools no vendor sells, such as bills of material and landed cost. It speaks plain MCP, so the same governed tools are live in Claude, Claude Code, ChatGPT, Codex, Cursor, Antigravity, and Pi, and a new client is a connector entry, not a migration.",
-            "Made the gateway act as the employee, never a service account: a per-turn token carries each person's identity so Jira and audit logs see a person, tool lists come from directory groups, and each tool declares read or write to set its approval tier. A declarative connector framework cut the Salesforce connector 87% to about 1KB, with 280+ tests.",
-            "Built Atlas Studio so non-technical employees reach those tools through six surfaces on one runtime, identity, and approval model. Chat runs in the browser and a Rust-based Tauri desktop shell with a signed auto-updater, on a Vercel AI SDK tool loop where reads flow freely and writes pause for approval. Every model call is a named LiteLLM route, so a model change is one config line.",
-            "Built Skills, versioned instructions employees write and attach to chat, and Agents, automations that run on a schedule. Treated unattended execution as its own security domain: an empty tool allowlist is merely permissive with a person present but dangerous unattended, so the database schema requires every scheduled agent to name its tools and makes skipping approval unreachable.",
-            "Built Apps: an employee builds a web app, Atlas hosts it as a single-spa micro-frontend, and a bridge injected at runtime lets it call the same federated tools as the person using it, with a consent step and the same permissions and audit trail. The employee needs no API keys, service account, backend, or deployment. An Admin surface tracks adoption, spend, and outcomes.",
-            "In its first eleven days in production (mid August 2026), 65 of Fishbowl's 222 employees used Atlas chat, 85% returned on a different day, 41 were active on three or more days, and at least 25 worked outside engineering. Built in four months: 1,854 commits across four core repositories, about 150K lines of TypeScript and Python, and 506 test files.",
-            "Built Atlas Builder for the engineering org, which takes a ticket through a sandboxed, test-driven run to a draft merge request. A harness-neutral supervisor hands each phase to a pluggable coding harness behind a schema-validated contract that rejects malformed output, and checkpoints so runs survive pod loss. Each run gets a per-session Kubernetes sandbox with brokered short-lived credentials."
+            "Identified the need for an agent platform and won leadership approval to build it after a structured build, buy, and hybrid evaluation including Glean and RunLayer. As principal engineer, designed Atlas for low swap cost, with employee-created workflows, agents, and skills kept on Fishbowl's own servers.",
+            "Built the Atlas Gateway: 177 tools in 25 provider modules over plain MCP, usable from Claude, ChatGPT, Codex, and Cursor. It acts as the employee via OAuth where systems allow, filters tools per user, gates writes for approval, and cut Salesforce connector code 87%.",
+            "Built Atlas Studio for non-technical employees on one runtime, identity, and approval model: chat on the Vercel AI SDK in the browser and a Rust-based Tauri desktop shell with a signed auto-updater, versioned skills, and scheduled agents that the database schema requires to name their tools.",
+            "Added Apps to Studio: an employee builds a web app, Atlas hosts it as a single-spa micro-frontend, and a consent-gated bridge lets it call the same tools as the person using it, within their permissions and audit trail, with no API keys, backend, or deployment.",
+            "In its first eleven days in production (mid August 2026), 65 of Fishbowl's 222 employees used Atlas chat, 85% returned on a different day, and at least 25 worked outside engineering, in support, implementation, sales, and finance.",
+            "Built Atlas Builder for engineering, taking a ticket through a sandboxed, test-driven run to a draft merge request. A supervisor hands each phase to a pluggable coding harness under a fail-closed step contract, checkpoints so runs survive pod loss, and gives each session its own Kubernetes sandbox."
           ]
         },
         {
           "title": "Principal AI Engineer",
-          "dateRange": "March 2026 - May 2026 (Promoted)",
+          "dateRange": "March 2026 - May 2026",
           "location": "Orem, UT, Remote",
           "responsibilities": [
-            "Built AI coding tools and workflows across the Product and Engineering orgs, turning early experimentation into repeatable operating patterns for real product work.",
-            "Architected the Claude Code agentic coding pipeline, MCP-based context and integration servers, and cloud execution environment where agents plan, implement, test, and iterate against production codebases.",
-            "Designed context engineering systems that gather stakeholder requirements, constraints, and institutional knowledge, then transform them into structured inputs that agentic coding systems can reliably consume.",
-            "Built LLM evaluation and automated review loops that verify agent output against business intent and code quality expectations before work reaches a human reviewer.",
-            "Drove measured adoption with strong buy-in across Product and Engineering; productivity gains showed up in GitLab commit activity improving across the board instead of concentrating around a few power users."
+            "Built AI coding tools and workflows across Product and Engineering, turning experimentation into repeatable practice.",
+            "Architected the Claude Code agentic coding pipeline, MCP context servers, and cloud execution environment.",
+            "Designed context engineering systems that turn requirements and institutional knowledge into structured agent inputs.",
+            "Built LLM evaluation and automated review loops that check agent output before it reaches a human reviewer.",
+            "Drove adoption across Product and Engineering; GitLab commit activity rose broadly, not only among power users."
           ]
         },
         {
           "title": "Software Engineering Manager",
-          "dateRange": "December 2025 - February 2026 (Promoted)",
+          "dateRange": "December 2025 - February 2026",
           "location": "Orem, UT, Remote",
           "responsibilities": [
-            "Lead and manage the Fishbowl Inventory cloud application engineering team.",
-            "Drive technical strategy and roadmap for cloud-based inventory management solutions.",
-            "Mentor and develop engineering talent, conducting performance reviews and career development planning.",
-            "Coordinate cross-functional collaboration between product, design, and engineering teams.",
-            "Championed internal context sharing framework and other AI tools that make the whole team more efficient when using Agentic AI tools.",
-            "Streamlined onboarding process from two hours to five minutes, significantly improving developer experience and time-to-productivity."
+            "Led and managed the Fishbowl Inventory cloud application engineering team and drove its technical roadmap.",
+            "Mentored engineers through reviews and career planning, and coordinated product, design, and engineering.",
+            "Championed an internal context sharing framework that made the team more efficient with agentic AI tools.",
+            "Streamlined onboarding from two hours to five minutes."
           ]
         },
         {
           "title": "Senior Software Engineer",
-          "dateRange": "August 2024 - November 2025 (Promoted)",
+          "dateRange": "August 2024 - November 2025",
           "location": "Orem, UT, Remote",
           "responsibilities": [
-            "Architected and implemented MicroFrontend solution using SingleSPA to unify multiple products built in different JS technologies (React, Angular), eliminating dependency on legacy product architecture and enabling independent deployment.",
-            "Won company-wide Applied AI Hackathon as team lead and idea creator, building conversational agent with MCP server and chat interface that automated common user workflows in 2 days.",
-            "Unified the UI of multiple products by creating a native web component Lit-based design system.",
-            "Led 20-member pod as the Scrum Master to manage sprint planning and execution.",
-            "Served as team admin identifying and championing adoption of cutting-edge AI coding tools, leading multiple iterations from Codeium Windsurf to Claude Code, accelerating productivity across engineering department."
+            "Architected a single-spa micro-frontend solution unifying React and Angular products with independent deployment.",
+            "Won the company-wide Applied AI Hackathon as team lead with a conversational agent and MCP server built in 2 days.",
+            "Unified the UI of multiple products with a Lit-based native web component design system.",
+            "Led a 20-member pod as Scrum Master for sprint planning and execution.",
+            "Led AI coding tool migrations from Codeium Windsurf to Cursor to Claude Code across engineering."
           ]
         }
       ]
@@ -75,24 +73,20 @@
           "dateRange": "February 2023 - July 2024",
           "location": "San Francisco, CA, Remote",
           "responsibilities": [
-            "Led development of B2B portal for customizing conversational AI chatbot, enhancing features and performance.",
-            "Developed no-code Canvas drag-and-drop solution for building reply flows.",
-            "Implemented robust CI/CD pipeline using Vite, Netlify, and GitHub Actions.",
-            "Directed all frontend work, leading a team of five engineers.",
-            "Translated high-fidelity mocks into actionable tasks with weekly releases.",
-            "Collaborated with Head of Product Management and Head of Design to align priorities.",
-            "Conducted bi-weekly meetings to support team members' professional development."
+            "Led development of the B2B portal for customizing a conversational AI chatbot.",
+            "Built a no-code Canvas drag-and-drop editor for chatbot reply flows.",
+            "Directed all frontend work with a team of five engineers, shipping weekly releases.",
+            "Built the CI/CD pipeline with Vite, Netlify, and GitHub Actions."
           ]
         },
         {
           "title": "Senior Software Engineer",
-          "dateRange": "May 2022 - February 2023 (Promoted)",
+          "dateRange": "May 2022 - February 2023",
           "location": "San Francisco, CA, Remote",
           "responsibilities": [
-            "Developed a design system with native web components using Lit for a conversational AI chatbot product.",
-            "Authored technical design documents for a new B2B customer portal supporting the AI chatbot.",
-            "Built MVP of the B2B customer portal and created tickets for future enhancements.",
-            "Proactively implemented a user feedback system using Netlify forms, Zapier, and Linear APIs to improve product development cycle."
+            "Built a Lit web component design system for a conversational AI chatbot product.",
+            "Wrote the technical design for a new B2B customer portal and built its MVP.",
+            "Implemented a user feedback system with Netlify forms, Zapier, and Linear APIs."
           ]
         }
       ]
@@ -107,8 +101,7 @@
           "dateRange": "February 2020 - April 2022",
           "location": "Atlanta, GA, Remote",
           "responsibilities": [
-            "Maintained and integrated Router Limits technologies after acquisition.",
-            "Migrated front-end pages to a new UI kit and took ownership of Bark React Native app development."
+            "Integrated Router Limits technologies after the acquisition and owned the Bark React Native app."
           ]
         }
       ]
@@ -122,9 +115,8 @@
           "dateRange": "November 2015 - February 2020 (Acquired)",
           "location": "Layton, UT",
           "responsibilities": [
-            "Led frontend development for a small software company.",
-            "Developed Android and iOS apps using C# with Xamarin forms.",
-            "Created a complex AngularJS progressive web app with Node mySQL REST API integration."
+            "Led frontend development and built Android and iOS apps using C# with Xamarin.Forms.",
+            "Created a complex AngularJS progressive web app with a Node and MySQL REST API."
           ]
         }
       ]
@@ -139,7 +131,7 @@
           "dateRange": "June 2015 - August 2015",
           "location": "Orlando, FL",
           "responsibilities": [
-            "Contributed to F-14 training simulation software using C# .NET and WPF."
+            "Contributed to F-14 training simulation software for international operators using C# .NET and WPF."
           ]
         }
       ]
@@ -153,16 +145,17 @@
           "dateRange": "April 2014 - November 2015",
           "location": "Provo, UT",
           "responsibilities": [
-            "Developed a missionary chat application for Mormon.org with Java Spring and Oracle SQL backend.",
-            "Worked in an Agile Scrum environment using Jira for sprint management."
+            "Developed a missionary chat application for Mormon.org with Java Spring and an Oracle SQL backend."
           ]
         }
       ]
     }
   ],
   "skills": {
-    "Computer_Science": "Excellent object-oriented programming background. Passionate for great UX. Agent harness and runtime focus areas: <span class=\"feature\">agent runtime and supervisor design</span>, <span class=\"feature\">tool-calling loops</span>, <span class=\"feature\">sandboxed execution (Kubernetes Jobs)</span>, <span class=\"feature\">permissions and trust boundaries</span>, <span class=\"feature\">MCP servers and federation</span>, <span class=\"feature\">provider abstraction and model routing</span>, <span class=\"feature\">streaming and structured outputs</span>, <span class=\"feature\">agent memory</span>, <span class=\"feature\">observability and audit</span>, <span class=\"feature\">LLM evaluation</span>, <span class=\"feature\">context engineering</span>, <span class=\"feature\">agentic coding</span>. Daily drivers: <span class=\"feature\">Claude Code</span>, <span class=\"feature\">Codex</span>, <span class=\"feature\">Cursor</span>, <span class=\"feature\">OpenCode</span>, <span class=\"feature\">Pi coding agent</span>, <span class=\"feature\">Claude Agent SDK</span>, <span class=\"feature\">Vercel AI SDK</span>, <span class=\"feature\">LiteLLM</span>, <span class=\"feature\">Skills</span>, <span class=\"feature\">Anthropic API</span>, <span class=\"feature\">Amazon Bedrock</span>, <span class=\"feature\">local open-source models</span>. Experienced with <span class=\"feature\">TypeScript</span>, <span class=\"feature\">Node</span>, <span class=\"feature\">Python</span>, <span class=\"feature\">Fastify</span>, <span class=\"feature\">FastAPI</span>, <span class=\"feature\">Postgres</span>, <span class=\"feature\">pgvector</span>, <span class=\"feature\">Kubernetes</span>, <span class=\"feature\">ArgoCD</span>, <span class=\"feature\">Docker</span>, <span class=\"feature\">Redis</span>, <span class=\"feature\">Datadog</span>, <span class=\"feature\">React</span>, <span class=\"feature\">Tauri</span>, <span class=\"feature\">single-spa</span>, <span class=\"feature\">Lit</span>, <span class=\"feature\">Angular</span>, <span class=\"feature\">JavaScript</span>, <span class=\"feature\">HTML</span>, <span class=\"feature\">CSS variables</span>, <span class=\"feature\">Firebase</span>, <span class=\"feature\">AWS</span>, <span class=\"feature\">Vite</span>, <span class=\"feature\">Prisma</span>, <span class=\"feature\">Figma</span>, <span class=\"feature\">Netlify</span>. Comfortable with <span class=\"feature\">React Native</span>, <span class=\"feature\">Flutter</span>, <span class=\"feature\">C#</span>, <span class=\"feature\">Java</span>. Shipped production <span class=\"feature\">Rust</span> through AI coding tools rather than by hand: a Tauri v2 desktop shell with a signed auto-updater for Windows and macOS. Proven track record taking AI-assisted prototypes and integrating them into production systems.",
-    "Personal_and_Communication": "Lead and mentor distributed engineering teams, growing engineers from mid to senior through one-on-ones, code review, and intentional career planning. Champion org-wide AI tool adoption - drove multiple migrations across Fishbowl from Codeium Windsurf to Cursor to Claude Code, accelerating productivity department-wide. Collaborate cross-functionally with product, design, and leadership to translate ambiguous business intent into shipped software. Comfortable owning the technical roadmap and the conversations that justify it."
+    "Agent_Platform": "Agent runtime and supervisor design, MCP gateways and tool federation, provider abstraction and model routing, permissions and trust boundaries, sandboxed execution, streaming tool-calling loops, observability and audit, agent memory, LLM evaluation, context engineering.",
+    "AI_Tools_and_Models": "Claude Code, Codex, Cursor, Claude Agent SDK, Vercel AI SDK, LiteLLM, Anthropic API, Amazon Bedrock, local open-source models.",
+    "Languages_and_Infrastructure": "TypeScript, Python, Node, Fastify, FastAPI, React, Tauri, single-spa, Lit, Postgres, pgvector, Redis, Kubernetes, ArgoCD, Docker, Datadog, AWS, and Rust (via AI coding tools).",
+    "Leadership": "Lead and mentor distributed engineering teams, growing engineers from mid to senior. Championed org-wide AI tool adoption from Codeium Windsurf to Cursor to Claude Code."
   },
   "education": [
     {
