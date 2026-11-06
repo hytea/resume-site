@@ -1,0 +1,33 @@
+body.maker { margin: 0; padding: 0; }
+.maker * { box-sizing: border-box; }
+.maker header, .maker main { width: min(1080px, 90%); margin: auto; }
+.maker header { display: flex; justify-content: space-between; align-items: center; padding: 22px 0; border-bottom: 1px solid var(--line); }
+.maker header a { text-decoration: none; color: var(--ink); font-weight: 650; }
+.maker header a:first-child { font-size: 1.25rem; }
+.maker main { padding: clamp(30px, 6vw, 78px) 0; display: grid; grid-template-columns: 1fr 1fr; grid-template-areas: 'intro form' 'figure form'; gap: 25px clamp(30px, 7vw, 90px); }
+.maker .intro { grid-area: intro; }
+.maker h1 { margin: 0; font-size: clamp(3.6rem, 6.6vw, 5.7rem); line-height: .98; letter-spacing: -.055em; }
+.maker h1 em { font: italic 1.06em/.92 var(--font-italic); letter-spacing: -.045em; }
+.maker .intro p { margin: 20px 0 0; max-width: 38ch; font-size: 1.14rem; line-height: 1.5; color: var(--mute); }
+.maker figure { grid-area: figure; margin: 0; width: min(100%, 315px); }
+.maker figure img { display: block; width: 100%; height: auto; border-radius: 4px; }
+.maker figcaption { display: flex; justify-content: space-between; gap: 8px; font-size: .9rem; padding-top: 9px; }
+.maker figcaption span, .maker small, .maker .helper { color: var(--mute); }
+.maker form { grid-area: form; align-self: start; padding: clamp(20px, 3vw, 36px); background: var(--bg-2); border: 1px solid var(--line); border-radius: 5px; }
+.maker fieldset { margin: 0; padding: 0; border: 0; min-width: 0; }
+.maker legend { font-size: 1.6rem; font-weight: 700; margin-bottom: 26px; letter-spacing: -.035em; }
+.maker label { display: block; margin-bottom: 8px; font-weight: 600; }
+.maker input, .maker textarea { font: inherit; font-size: 1rem; width: 100%; border: 1px solid #909893; background: white; border-radius: 3px; padding: 12px; color: var(--ink); }
+.maker input { margin-bottom: 20px; }
+.maker textarea { resize: vertical; }
+.maker small { display: block; margin: 6px 0 22px; line-height: 1.45; }
+.maker button { font: inherit; font-weight: 600; font-size: 1.04rem; color: white; background: var(--ink); border: 0; border-radius: 4px; padding: 14px 18px; cursor: pointer; }
+.maker button span { margin-left: 12px; }
+.maker :focus-visible { outline: 3px solid var(--lush-deep); outline-offset: 3px; }
+.maker .helper, .maker #status { line-height: 1.45; font-size: .94rem; margin-bottom: 0; }
+.maker details { margin-top: 16px; }
+.maker summary { cursor: pointer; }
+@media(max-width: 700px) {
+  .maker main { grid-template-columns: 1fr; grid-template-areas: 'intro' 'form' 'figure'; }
+  .maker figure { width: min(100%, 280px); }
+}
