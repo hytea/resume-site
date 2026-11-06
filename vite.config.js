@@ -8,7 +8,7 @@ export default {
     rollupOptions: {
       input: {
         main: resolve(__dirname, 'index.html'),
-        maker: resolve(__dirname, 'maker/index.html'),
+        maker: resolve(__dirname, 'maker.html'),
         resume: resolve(__dirname, 'resume/index.html'),
       },
     },
