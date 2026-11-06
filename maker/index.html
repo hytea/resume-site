@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Contact Andrew Hyte to request a custom 3D print.">
+  <title>Request a custom print | Andrew Hyte</title>
+  <link rel="canonical" href="https://andrew.hyte.us/maker/">
+  <link rel="icon" href="/andrew-icon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&amp;family=Instrument+Serif:ital@1&amp;display=swap" rel="stylesheet">
+  <link href="/src/styles.css" rel="stylesheet">
+  <link href="./maker.css" rel="stylesheet">
+</head>
+<body class="maker">
+  <header><a href="/">Andrew Hyte</a><a href="/">Résumé <span aria-hidden="true">↗</span></a></header>
+  <main>
+    <div class="intro">
+      <h1>Request a<br><em>custom print.</em></h1>
+      <p>Tell me what you’d like to make. A sketch, a few measurements, or a photo can help me figure out the print.</p>
+    </div>
+    <figure>
+      <img src="/maker-pendant.webp" alt="A royal blue and white Sailor Coug pendant with raised face details." width="700" height="700">
+      <figcaption>Sailor Coug pendant <span>171 mm · PLA</span></figcaption>
+    </figure>
+    <form id="print-form">
+      <fieldset disabled id="request-fields">
+        <legend>Your print request</legend>
+        <label for="visitor">Your name</label>
+        <input id="visitor" name="visitor" autocomplete="name" maxlength="80" required>
+        <label for="idea">What would you like printed?</label>
+        <textarea id="idea" name="idea" rows="5" maxlength="1200" required aria-describedby="idea-hint"></textarea>
+        <small id="idea-hint">Include the size, colors, and quantity if you know them.</small>
+        <button type="submit">Open email draft <span aria-hidden="true">↗</span></button>
+      </fieldset>
+      <p class="helper">Review and send the request from your email app. You can attach photos there.</p>
+      <p id="status" role="status"></p>
+      <details id="fallback" hidden>
+        <summary>Use webmail instead</summary>
+        <p>Send this message to <span id="recipient"></span>.</p>
+        <label for="draft">Message to copy</label>
+        <textarea readonly id="draft" rows="5"></textarea>
+      </details>
+      <noscript><p>Email Andrew through the <a href="/#contact">contact section</a> to request a print.</p></noscript>
+    </form>
+  </main>
+  <script type="module" src="./maker.js"></script>
+</body>
+</html>
