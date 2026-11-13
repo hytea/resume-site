@@ -31,3 +31,5 @@ Thumbs.db
 # Ignore Playwright MCP audit artifacts
 .playwright-mcp/
 /*.png
+/output/
+/tmp/

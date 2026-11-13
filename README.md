@@ -75,6 +75,23 @@ The main idea of the website is to showcase a resume and only have to update it 
 
 The website configuration can be managed via the `config.json` file located in the `public` directory. This allows for easy updates to the resume content without modifying the HTML directly.
 
+### Application pages
+
+Add a resume JSON file under `src/data/` to create a job-specific page. For
+example, `src/data/salesforce.json` becomes `/salesforce/`. Copy that file and
+update the `application`, `page`, resume content, and `outputFileName` fields.
+The filename before `.json` is the URL slug.
+
+`page.sections` selects from `bio`, `highlights`, `portfolio`, `resume`, and
+`contact`. A portfolio appears when selected and populated with a `portfolio`
+array. Each project accepts a `title`, `description`, and optional `image`,
+`imageAlt`, and `url`. For a shorter page, leave out sections that do not
+apply to the opportunity.
+
+All job pages use `application-template.html` and the main site's stylesheet
+and resume layout. Vite serves the page and its PDF during development and
+emits both for GitHub Pages during the production build.
+
 ### Configurable Sections
 
 1. **Header**

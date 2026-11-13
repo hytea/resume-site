@@ -12,6 +12,10 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "jspdf": "^4.2.1",
     "vite": "^5.3.5"
+  },
+  "devDependencies": {
+    "linkedom": "^0.18.15"
   }
 }
