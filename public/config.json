@@ -153,12 +153,12 @@
     }
   ],
   "skills": {
-    "Software Factory": "Product discovery, Jira and Linear intake, automated ticket triage, JEV decision model, test-first planning, Slack and scheduled triggers, GitLab CI/CD.",
-    "Agent Tools and Orchestration": "Claude Code, Codex, Cursor, Vercel AI SDK, multi-agent orchestration, coding agent harnesses, model routing, tool calling.",
-    "MCP, Context and Memory": "Model Context Protocol (MCP), FastMCP, MCP gateways, tool federation, context engineering, reusable skills, agent memory.",
-    "Identity and Governance": "Microsoft Entra ID, role-based access control (RBAC), per-user OAuth, scoped tool permissions, encrypted credential vaults, human approval gates, audit trails.",
-    "Execution and Infrastructure": "Kubernetes sandboxes, Docker, Argo CD, MinIO object storage, repository and toolchain provisioning, Git credential proxies.",
-    "Verification and Observability": "Playwright, test-driven development (TDD), automated QA, independent agent code review, LLM evaluation, Datadog, run telemetry, model usage and cost tracking."
+    "AI Software Factory": "Ticket-to-merge-request automation, automated Jira triage, decision models (JEV evaluation), Slack integrations, GitLab CI/CD, no-code AI app publishing.",
+    "Agent Orchestration": "AgentOps, multi-agent orchestration, autonomous coding agents, Claude Code, Codex, Cursor, Vercel AI SDK, LLM routing (LiteLLM, OpenRouter).",
+    "MCP, Context and Memory": "Model Context Protocol (MCP), FastMCP, MCP gateways, tool federation, context engineering, reusable agent skills, cross-session agent memory and retrieval.",
+    "AI Governance": "Microsoft Entra ID, role-based access control (RBAC), per-user OAuth, credential vaults, policy enforcement, fail-closed guardrails, human-in-the-loop approvals, audit trails.",
+    "Agent Infrastructure": "Kubernetes sandboxes, Docker, Argo CD, MinIO object storage, repository provisioning, Git credential proxies.",
+    "Evaluation and Observability": "LLM evaluation (LLM-as-judge, replay), model and harness benchmarking, Playwright QA, test-driven development (TDD), independent agent code review, Datadog, AI cost and ROI tracking."
   },
   "education": [
     {
