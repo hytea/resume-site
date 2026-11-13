@@ -153,10 +153,12 @@
     }
   ],
   "skills": {
-    "Product_to_Delivery": "Product discovery, Jira and Linear prioritization, acceptance criteria, and test-first plans.",
-    "Agent_Architecture": "Claude Code, Codex, Cursor, MCP, agent orchestration, model routing, context, and reusable skills.",
-    "Verification_and_Improvement": "Test-driven development, automated QA, agent review, GitLab CI/CD, and feedback from run telemetry.",
-    "Platform_and_Governance": "Kubernetes sandboxes, Docker, ArgoCD, Datadog, OAuth, human approvals, and audit trails."
+    "Software Factory": "Product discovery, Jira and Linear intake, automated ticket triage, JEV decision model, test-first planning, Slack and scheduled triggers, GitLab CI/CD.",
+    "Agent Tools and Orchestration": "Claude Code, Codex, Cursor, Vercel AI SDK, multi-agent orchestration, coding agent harnesses, model routing, tool calling.",
+    "MCP, Context and Memory": "Model Context Protocol (MCP), FastMCP, MCP gateways, tool federation, context engineering, reusable skills, agent memory.",
+    "Identity and Governance": "Microsoft Entra ID, role-based access control (RBAC), per-user OAuth, scoped tool permissions, encrypted credential vaults, human approval gates, audit trails.",
+    "Execution and Infrastructure": "Kubernetes sandboxes, Docker, Argo CD, MinIO object storage, repository and toolchain provisioning, Git credential proxies.",
+    "Verification and Observability": "Playwright, test-driven development (TDD), automated QA, independent agent code review, LLM evaluation, Datadog, run telemetry, model usage and cost tracking."
   },
   "education": [
     {
