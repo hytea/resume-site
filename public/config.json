@@ -19,7 +19,7 @@
           "dateRange": "June 2026 - Present",
           "location": "Orem, UT, Remote",
           "responsibilities": [
-            "Identified the need for an agent platform and won leadership approval to build it after a structured build, buy, and hybrid evaluation including Glean and RunLayer. As principal engineer, designed Atlas for low swap cost, with employee-created workflows, agents, and skills kept on Fishbowl's own servers.",
+            "Identified the need for an agent platform, evaluated build, buy, and hybrid options, and won leadership approval to build Atlas. Designed it so components could be replaced independently and employee-created workflows, agents, and skills stayed on Fishbowl's own infrastructure.",
             "Built the Atlas Gateway: 177 tools in 25 provider modules over plain MCP, usable from Claude, ChatGPT, Codex, and Cursor. It acts as the employee via OAuth where systems allow, filters tools per user, gates writes for approval, and cut Salesforce connector code 87%.",
             "Built Atlas Studio for non-technical employees on one runtime, identity, and approval model: chat on the Vercel AI SDK in the browser and a Rust-based Tauri desktop shell with a signed auto-updater, versioned skills, and scheduled agents that the database schema requires to name their tools.",
             "Added Apps to Studio: an employee builds a web app, Atlas hosts it as a single-spa micro-frontend, and a consent-gated bridge lets it call the same tools as the person using it, within their permissions and audit trail, with no API keys, backend, or deployment.",
