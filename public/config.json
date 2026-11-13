@@ -153,8 +153,8 @@
     }
   ],
   "skills": {
-    "AI Software Factory": "Ticket-to-merge-request automation, automated Jira triage, decision models (JEV evaluation), Slack integrations, GitLab CI/CD, no-code AI app publishing.",
-    "Agent Orchestration": "AgentOps, multi-agent orchestration, autonomous coding agents, Claude Code, Codex, Cursor, Vercel AI SDK, LLM routing (LiteLLM, OpenRouter).",
+    "AI Software Factory": "Automated Jira triage (JEV evaluation), Slack integrations, GitLab CI/CD, no-code AI app publishing.",
+    "Agent Orchestration": "AgentOps, multi-agent orchestration, autonomous coding agents, Claude Code, Codex, Cursor, PyHarness, Vercel AI SDK, LLM routing (LiteLLM, OpenRouter).",
     "MCP, Context and Memory": "Model Context Protocol (MCP), FastMCP, MCP gateways, tool federation, context engineering, reusable agent skills, cross-session agent memory and retrieval.",
     "AI Governance": "Microsoft Entra ID, role-based access control (RBAC), per-user OAuth, credential vaults, policy enforcement, fail-closed guardrails, human-in-the-loop approvals, audit trails.",
     "Agent Infrastructure": "Kubernetes sandboxes, Docker, Argo CD, MinIO object storage, repository provisioning, Git credential proxies.",
