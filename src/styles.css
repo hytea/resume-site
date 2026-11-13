@@ -78,35 +78,6 @@ body {
   max-width: min(840px, 92vw);
 }
 
-.hero .hero-eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 6px 14px 6px 6px;
-  border-radius: 999px;
-  background: rgba(63, 168, 120, 0.16);
-  border: 1px solid rgba(184, 224, 199, 0.35);
-  color: #d8f0e3;
-  font: 500 12px var(--font-sans);
-  margin-bottom: 22px;
-  letter-spacing: 0.01em;
-  opacity: 0;
-  transform: translateY(8px);
-  animation: hero-rise 0.7s 0.1s ease-out forwards;
-}
-
-.hero .hero-eyebrow .pill {
-  width: 8px;
-  height: 8px;
-  padding: 0;
-  border-radius: 999px;
-  background: var(--lush);
-  box-shadow: 0 0 0 4px rgba(63, 168, 120, 0.22);
-  font-size: 0;
-  color: transparent;
-  flex-shrink: 0;
-}
-
 .hero h1 {
   font-family: var(--font-display);
   font-size: clamp(2.4rem, 6vw, 4.4rem);
@@ -1134,6 +1105,15 @@ ul li {
 }
 
 .btn-primary-contact {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: rgba(255, 255, 255, 0.06);
+  --bs-btn-border-color: var(--mute-2);
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: rgba(255, 255, 255, 0.14);
+  --bs-btn-hover-border-color: #fff;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: rgba(255, 255, 255, 0.2);
+  --bs-btn-active-border-color: #fff;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -1144,7 +1124,6 @@ ul li {
   border-radius: 50px;
   text-decoration: none;
   transition: all 0.3s ease;
-  border: none;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   min-width: 180px;
 }
@@ -1160,26 +1139,18 @@ ul li {
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
 
-.btn-email {
-  background: transparent;
-  color: #fff;
-  border: 1px solid rgba(255, 255, 255, 0.35);
-}
-
-.btn-email:hover {
-  background: rgba(255, 255, 255, 0.08);
-  border-color: #fff;
-  color: #fff;
+.btn-primary-contact:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 3px;
 }
 
 .btn-phone {
-  background: var(--lush);
-  color: #fff;
-}
-
-.btn-phone:hover {
-  background: var(--lush-deep);
-  color: #fff;
+  --bs-btn-bg: var(--lush-deep);
+  --bs-btn-border-color: var(--lush);
+  --bs-btn-hover-bg: var(--primary-color-hover);
+  --bs-btn-hover-border-color: var(--lush-line);
+  --bs-btn-active-bg: var(--primary-color-hover);
+  --bs-btn-active-border-color: var(--lush-line);
 }
 
 .contact-icon {
@@ -1872,5 +1843,62 @@ a:hover {
   #contact > [class*='container'] {
     border-radius: 0;
     padding: 48px 20px;
+  }
+}
+
+/* Application pages share the main resume styling and render their content at build time. */
+.application-page .hero {
+  height: auto;
+  min-height: min(580px, calc(100svh - 56px));
+  padding: 4rem 1rem;
+}
+
+.application-page section[id],
+.application-page main[id] {
+  scroll-margin-top: 5rem;
+}
+
+.application-page .resume-item,
+.application-page .responsibilities li {
+  opacity: 1;
+  transform: none;
+}
+
+.application-page .application-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+  gap: 1.25rem;
+}
+
+.application-page .application-cards .company-card {
+  margin-bottom: 0;
+}
+
+.application-page .visually-hidden-focusable:focus {
+  z-index: 1050;
+}
+
+@media (max-width: 576px) {
+  .application-page .hero {
+    min-height: auto;
+    padding: 3.5rem 1rem;
+  }
+
+  .application-page .hero .glass {
+    padding: 1.5rem;
+  }
+
+  .application-page .hero h1 .lush-mark {
+    white-space: normal;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .application-page .hero h1,
+  .application-page .hero .lead,
+  .application-page .hero h1 .lush-mark::after {
+    animation: none;
+    opacity: 1;
+    transform: none;
   }
 }

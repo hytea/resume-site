@@ -8,7 +8,7 @@
     "github": "github.com/hytea"
   },
   "outputFileName": "Andrew_Hyte_Resume.pdf",
-  "summary": "Principal Enterprise AI Architect who identified Fishbowl's need for an internal AI platform, made the <span class=\"feature\">build-versus-buy case</span> to leadership, and built Atlas from the ground up on Fishbowl's own infrastructure. Its foundation is a <span class=\"feature\">governed MCP gateway</span> of 177 tools across 25 provider modules that carries <span class=\"feature\">each employee's own identity and permissions</span> into Claude, ChatGPT, Codex, Cursor, and other clients. On top of it, <span class=\"feature\">Atlas Studio</span> gives non-technical employees <span class=\"feature\">desktop and browser chat</span>, reusable <span class=\"feature\">skills</span>, <span class=\"feature\">scheduled agents</span>, and <span class=\"feature\">hosted employee-built apps</span> on one runtime, one identity, and one approval model, with <span class=\"feature\">provider-agnostic model routing</span> underneath. Engineering also gets a <span class=\"feature\">sandboxed agentic coding pipeline</span>. Applied AI Hackathon winner with deep frontend roots, including <span class=\"feature\">micro-frontend solutions</span> that unify disparate technology stacks.",
+  "summary": "AI-native engineer and Principal Enterprise AI Architect at Fishbowl Inventory. I design the systems coding agents use to write and verify software, from product discovery and ticket prioritization through test-first implementation, automated QA, and GitLab pipelines. I use run failures and review findings to improve the workflow that produces each change.",
   "experience": [
     {
       "company": "Fishbowl Inventory",
@@ -24,7 +24,8 @@
             "Built Atlas Studio for non-technical employees on one runtime, identity, and approval model: chat on the Vercel AI SDK in the browser and a Rust-based Tauri desktop shell with a signed auto-updater, versioned skills, and scheduled agents that the database schema requires to name their tools.",
             "Added Apps to Studio: an employee builds a web app, Atlas hosts it as a single-spa micro-frontend, and a consent-gated bridge lets it call the same tools as the person using it, within their permissions and audit trail, with no API keys, backend, or deployment.",
             "In its first eleven days in production (mid August 2026), 65 of Fishbowl's 222 employees used Atlas chat, 85% returned on a different day, and at least 25 worked outside engineering, in support, implementation, sales, and finance.",
-            "Built Atlas Builder for engineering, taking a ticket through a sandboxed, test-driven run to a draft merge request. A supervisor hands each phase to a pluggable coding harness under a fail-closed step contract, checkpoints so runs survive pod loss, and gives each session its own Kubernetes sandbox."
+            "Designed Atlas Builder so people in support, product, and QA could start a fix from Slack. Led the production rollout for Drive frontend repositories, with isolated Kubernetes execution, test-first plans, independent review, and draft GitLab merge requests.",
+            "Instrumented agent runs with failure details, audit events, and model usage by step. Use run results and review findings to refine the context, instructions, tests, and approval gates that guide coding agents."
           ]
         },
         {
@@ -152,10 +153,10 @@
     }
   ],
   "skills": {
-    "Agent_Platform": "Agent runtime and supervisor design, MCP gateways and tool federation, provider abstraction and model routing, permissions and trust boundaries, sandboxed execution, streaming tool-calling loops, observability and audit, agent memory, LLM evaluation, context engineering.",
-    "AI_Tools_and_Models": "Claude Code, Codex, Cursor, Claude Agent SDK, Vercel AI SDK, LiteLLM, Anthropic API, Amazon Bedrock, local open-source models.",
-    "Languages_and_Infrastructure": "TypeScript, Python, Node, Fastify, FastAPI, React, Tauri, single-spa, Lit, Postgres, pgvector, Redis, Kubernetes, ArgoCD, Docker, Datadog, AWS, and Rust (via AI coding tools).",
-    "Leadership": "Lead and mentor distributed engineering teams, growing engineers from mid to senior. Championed org-wide AI tool adoption from Codeium Windsurf to Cursor to Claude Code."
+    "Product_to_Delivery": "Product discovery, Jira and Linear prioritization, acceptance criteria, and test-first plans.",
+    "Agent_Architecture": "Claude Code, Codex, Cursor, MCP, agent orchestration, model routing, context, and reusable skills.",
+    "Verification_and_Improvement": "Test-driven development, automated QA, agent review, GitLab CI/CD, and feedback from run telemetry.",
+    "Platform_and_Governance": "Kubernetes sandboxes, Docker, ArgoCD, Datadog, OAuth, human approvals, and audit trails."
   },
   "education": [
     {

@@ -1,0 +1,174 @@
+{
+  "header": {
+    "title": "Andrew Hyte",
+    "currentTitle": "Principal Enterprise AI Architect",
+    "location": "Heber City, Utah",
+    "phoneNumber": "+1 801-200-8453",
+    "email": "a@hyte.us",
+    "website": "andrew.hyte.us",
+    "linkedin": "linkedin.com/in/andrew-hyte",
+    "github": "github.com/hytea"
+  },
+  "application": {
+    "company": "Salesforce",
+    "team": "Qualified Software Factory",
+    "role": "Software Engineering LMTS / PMTS",
+    "jobUrl": "https://salesforce.wd12.myworkdayjobs.com/External_Career_Site/job/California---San-Francisco/Software-Engineering-LMTS---PMTS---Software-Factory--REMOTE-_JR363371"
+  },
+  "outputFileName": "Andrew_Hyte_Salesforce_Software_Factory_Resume.pdf",
+  "page": {
+    "headline": "I build the systems that",
+    "headlineAccent": "write software.",
+    "intro": "I turn product requests into prioritized work, give coding agents a test-first plan, and use the results to improve the next run.",
+    "description": "Andrew Hyte's resume for the Qualified Software Factory team at Salesforce, featuring Atlas Builder at Fishbowl.",
+    "sections": ["bio", "highlights", "resume", "contact"]
+  },
+  "summary": "AI-native engineer and Principal Enterprise AI Architect with 10+ years in software engineering. I design the systems coding agents use to write and verify software, from refining product requests and prioritizing tickets to test-driven development, automated QA, and GitLab pipelines. I led Atlas Builder into production at Fishbowl and designed it so support, product, and QA could start fixes from Slack.",
+  "highlights": [
+    {
+      "title": "Atlas Builder",
+      "description": "I designed Builder so a support tech, product manager, or QA engineer could move a fix forward directly. In production for Drive frontend repos, it takes Jira work from Slack through isolated execution, testing, and agent review to a draft GitLab merge request. Engineers review and merge the change."
+    },
+    {
+      "title": "Slack integration",
+      "description": "I led the design of Atlas Gateway’s Slack tools, with per-user OAuth and encrypted token storage. I also led development of Slack cards for people to approve, reject, or edit proposed agent actions. The cards work in development, and the integration includes rich link previews and Canvas support."
+    },
+    {
+      "title": "Context Sherpa",
+      "description": "I started a shared toolkit that gives Claude Code access to Jira, GitLab, and other engineering tools. In March 2026, it supported a bug fix from a Slack report through ticket creation, agent code review, preview QA, and merge."
+    }
+  ],
+  "experience": [
+    {
+      "company": "Fishbowl Inventory",
+      "roles": [
+        {
+          "title": "Principal Enterprise AI Architect",
+          "dateRange": "June 2026 - Present",
+          "location": "Orem, UT / Remote",
+          "responsibilities": [
+            "Designed Atlas Builder so support, product, and QA could initiate fixes from Slack without waiting for engineering intake. Engineers retain review and merge authority.",
+            "Led the production rollout for Fishbowl's Drive frontend repositories. Builder starts from a Jira ticket, asks for decisions in the Slack thread, and returns a draft GitLab merge request.",
+            "Designed a pluggable Claude Code harness that takes scoped tickets through test-first planning, agent implementation, automated testing, independent review, and remediation.",
+            "Designed resource-limited Kubernetes jobs that provision repositories and toolchains per step. Routed Git clones through a proxy that supplies repository credentials server-side.",
+            "Shipped Slack run updates, structured failure details, audit events, and per-step model usage and cost tracking. Use failed runs to improve the instructions, context, and verification that guide the next run.",
+            "Used telemetry from 1,925 Atlas chat turns to guide a step-limit change and added a visible notice for users when a turn reaches its limit.",
+            "Led development of interactive Slack approval cards. In development, reviewers can approve, reject, or edit proposed agent actions in Slack. Added rich link previews and Canvas support.",
+            "Led the Atlas build-versus-buy evaluation and secured leadership approval for a shared MCP gateway with scoped access and approval gates."
+          ]
+        },
+        {
+          "title": "Principal AI Engineer",
+          "dateRange": "March 2026 - May 2026",
+          "location": "Orem, UT / Remote",
+          "responsibilities": [
+            "Led the tooling behind a March 2026 AI-triaged bug fix. Claude turned a Slack report into a Jira ticket, fixed the bug, and opened a GitLab merge request. An agent reviewed the code and QA validated it in a preview environment before merge.",
+            "Brought Sherpa's Slack tools into Atlas Gateway as an MCP provider, with per-user Slack OAuth and encrypted token storage. Packaged repository instructions and reusable skills for engineering and QA."
+          ]
+        },
+        {
+          "title": "Software Engineering Manager",
+          "dateRange": "December 2025 - February 2026",
+          "location": "Orem, UT / Remote",
+          "responsibilities": [
+            "Started Context Sherpa, a toolkit with guided setup for Claude Code to work across Jira and GitLab. The project grew to five contributors.",
+            "Led the cloud engineering team and technical roadmap, partnering with Product and Design and mentoring engineers through code reviews."
+          ]
+        },
+        {
+          "title": "Senior Software Engineer",
+          "dateRange": "August 2024 - November 2025",
+          "location": "Orem, UT / Remote",
+          "responsibilities": [
+            "Architected a single-spa micro-frontend platform unifying React and Angular applications while preserving independent deployments.",
+            "Led engineering migrations from Windsurf to Cursor to Claude Code. Led the winning team in Fishbowl’s Applied AI Hackathon, building a conversational agent and MCP server in two days."
+          ]
+        }
+      ]
+    },
+    {
+      "company": "ON Platform (formerly GameOn)",
+      "roles": [
+        {
+          "title": "Lead Software Engineer, Frontend",
+          "dateRange": "February 2023 - July 2024",
+          "location": "San Francisco, CA / Remote",
+          "responsibilities": [
+            "Led five frontend engineers and weekly releases for a B2B conversational AI portal, including a no-code Canvas editor for chatbot reply flows.",
+            "Built the CI/CD pipeline with Vite, Netlify, and GitHub Actions."
+          ]
+        },
+        {
+          "title": "Senior Software Engineer",
+          "dateRange": "May 2022 - February 2023",
+          "location": "San Francisco, CA / Remote",
+          "responsibilities": [
+            "Wrote the technical design and built the MVP for a B2B customer portal; developed a Lit component system and integrated customer feedback with Linear."
+          ]
+        }
+      ]
+    },
+    {
+      "company": "Bark Technologies",
+      "roles": [
+        {
+          "title": "Software Engineer",
+          "dateRange": "February 2020 - April 2022",
+          "responsibilities": [
+            "Integrated Router Limits technologies following acquisition and owned the Bark React Native app."
+          ]
+        }
+      ]
+    },
+    {
+      "company": "Router Limits",
+      "roles": [
+        {
+          "title": "Software Developer",
+          "dateRange": "November 2015 - February 2020",
+          "responsibilities": [
+            "Led frontend development; built an AngularJS progressive web app with a Node and MySQL REST API, plus Android and iOS apps using C# and Xamarin.Forms."
+          ]
+        }
+      ]
+    },
+    {
+      "company": "Lockheed Martin Mission Systems and Training",
+      "roles": [
+        {
+          "title": "Software Engineer Intern",
+          "dateRange": "June 2015 - August 2015",
+          "responsibilities": [
+            "Contributed to training simulation software using C# .NET and WPF."
+          ]
+        }
+      ]
+    },
+    {
+      "company": "Missionary Training Center",
+      "roles": [
+        {
+          "title": "Full Stack Programmer",
+          "dateRange": "April 2014 - November 2015",
+          "responsibilities": [
+            "Developed a chat application with Java Spring and an Oracle SQL backend."
+          ]
+        }
+      ]
+    }
+  ],
+  "skills": {
+    "Product to Delivery": "Product discovery, Jira and Linear prioritization, acceptance criteria, and test-first plans.",
+    "Agent Architecture": "Claude Code, Codex, Cursor, MCP, agent orchestration, model routing, context, and reusable skills.",
+    "Verification and Improvement": "Test-driven development, automated QA, agent review, GitLab CI/CD, and feedback from run telemetry.",
+    "Platform and Governance": "Kubernetes sandboxes, Docker, ArgoCD, Datadog, OAuth, human approvals, and audit trails."
+  },
+  "education": [
+    {
+      "degree": "B.S. Computer Science",
+      "institution": "Brigham Young University",
+      "date": "December 2015"
+    }
+  ],
+  "personalProject": "Run a software factory with Claude and Codex workers across two development machines. Refine product ideas, prioritize tickets, and direct agents through test-first briefs, independent review, and controlled merges. Use failures to improve the workflow and package the practices for other engineers."
+}
