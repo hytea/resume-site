@@ -159,15 +159,15 @@ export function createResumePDF(data, { jsPDF, parseBody }) {
   const addSkillDetails = (doc, skillCategory, skillsHTML, y) => {
     y = checkPageOverflow(doc, y);
     doc.setFontSize(10);
-    doc.setFont(fontFamily, 'bolditalic');
+    doc.setFont(fontFamily, 'bold');
     doc.text(skillCategory, margin, y);
     // Label metrics vary slightly across viewers, so leave a fixed gap
     const labelWidth = doc.getTextWidth(skillCategory) + 1.5;
     doc.setFont(fontFamily, 'normal');
 
-    y = parseHTMLAndAddToPDF(doc, skillsHTML, margin + labelWidth, y);
+    y = parseHTMLAndAddToPDF(doc, skillsHTML, margin + labelWidth, y, 4);
 
-    y += 6.5;
+    y += 4;
     return y;
   };
 
@@ -331,7 +331,7 @@ export function createResumePDF(data, { jsPDF, parseBody }) {
   if (data.skills && Object.keys(data.skills).length > 0) {
     y = ensureSpace(doc, y + 6, 30);
     addSectionTitle(doc, 'Skills Profile', y);
-    y += SECTION_TITLE_BUFFER + 3;
+    y += SECTION_TITLE_BUFFER - 1;
 
     Object.keys(data.skills).forEach((key) => {
       const skillCategory = key.replace(/_/g, ' ');
