@@ -1357,6 +1357,39 @@ ul li {
     0 30px 60px -28px rgba(11, 15, 13, 0.28);
 }
 
+.bio-music {
+  margin-top: 0.75rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--line);
+}
+
+.bio-music h3 {
+  font: 700 1.5rem var(--font-display);
+  color: var(--ink);
+}
+
+#bio .bio-music p {
+  font-size: 1.0625rem;
+  font-weight: 400;
+  color: var(--mute);
+}
+
+.bio-music-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.25rem;
+  list-style: none;
+  margin: 0 0 1rem;
+  padding: 0;
+}
+
+.bio-music-player {
+  display: block;
+  width: 100%;
+  border: 0;
+  border-radius: 12px;
+}
+
 /* Portfolio cards — refined card surface */
 .portfolio-item {
   border-radius: 14px;
