@@ -27,7 +27,7 @@
     ],
     "title": "Andrew Hyte | AI Platform Engineer"
   },
-  "summary": "I’m a Principal Enterprise AI Architect with 10+ years in software engineering. At Fishbowl, I led the production rollout of Atlas Builder for the Drive frontend repositories. It turns Jira issues into tested code changes and opens draft GitLab merge requests. Engineers retain final approval and merge authority.",
+  "summary": "I’m a Principal Enterprise AI Architect with 10+ years in software engineering. I led the production rollout of Atlas Builder for Fishbowl Inventory’s frontend repositories. It turns Jira issues into tested code changes and opens draft GitLab merge requests. Engineers retain final approval and merge authority.",
   "highlights": [
     {
       "title": "Atlas Builder: request to review",
@@ -51,10 +51,10 @@
           "dateRange": "June 2026 - Present",
           "location": "Orem, UT / Remote",
           "responsibilities": [
-            "Led the production rollout of Atlas Builder across the Drive frontend repositories. Designed the workflow from issue intake to independent review and a draft merge request.",
-            "Designed resource-limited Kubernetes jobs that provision a repository and its tools for each step. Kept Git credentials server-side.",
+            "Led the production rollout of Atlas Builder across Fishbowl Inventory’s frontend repositories. Designed the workflow from issue intake to independent review and a draft merge request.",
+            "Designed resource-limited Kubernetes jobs that set up repositories and tools for each step of a run.",
             "Shipped progress updates, structured failure details, audit events, and per-step model usage and cost tracking. Used failed runs to improve instructions, context, and verification.",
-            "Led the build-versus-buy evaluation for Atlas Gateway and secured leadership approval for an in-house platform with scoped tool access and human approval gates."
+            "Led the build-versus-buy evaluation for Atlas Gateway and secured leadership approval for an in-house platform that limits which tools agents can use and supports human approval for sensitive actions."
           ]
         },
         {
@@ -161,7 +161,7 @@
     "Agent Workflows": "Multi-agent orchestration, test-first planning, Claude Code, Codex, model routing.",
     "Platform and Delivery": "Kubernetes, Docker, TypeScript, Node.js, GitLab CI/CD, GitHub Actions, Argo CD.",
     "Testing and Evaluation": "Playwright, automated QA, independent agent review, replay, model usage and cost tracking.",
-    "Tool Access and Security": "MCP, FastMCP, OAuth, role-based access, approval gates, audit trails."
+    "Tool Access and Security": "MCP, FastMCP, OAuth, role-based access control (RBAC), approval gates, audit trails."
   },
   "education": [
     {
