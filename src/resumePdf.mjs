@@ -321,7 +321,7 @@ export function createResumePDF(data, { jsPDF, parseBody }) {
 
   if (data.personalProject) {
     y = ensureSpace(doc, y + 6, 30);
-    addSectionTitle(doc, 'Personal Software Factory', y);
+    addSectionTitle(doc, data.personalProjectTitle || 'Personal Software Factory', y);
     y += SECTION_TITLE_BUFFER + 3;
     doc.setFontSize(10);
     y = parseHTMLAndAddToPDF(doc, data.personalProject, margin, y, 4.5) + 4;

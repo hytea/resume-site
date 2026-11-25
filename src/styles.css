@@ -1891,6 +1891,14 @@ a:hover {
   scroll-margin-top: 5rem;
 }
 
+[data-application='ai-platform-engineer'] #resume-heading {
+  text-align: center;
+}
+
+[data-application='ai-platform-engineer'] #resume-heading::before {
+  margin-inline: auto;
+}
+
 .application-page .resume-item,
 .application-page .responsibilities li {
   opacity: 1;
