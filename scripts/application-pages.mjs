@@ -45,11 +45,12 @@ function renderApplication(html, slug, data) {
     if (content) node.textContent = content;
     return node;
   };
-  const title = [header.title, company, team].filter(Boolean).join(' | ');
+  const title = page.title || [header.title, company, team].filter(Boolean).join(' | ');
   const description = page.description || `${header.title}'s resume for ${company}.`;
   const domain = readFileSync(domainFile, 'utf8').trim();
   const url = `https://${domain}/${slug}/`;
   document.title = title;
+  document.body.dataset.application = slug;
   document.querySelector('meta[name="description"]').content = description;
   document.querySelector('meta[property="og:title"]').content = title;
   document.querySelector('meta[property="og:description"]').content = description;
@@ -69,6 +70,8 @@ function renderApplication(html, slug, data) {
   byId('personal-project').textContent = data.personalProject || '';
   if (!data.personalProject || page.showPersonalProject === false) {
     byId('application-personal-project').remove();
+  } else if (data.personalProjectTitle) {
+    byId('application-personal-project').querySelector('h3').textContent = data.personalProjectTitle;
   }
   for (const link of document.querySelectorAll('[data-resume-download]')) {
     link.setAttribute('href', `/${slug}/${data.outputFileName}`);

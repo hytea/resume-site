@@ -17,32 +17,29 @@
   "page": {
     "headline": "I build software factories",
     "headlineAccent": "engineers can trust.",
-    "intro": "I turn product requests into scoped, testable work, then give coding agents the tools and checks to carry it through to a merge request an engineer can review.",
-    "description": "Andrew Hyte’s AI Platform Engineer resume, featuring production agent orchestration, engineering governance, evaluation, and delivery.",
+    "intro": "I design the pipeline that turns a product request into a tested code change an engineer can review.",
+    "description": "Andrew Hyte’s AI Platform Engineer resume: production coding agents, permissioned tool access, and software delivery.",
     "sections": [
       "bio",
       "highlights",
       "resume",
       "contact"
-    ]
+    ],
+    "title": "Andrew Hyte | AI Platform Engineer"
   },
-  "summary": "I’m a Principal Enterprise AI Architect with 10+ years in software engineering. At Fishbowl, I led Atlas Builder into production for the Drive frontend repositories. Support, Product, and QA can start work from Slack; Builder takes a Jira ticket through planning, implementation, tests, and independent review, then opens a draft GitLab merge request. Engineers retain review and merge authority. I also led the build-versus-buy evaluation for a shared MCP gateway and secured leadership approval for the in-house approach.",
+  "summary": "I’m a Principal Enterprise AI Architect with 10+ years in software engineering. At Fishbowl, I led the production rollout of Atlas Builder for the Drive frontend repositories. It turns Jira issues into tested code changes and opens draft GitLab merge requests. Engineers retain final approval and merge authority.",
   "highlights": [
     {
-      "title": "Atlas Builder | From request to merge request",
-      "description": "A Slack request can move from a Jira ticket and a test-first plan through agent implementation, automated checks, independent review, and a draft GitLab merge request. The production rollout covers the Drive frontend repositories, with engineers owning the final decision."
+      "title": "Atlas Builder: request to review",
+      "description": "Support, Product, and QA can start or clarify a fix from Slack. Atlas Builder takes the Jira issue through a test-first plan, implementation, automated tests, and independent code review."
     },
     {
-      "title": "Atlas Gateway | Controlled tool access",
-      "description": "Led design of a shared MCP gateway with scoped access and approval gates, including per-user Slack OAuth and encrypted token storage. Led development of Slack cards that let reviewers approve, reject, or edit proposed agent actions."
+      "title": "Atlas Gateway: controlled tool access",
+      "description": "Led the decision to build a shared gateway that gives AI agents permission to use specific tools through the Model Context Protocol (MCP). High-risk actions can require human approval."
     },
     {
-      "title": "Kubernetes execution and run telemetry",
-      "description": "Designed resource-limited Kubernetes jobs to provision repositories and tools per step, with server-side Git credentials. Shipped Slack progress and failure details, audit events, and model usage and cost tracking per step."
-    },
-    {
-      "title": "Context Sherpa | Validating delivery end to end",
-      "description": "Started the toolkit behind a March 2026 fix that began as a Slack report. An agent created a Jira ticket, implemented the fix, and opened a GitLab merge request. Agent review and preview QA preceded the merge."
+      "title": "Context Sherpa: a fix validated in preview",
+      "description": "Started the toolkit behind a March 2026 fix. An agent turned a bug report into a Jira ticket, implemented the change, and opened a GitLab merge request. An independent review and QA in a preview environment preceded the merge."
     }
   ],
   "experience": [
@@ -54,14 +51,10 @@
           "dateRange": "June 2026 - Present",
           "location": "Orem, UT / Remote",
           "responsibilities": [
-            "Designed Atlas Builder so support, product, and QA could initiate fixes from Slack without waiting for engineering intake. Engineers retain review and merge authority.",
-            "Led the production rollout for Fishbowl's Drive frontend repositories. Builder starts from a Jira ticket, asks for decisions in the Slack thread, and returns a draft GitLab merge request.",
-            "Designed a pluggable Claude Code harness that takes scoped tickets through test-first planning, agent implementation, automated testing, independent review, and remediation.",
-            "Designed resource-limited Kubernetes jobs that provision repositories and toolchains per step. Routed Git clones through a proxy that supplies repository credentials server-side.",
-            "Shipped Slack run updates, structured failure details, audit events, and per-step model usage and cost tracking. Use failed runs to improve the instructions, context, and verification that guide the next run.",
-            "Used telemetry from 1,925 Atlas chat turns to guide a step-limit change and added a visible notice for users when a turn reaches its limit.",
-            "Led development of interactive Slack approval cards. In development, reviewers can approve, reject, or edit proposed agent actions in Slack. Added rich link previews and Canvas support.",
-            "Led the Atlas build-versus-buy evaluation and secured leadership approval for a shared MCP gateway with scoped access and approval gates."
+            "Led the production rollout of Atlas Builder across the Drive frontend repositories. Designed the workflow from issue intake to independent review and a draft merge request.",
+            "Designed resource-limited Kubernetes jobs that provision a repository and its tools for each step. Kept Git credentials server-side.",
+            "Shipped progress updates, structured failure details, audit events, and per-step model usage and cost tracking. Used failed runs to improve instructions, context, and verification.",
+            "Led the build-versus-buy evaluation for Atlas Gateway and secured leadership approval for an in-house platform with scoped tool access and human approval gates."
           ]
         },
         {
@@ -69,8 +62,8 @@
           "dateRange": "March 2026 - May 2026",
           "location": "Orem, UT / Remote",
           "responsibilities": [
-            "Led the tooling behind a March 2026 AI-triaged bug fix. Claude turned a Slack report into a Jira ticket, fixed the bug, and opened a GitLab merge request. An agent reviewed the code and QA validated it in a preview environment before merge.",
-            "Brought Sherpa's Slack tools into Atlas Gateway as an MCP provider, with per-user Slack OAuth and encrypted token storage. Packaged repository instructions and reusable skills for engineering and QA."
+            "Led tooling for a March 2026 AI-triaged fix, with agent code review and QA in a preview environment before merge.",
+            "Integrated Sherpa’s tools into Atlas Gateway with per-user OAuth and encrypted tokens. Packaged reusable instructions for engineering and QA."
           ]
         },
         {
@@ -78,7 +71,7 @@
           "dateRange": "December 2025 - February 2026",
           "location": "Orem, UT / Remote",
           "responsibilities": [
-            "Started Context Sherpa, a toolkit with guided setup for Claude Code to work across Jira and GitLab.",
+            "Started Context Sherpa to make engineering tools such as Jira and GitLab accessible to coding agents.",
             "Led the cloud engineering team and technical roadmap, partnering with Product and Design and mentoring engineers through code reviews."
           ]
         },
@@ -87,8 +80,8 @@
           "dateRange": "August 2024 - November 2025",
           "location": "Orem, UT / Remote",
           "responsibilities": [
-            "Architected a single-spa micro-frontend platform unifying React and Angular applications while preserving independent deployments.",
-            "Led engineering migrations from Windsurf to Cursor to Claude Code. Led the winning team in Fishbowl’s Applied AI Hackathon, building a conversational agent and MCP server in two days."
+            "Architected a micro-frontend platform that combined React and Angular applications while preserving independent deployments.",
+            "Led the winning team in Fishbowl’s Applied AI Hackathon, building a conversational agent and MCP server in two days."
           ]
         }
       ]
@@ -165,11 +158,10 @@
     }
   ],
   "skills": {
-    "Agent Orchestration": "Multi-agent workflows, test-first planning, Claude Code, Codex, Pi Harness, Vercel AI SDK, LiteLLM, OpenRouter.",
-    "Platform and Delivery": "Kubernetes jobs, Docker, GitLab CI/CD, GitHub Actions, Argo CD, repository provisioning, Slack and Jira integrations.",
-    "Evaluation and Observability": "Automated QA, Playwright, independent agent review, LLM-as-judge, replay, telemetry, model cost tracking, self-improvement loops.",
-    "Tooling and Governance": "MCP gateways, FastMCP, tool federation, scoped access, per-user OAuth, RBAC, credentials, approval gates, audit trails.",
-    "Software Engineering": "TypeScript, React, Angular, Vite, Node.js, REST APIs, SQL, micro-frontends."
+    "Agent Workflows": "Multi-agent orchestration, test-first planning, Claude Code, Codex, model routing.",
+    "Platform and Delivery": "Kubernetes, Docker, TypeScript, Node.js, GitLab CI/CD, GitHub Actions, Argo CD.",
+    "Testing and Evaluation": "Playwright, automated QA, independent agent review, replay, model usage and cost tracking.",
+    "Tool Access and Security": "MCP, FastMCP, OAuth, role-based access, approval gates, audit trails."
   },
   "education": [
     {
@@ -178,5 +170,6 @@
       "date": "December 2015"
     }
   ],
-  "personalProject": "Ran an operator-assisted pilot in which local models implemented changes, wrote tests, and reviewed each other’s work. Used Codex for a final review with a fixed scope. The pilot required manual recovery and did not deploy to production."
+  "personalProject": "Ran a supervised pilot in which local models implemented changes, wrote tests, and reviewed each other’s work. Used Codex for a final review. The pilot required manual recovery and did not deploy to production.",
+  "personalProjectTitle": "Local-model delivery pilot"
 }
